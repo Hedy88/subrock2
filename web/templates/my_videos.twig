@@ -1,0 +1,704 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+<link rel="stylesheet" href="/yts/cssbin/www-refresh-static-vflJ4wqNO.css">
+<link rel="stylesheet" href="/yts/cssbin/www-videomanager-webp-vflNIQTcK.css">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <div class="ytg-base">
+        <div class="ytg-wide">
+            <div id="yt-admin">
+                <div id="yt-admin-sidebar" class="ytg-1col">
+                    <ol>
+                        <li class="top-level">
+                            <a href="/web/20121114174201/https://www.youtube.com/t/about_youtube"
+                                class="item-highlight">
+                                About YouTube
+                            </a>
+                        </li>
+                        <ol class="indented">
+                            <li class="sub-level">
+                                <a href="/web/20121114174201/https://www.youtube.com/t/about_getting_started">
+                                    Getting Started
+                                </a>
+                            </li>
+                            <li class="sub-level">
+                                <a href="/web/20121114174201/https://www.youtube.com/t/about_essentials">
+                                    YouTube Essentials
+                                </a>
+                            </li>
+                            <li class="sub-level">
+                                <a href="/web/20121114174201/https://www.youtube.com/t/community_guidelines">
+                                    Community Guidelines
+                                </a>
+                            </li>
+                            <li class="sub-level">
+                                <a href="/web/20121114174201/https://www.youtube.com/t/contact_us">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="sub-level">
+                                <a
+                                    href="http://web.archive.org/web/20121114174201/http://www.google.com/intl/en/jobs/youtube/">
+                                    Careers
+                                </a>
+                            </li>
+                            <li class="sub-level">
+                            </li>
+                            <li class="sub-level">
+                                <a
+                                    href="http://web.archive.org/web/20121114174201/http://www.googlestore.com/You+Tube/">
+                                    YouTube Merchandise
+                                </a>
+                            </li>
+
+                        </ol>
+                    </ol>
+
+                </div>
+                <div id="yt-admin-content" class="ytg-fl">
+
+
+                    <div id="vm-page-subheader">
+                        <div class="vm-page-subheader-content">
+                            <h3 id="vm-page-subheader-text">Uploads</h3>
+                            <span id="vm-num-videos-shown" class="yt-badge-vm">7</span>
+                        </div>
+                        <div class="vm-page-subheader-controls">
+                            <form method="get" class="vm-search-form" action="/my_videos">
+
+                                <div id="vm-search-container"><a
+                                        href="//support.google.com/youtube/bin/answer.py?answer=2685977&amp;hl=en-US"
+                                        class="vm-search-container-help" target="_blank"><img class="yt-help-icon"
+                                            src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt=""
+                                            title=""></a><span
+                                        class="vm-search-input-container yt-uix-form-input-container yt-uix-form-input-text-container ">
+                                        <input class="yt-uix-form-input-text " name="sq" id="vm-myvideos-search-box"
+                                            value="" placeholder="Search uploads">
+                                    </span><input name="o" type="hidden" value="U"><button onclick=";return true;"
+                                        id="vm-myvideos-search-btn"
+                                        class="vm-search-btn yt-uix-button yt-uix-button-default yt-uix-button-size-default"
+                                        type="submit" role="button"><span class="yt-uix-button-content">Search
+                                        </span></button></div>
+                            </form>
+
+                        </div>
+                    </div>
+
+
+
+                    <div id="vm-general-notifs">
+                    </div>
+
+                    
+                    <div class="hid" id="vm-bulk-actions-progress-bar">
+                        <img src="https://s.ytimg.com/yts/img/videomanager/bulk_action_loading-vflt5e1WB.gif">
+                        <span id="vm-bulk-actions-progress-bar-message">Edit in progress</span>
+                    </div>
+
+                    <div class="hid" id="vm-actions-menu-more-arrow"></div>
+                    <div class="hid" id="vm-bulk-actions-editing">
+                        <div id="vm-bulk-actions-editing-header">
+                            Edit videos
+                        </div>
+                        <form id="vm-bulk-actions-form" method="post" action="/bulk_actions_ajax">
+                            <input type="hidden" name="session_token"
+                                value="JYs2eijNTWrT__FxoG8ND-GZfP58MTM4MDUwMDIxNEAxMzgwNDEzODE0">
+                            <input name="o" type="hidden" value="U">
+
+                            <input type="hidden" name="bulk_action_search_query" value="">
+                            <input type="hidden" id="vm-bulk-actions-video-ids" name="bulk_action_video_ids" value="">
+                            <ul id="vm-bulk-actions-editing-fields"></ul>
+                        </form>
+                        <div id="vm-bulk-actions-editing-buttons">
+                            <button onclick=";return false;"
+                                class=" yt-uix-button yt-uix-button-default yt-uix-button-size-default" type="button"
+                                id="vm-bulk-actions-editing-button-add" role="button" aria-pressed="false"
+                                aria-expanded="false" aria-haspopup="true" aria-activedescendant=""><span
+                                    class="yt-uix-button-valign"></span><span class="yt-uix-button-icon-wrapper"><img
+                                        class="yt-uix-button-icon yt-uix-button-icon-vm-bulk-actions-field-add"
+                                        src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt=""
+                                        title=""></span><span class="yt-uix-button-content">Add actions </span><img
+                                    class="yt-uix-button-arrow" src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                    alt="" title="">
+                                <ul class="vm-bulk-actions-editing-menu yt-uix-button-menu yt-uix-button-menu-default"
+                                    role="menu" aria-haspopup="true" style="display: none;">
+                                    <li role="menuitem" id="aria-id-85898552752"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="ad_formats">Ad Formats</span></li>
+                                    <li role="menuitem" id="aria-id-30848684691"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="caption_certification">Caption
+                                            certification</span></li>
+                                    <li role="menuitem" id="aria-id-45966949485"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="category">Category</span></li>
+                                    <li role="menuitem" id="aria-id-15720931049"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="description">Description</span></li>
+                                    <li role="menuitem" id="aria-id-67930225461"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="embedding">Embedding</span></li>
+                                    <li role="menuitem" id="aria-id-54429900805"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="license">License</span></li>
+                                    <li role="menuitem" id="aria-id-76340748733"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="location">Location</span></li>
+                                    <li role="menuitem" id="aria-id-75692467546"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="monetization">Monetization</span>
+                                    </li>
+                                    <li role="menuitem" id="aria-id-60580060328"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="privacy">Privacy</span></li>
+                                    <li role="menuitem" id="aria-id-19661354143"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="ratings">Ratings</span></li>
+                                    <li role="menuitem" id="aria-id-39870103929"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="recorded_date">Recording date</span>
+                                    </li>
+                                    <li role="menuitem" id="aria-id-88199988357"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="tags">Tags</span></li>
+                                    <li role="menuitem" id="aria-id-80142816560"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="title">Title</span></li>
+                                    <li role="menuitem" id="aria-id-15721109212"><span onclick=";return false;"
+                                            class=" yt-uix-button-menu-item" value="public_stats">Video statistics
+                                            privacy</span></li>
+                                </ul>
+                            </button>
+                            <button onclick=";return false;"
+                                class=" yt-uix-button yt-uix-button-primary yt-uix-button-size-default" type="button"
+                                id="vm-bulk-actions-editing-button-submit" role="button"><span
+                                    class="yt-uix-button-content">Submit </span></button>
+                            <button onclick=";return false;"
+                                class=" yt-uix-button yt-uix-button-default yt-uix-button-size-default" type="button"
+                                id="vm-bulk-actions-editing-button-cancel" role="button"><span
+                                    class="yt-uix-button-content">Cancel </span></button>
+                        </div>
+
+                    </div>
+
+                    <div class="hid" id="vm-bulk-actions-selection">
+                        <span id="vm-bulk-actions-selection-message"></span>
+                        <button onclick=";return false;"
+                            class=" yt-uix-button yt-uix-button-link yt-uix-button-size-default" type="button"
+                            id="vm-bulk-actions-selection-link" role="button"><span class="yt-uix-button-content">Select
+                                all your videos.
+                            </span></button>
+                    </div>
+
+                    <div id="vm-bulk-actions-report-overlay">
+                        <div class="yt-uix-overlay ">
+
+                            <div class="yt-dialog hid">
+                                <div class="yt-dialog-base">
+                                    <span class="yt-dialog-align"></span>
+                                    <div class="yt-dialog-fg">
+                                        <div class="yt-dialog-fg-content">
+                                            <div class="yt-dialog-header">
+                                                <button onclick=";return false;"
+                                                    class="  yt-dialog-dismiss yt-dialog-close yt-uix-button yt-uix-button-default yt-uix-button-size-default"
+                                                    type="button" data-action="close" role="button"><span
+                                                        class="yt-uix-button-content">Close </span></button>
+
+                                                <h2 class="yt-dialog-title">
+                                                    Edit failures
+
+
+                                                </h2>
+                                            </div>
+                                            <div class="yt-dialog-loading">
+                                                <div class="yt-dialog-waiting-content">
+                                                    <div class="yt-spinner-img"></div>
+                                                    <div class="yt-dialog-waiting-text">Loading...</div>
+                                                </div>
+
+                                            </div>
+                                            <div class="yt-dialog-content">
+                                                <div class="vm-bulk-actions-report-overlay-content"></div>
+                                            </div>
+                                            <div class="yt-dialog-working">
+                                                <div id="yt-dialog-working-overlay">
+                                                </div>
+                                                <div id="yt-dialog-working-bubble">
+                                                    <div class="yt-dialog-waiting-content">
+                                                        <div class="yt-spinner-img"></div>
+                                                        <div class="yt-dialog-waiting-text">Working...</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="yt-uix-overlay" data-overlay-class="vm-confirmation-overlay">
+                        <div class="yt-dialog hid">
+                            <div class="yt-dialog-base">
+                                <span class="yt-dialog-align"></span>
+                                <div class="yt-dialog-fg">
+                                    <div class="yt-dialog-fg-content">
+                                        <div class="yt-dialog-loading">
+                                            <div class="yt-dialog-waiting-content">
+                                                <div class="yt-spinner-img"></div>
+                                                <div class="yt-dialog-waiting-text">Loading...</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="yt-dialog-content">
+                                            <div class="vm-bulk-actions-overlay-warning-content">
+                                                <div class="vm-confirmation-overlay-full-area">
+                                                    <div class="vm-confirmation-overlay-header">
+                                                        <div class="message">
+                                                            Confirmation
+                                                        </div>
+                                                    </div>
+                                                    <div class="vm-confirmation-overlay-main-area">
+                                                        <span class="vm-confirmation-overlay-message">Are you sure you
+                                                            want to make these changes to the selected videos?
+                                                        </span>
+                                                        <div class="vm-confirmation-overlay-button-area">
+                                                            <button onclick=";return false;"
+                                                                class="yt-uix-overlay-close vm-bulk-actions-overlay-button-cancel yt-uix-button yt-uix-button-default yt-uix-button-size-default"
+                                                                type="button" role="button"><span
+                                                                    class="yt-uix-button-content">Cancel
+                                                                </span></button>
+                                                            <button onclick=";return false;"
+                                                                class="vm-bulk-actions-overlay-button-confirm yt-uix-button yt-uix-button-primary yt-uix-button-size-default"
+                                                                type="button" role="button"><span
+                                                                    class="yt-uix-button-content">Yes, submit
+                                                                </span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="yt-dialog-working">
+                                            <div id="yt-dialog-working-overlay">
+                                            </div>
+                                            <div id="yt-dialog-working-bubble">
+                                                <div class="yt-dialog-waiting-content">
+                                                    <div class="yt-spinner-img"></div>
+                                                    <div class="yt-dialog-waiting-text">Working...</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="yt-dialog hid" id="suggested-edits-dialog">
+                        <div class="yt-dialog-base">
+                            <span class="yt-dialog-align"></span>
+                            <div class="yt-dialog-fg">
+                                <div class="yt-dialog-fg-content">
+                                    <div class="yt-dialog-header">
+                                        <h2 class="yt-dialog-title">
+                                            Improve your video
+
+
+                                        </h2>
+                                    </div>
+                                    <div class="yt-dialog-loading">
+                                        <div class="yt-dialog-waiting-content">
+                                            <div class="yt-spinner-img"></div>
+                                            <div class="yt-dialog-waiting-text">Loading...</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="yt-dialog-content">
+                                        <div id="suggested-edits-dialog-message"></div>
+                                        <div class="suggested-edits-player">
+                                            <div class="preview-player"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="yt-dialog-working">
+                                        <div id="yt-dialog-working-overlay">
+                                        </div>
+                                        <div id="yt-dialog-working-bubble">
+                                            <div class="yt-dialog-waiting-content">
+                                                <div class="yt-spinner-img"></div>
+                                                <div class="yt-dialog-waiting-text">Working...</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="yt-dialog-footer">
+                                        <div class="opt-out">
+                                            <a href="#" id="suggested-edit-opt-out" class="  yt-dialog-dismiss"
+                                                data-action="opt-out">
+                                                Never ask me again
+                                            </a>
+                                        </div>
+
+                                        <button onclick=";return false;"
+                                            class="  yt-dialog-dismiss yt-uix-button yt-uix-button-default yt-uix-button-size-default"
+                                            type="button" data-action="cancel" role="button"><span
+                                                class="yt-uix-button-content">No thanks </span></button><button
+                                            onclick=";return false;"
+                                            class="  yt-dialog-dismiss yt-uix-button yt-uix-button-primary yt-uix-button-size-default"
+                                            type="button" data-action="save" role="button"><span
+                                                class="yt-uix-button-content">Okay </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="yt-dialog hid" id="suggested-edit-opt-out-dialog">
+                        <div class="yt-dialog-base">
+                            <span class="yt-dialog-align"></span>
+                            <div class="yt-dialog-fg">
+                                <div class="yt-dialog-fg-content">
+                                    <div class="yt-dialog-header">
+                                        <h2 class="yt-dialog-title">
+                                            Are you sure?
+
+
+                                        </h2>
+                                    </div>
+                                    <div class="yt-dialog-loading">
+                                        <div class="yt-dialog-waiting-content">
+                                            <div class="yt-spinner-img"></div>
+                                            <div class="yt-dialog-waiting-text">Loading...</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="yt-dialog-content">
+                                        <p>Are you sure you never want to be asked to improve your videos again?</p>
+                                        <p>
+                                        </p>
+                                        <p>We won't show any more suggestions, but you can still improve any of your
+                                            videos by selecting <em>Enhancements</em> from the <em>Edit</em> menu.</p>
+
+                                    </div>
+                                    <div class="yt-dialog-working">
+                                        <div id="yt-dialog-working-overlay">
+                                        </div>
+                                        <div id="yt-dialog-working-bubble">
+                                            <div class="yt-dialog-waiting-content">
+                                                <div class="yt-spinner-img"></div>
+                                                <div class="yt-dialog-waiting-text">Working...</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="yt-dialog-footer"><button onclick=";return false;"
+                                            class="  yt-dialog-dismiss yt-uix-button yt-uix-button-default yt-uix-button-size-default"
+                                            type="button" data-action="cancel" role="button"><span
+                                                class="yt-uix-button-content">Cancel </span></button><button
+                                            onclick=";return false;"
+                                            class="  yt-dialog-dismiss yt-uix-button yt-uix-button-primary yt-uix-button-size-default"
+                                            type="button" data-action="save" role="button"><span
+                                                class="yt-uix-button-content">Yes </span></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div id="vm-video-list-container" class="tag-resource-container vm-list-view">
+                        <ol id="vm-playlist-video-list-ol" class="vm-video-list">
+
+                            <li id="vm-video-LHziXEi29lI" class="vm-video-item
+            
+            
+            
+            ">
+                                <div class="vm-video-item-content">
+                                    <div class="vm-video-item-content-secondary">
+                                        <div class="vm-video-metrics">
+                                            <a href="https://www.youtube.com/analytics?o=U#fi=v-LHziXEi29lI"
+                                                class="yt-uix-tooltip" title="View stats"
+                                                data-tooltip-text="View stats">
+                                                <span class="vm-video-metric video-view-count">
+                                                    <span>
+                                                        <span class="vm-video-metric-icon">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="">
+                                                        </span>
+                                                        <span class="vm-video-metric-value">194</span>
+                                                    </span>
+
+                                                </span>
+
+
+                                                <span class="vm-video-metric video-likes-count">
+                                                    <span>
+                                                        <span class="vm-video-metric-icon">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="">
+                                                        </span>
+                                                        <span class="vm-video-metric-value">3</span>
+                                                    </span>
+
+                                                </span>
+
+
+                                                <span class="vm-video-metric video-dislikes-count">
+                                                    <span>
+                                                        <span class="vm-video-metric-icon">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="">
+                                                        </span>
+                                                        <span class="vm-video-metric-value">0</span>
+                                                    </span>
+
+                                                </span>
+
+
+                                            </a>
+
+                                            <a href="/all_comments?v=LHziXEi29lI"
+                                                class="yt-uix-tooltip yt-uix-tooltip-reverse" title="All comments">
+                                                <span class="vm-video-metric video-comments">
+                                                    <span>
+                                                        <span class="vm-video-metric-icon">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="">
+                                                        </span>
+                                                        <span class="vm-video-metric-value">0</span>
+                                                    </span>
+
+                                                </span>
+
+
+                                            </a>
+                                        </div>
+
+
+                                        <div class="vm-video-indicators">
+
+
+
+                                            <span
+                                                class="vm-video-privacy vm-public yt-uix-tooltip yt-uix-tooltip-reverse"
+                                                title="Public">
+                                                <a href="/edit?video_id=LHziXEi29lI&amp;ns=1" class="yt-uix-sessionlink"
+                                                    data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA"><img
+                                                        src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Public"></a>
+                                            </span>
+
+
+
+
+
+
+                                            <span
+                                                class="vm-video-privacy vm-unlisted hid yt-uix-tooltip yt-uix-tooltip-reverse"
+                                                title="Unlisted">
+                                                <a href="/edit?video_id=LHziXEi29lI&amp;ns=1" class="yt-uix-sessionlink"
+                                                    data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA"><img
+                                                        src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Unlisted"></a>
+                                            </span>
+
+
+
+
+
+
+                                            <span
+                                                class="vm-video-privacy vm-private hid yt-uix-tooltip yt-uix-tooltip-reverse"
+                                                title="Private">
+                                                <a href="/edit?video_id=LHziXEi29lI&amp;ns=1" class="yt-uix-sessionlink"
+                                                    data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA"><img
+                                                        src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Private"></a>
+                                            </span>
+
+
+
+
+                                            <span class="vm-time-published yt-uix-tooltip yt-uix-tooltip-reverse"
+                                                title="">
+                                                <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                            </span>
+
+                                            <span class="localized-date hid" data-timestamp="1379951638"
+                                                data-format="longdate">September 23, 2013 08:53 AM</span>
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="vm-video-item-content-primary">
+                                        <div class="vm-thumb">
+                                            <span class="ux-thumb-wrap"><span
+                                                    class="video-thumb ux-thumb yt-thumb-default-120 "><span
+                                                        class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                                src="/ytd/thumbs/6VLvIQJCjq_GoROMY5iwSKg3FWlZeubc.jpg"
+                                                                alt="ASSBALLS"
+                                                                data-thumb="/ytd/thumbs/6VLvIQJCjq_GoROMY5iwSKg3FWlZeubc.jpg"
+                                                                width="120" data-group-key="thumb-group-0"><span
+                                                                class="vertical-align"></span></span></span></span><span
+                                                    class="video-time">01:07</span>
+                                            </span>
+
+                                            <div class="vm-thumb-overlay">
+                                                <ul class="vm-quick-video-actions">
+                                                    <li>
+                                                        <a href="/watch?v=LHziXEi29lI"
+                                                            class="vm-quick-watch-video yt-uix-sessionlink"
+                                                            title="Watch" data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="Watch">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/edit?video_id=LHziXEi29lI&amp;ns=1"
+                                                            class="vm-quick-edit-video yt-uix-sessionlink" title="Edit"
+                                                            data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="Edit">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="vm-quick-delete-video vm-video-delete yt-uix-sessionlink"
+                                                            title="Delete" data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA">
+                                                            <img src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="Delete">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="vm-video-info-container">
+
+
+                                            <div class="vm-video-title">
+                                                <div class="vm-video-title-container " id="checkbox_LHziXEi29lI">
+                                                    <a href="/watch?v=LHziXEi29lI"
+                                                        class="vm-video-title-content yt-uix-sessionlink"
+                                                        data-sessionlink="ei=dXFHUtDnDs-5sQeq6IHoCA">Vendres Plage
+                                                        2013</a>
+
+                                                    <span class="vm-video-title-badges">
+                                                        <span class="yt-badge ">HD</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <span class="vm-video-info vm-date-info">
+
+                                                <span class="localized-date" data-timestamp="1379950841"
+                                                    data-format="longdate">September 23, 2013 08:40 AM</span>
+
+
+                                            </span>
+
+                                            <div class="vm-video-info">
+
+
+                                                <div class="vm-video-info vm-owner-bar">
+                                                    <span class="yt-uix-button-group"><a
+                                                            href="/edit?video_id=LHziXEi29lI&amp;ns=1&amp;o=U"
+                                                            class="yt-uix-button  start vm-playlist-edit-video yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-small"
+                                                            data-sessionlink="feature=vm&amp;ei=dXFHUtDnDs-5sQeq6IHoCA"><span
+                                                                class="yt-uix-button-content">Edit</span></a><button
+                                                            onclick=";return false;"
+                                                            class="edit-expand-menu-button end yt-uix-button yt-uix-button-default yt-uix-button-size-small yt-uix-button-empty"
+                                                            type="button" role="button" aria-pressed="false"
+                                                            aria-expanded="false" aria-haspopup="true"
+                                                            aria-activedescendant=""><img class="yt-uix-button-arrow"
+                                                                src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="" title="">
+                                                            <ul class=" yt-uix-button-menu yt-uix-button-menu-default"
+                                                                role="menu" aria-haspopup="true" style="display: none;">
+                                                                <li role="menuitem" id="aria-id-61206376990"><span
+                                                                        href="/edit?video_id=LHziXEi29lI&amp;feature=vm&amp;ns=1&amp;o=U"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-info-and-settings yt-uix-button-menu-item">Info
+                                                                        and Settings</span></li>
+                                                                <li role="menuitem" id="aria-id-51656661323"><span
+                                                                        href="/enhance?feature=vm&amp;v=LHziXEi29lI&amp;o=U"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-enhancements yt-uix-button-menu-item">Enhancements</span>
+                                                                </li>
+                                                                <li role="menuitem" id="aria-id-9661115085"><span
+                                                                        href="/audio?feature=vm&amp;v=LHziXEi29lI&amp;o=U"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-audio yt-uix-button-menu-item">Audio</span>
+                                                                </li>
+                                                                <li role="menuitem" id="aria-id-75923414983"><span
+                                                                        href="/my_videos_annotate?feature=vm&amp;v=LHziXEi29lI&amp;o=U"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-annotations yt-uix-button-menu-item">Annotations</span>
+                                                                </li>
+                                                                <li role="menuitem" id="aria-id-64008868372"><span
+                                                                        href="/timedtext?action_view=1&amp;v=LHziXEi29lI&amp;o=U"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-captions yt-uix-button-menu-item">Captions</span>
+                                                                </li>
+                                                                <li role="menuitem" id="aria-id-94819370993"><span
+                                                                        href="/my_video_ad?v=LHziXEi29lI&amp;utm_source=youtube&amp;utm_medium=permanent&amp;utm_term=drop_down&amp;utm_content=edit_menu&amp;utm_campaign=yt_video_manager"
+                                                                        onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                        class="vm-video-promote yt-uix-button-menu-item">Promote</span>
+                                                                </li>
+                                                                <li role="menuitem" id="aria-id-83829086991"><span
+                                                                        onclick=";return false;"
+                                                                        class="vm-video-edit-menu-delete  menu-item-top-divider yt-uix-button-menu-item"
+                                                                        data-video-id="LHziXEi29lI">Delete</span></li>
+                                                            </ul>
+                                                        </button></span>
+
+
+                                                    <span class="primary-notification"><a
+                                                            href="/copynotice?video_id=LHziXEi29lI"
+                                                            class="notification-action acknowledged-link yt-uix-sessionlink"
+                                                            data-sessionlink="feature=vm&amp;ei=dXFHUtDnDs-5sQeq6IHoCA">Acknowledged
+                                                            third party content.</a>
+                                                    </span>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                        <div id="vm-no-items" class="hid">
+                            No videos were found.
+                        </div>
+
+                    </div>
+
+
+                    <div id="vm-pagination">
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

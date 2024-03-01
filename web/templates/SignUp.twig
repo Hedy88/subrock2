@@ -1,0 +1,216 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+<style>
+    .sign-up {
+        width: 335px;
+        float: right;
+    }
+
+    .signin-box,
+    .accountchooser-box {
+        margin: 12px 0 0;
+        padding: 20px 25px 15px;
+        background: #f1f1f1;
+        border: 1px solid #e5e5e5;
+    }
+
+    .signin-box h2 {
+        font-size: 16px;
+        line-height: 17px;
+        height: 16px;
+        margin: 0 0 1.2em;
+        position: relative;
+    }
+
+    .signin-box div {
+        margin: 0 0 1.5em;
+    }
+
+    .signin-box label {
+        display: block;
+        margin: 8px 0;
+    }
+
+    label.remember {
+        display: inline-block;
+        vertical-align: top;
+        margin: 9px 0 0;
+    }
+
+    li {
+        margin: 0 0 0.5em;
+    }
+
+    input#signIn {
+        margin-bottom: 18px;
+    }
+
+    .features {
+        overflow: hidden;
+        margin: 2em 0 0;
+    }
+
+    .features li {
+        min-height: 56px;
+    }
+
+    .features img {
+        float: left;
+        margin: -3px 0 0;
+    }
+
+    .features .title {
+        font-size: 16px;
+        margin-bottom: 0.3em;
+    }
+
+    .features p {
+        margin-left: 74px;
+    }
+
+    .features li {
+        margin: 3px 0 2em;
+    }
+
+    .signin-box .remember-label {
+        font-weight: normal;
+        color: #666;
+        line-height: 0;
+        padding: 0 0 0 0.4em;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        font-size: 1.2em;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 13px;
+        height: 13px;
+        margin: 0;
+        cursor: pointer;
+        vertical-align: bottom;
+        background: #fff;
+        border: 1px solid #dcdcdc;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        border-radius: 1px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    input[type=checkbox]:checked::after {
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAyUlEQVQ4je3SMUtCYRSH8V9khujSEkgIztJii2Nra6ujS+DQ4tdQKHBxd+jz6OCS2NLSVIRICOHgFS5SV673Dne4z/a+7zkPf857yMkqVZzvDqcpCFvoYoVFCj63GKMdviwkEN7jDhO8hB9OjpCdoYMbTDHcL4ibtIxH1PGK0V9FUR81DFLN8YtL9HCFdzzhJ650ZTu3a6zxgAt8YIDlf41R0jfb/WugiSI+0cdXRN/BPZ0Fwgq+8RwkTUwtSFdPQxamlLYwJwNsADuYHQLAVX88AAAAAElFTkSuQmCC);
+        display: block;
+        position: absolute;
+        top: -6px;
+        left: -5px;
+    }
+
+    input[type=checkbox]:hover {
+        border-color: #c6c6c6;
+        -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+    }
+
+    input[type=checkbox]:active,
+    input[type=radio]:active {
+        border-color: #c6c6c6;
+        background: #ebebeb;
+    }
+
+    .signin-box input[type=submit] {
+        margin: 0 1.5em 1.2em 0;
+        height: 32px;
+        font-size: 13px;
+    }
+</style>
+<script src="https://js.hcaptcha.com/1/api.js?hl=en" async defer></script>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+    <div class="main content clearfix">
+        <div class="sign-up">
+            <div class="signin-box">
+                <h2>Sign up</h2>
+                <form novalidate="" id="gaia_loginform" action="/SignUpAuth" method="post">
+                    <input type="hidden" name="continue" id="continue"
+                        value="">
+                    <div class="username-div">
+                        <label for="Username"><strong class="email-label">Choose a ChenTube username</strong></label>
+                        <input type="username" spellcheck="false" class="yt-uix-form-input-text" name="Username" value="">
+                    </div>
+                    <div class="email-div">
+                        <label for="Email"><strong class="email-label">Your email address</strong></label>
+                        <input type="email" spellcheck="false" class="yt-uix-form-input-text" name="Email" value="">
+                    </div>
+                    <div class="passwd-div">
+                        <label for="Passwd"><strong class="passwd-label">Create a password</strong></label>
+                        <input type="password" class="yt-uix-form-input-text" name="Passwd" id="Passwd">
+                    </div>
+                    <div class="passwd-div">
+                        <label for="PasswdAgain"><strong class="passwd-label">Confirm your password</strong></label>
+                        <input type="password" class="yt-uix-form-input-text" name="PasswdAgain" id="PasswdAgain">
+                    </div>
+                    <strong>
+                        Prove you’re not a robot
+                    </strong>
+                    <div id="signup-captcha">
+                        <div
+                            class="h-captcha"
+                            data-sitekey="{{ __CONFIG.hcaptcha.key }}"
+                            data-theme="light"
+                            data-error-callback="onError"
+                        ></div>
+                    </div>
+                    <input type="submit" class="yt-uix-button yt-uix-button-primary" name="signUp" id="signUp"
+                        value="Sign up">
+                </form>
+            </div>
+        </div>
+        <div class="product-info youtube">
+            <div class="product-headers">
+                <h1>ChenTube</h1>
+                <h2>Sign up now, and use your ChenTube account to:</h2>
+            </div>
+            <ul class="features">
+                <li>
+                    <img alt="" src="/yts/img/login/ytfav.png">
+                    <p class="title">
+                        Keep up with your favorite channels
+                    </p>
+                    <p>
+                        Save videos to watch later, watch recommendations just for you, or subscribe to get updates from
+                        your favorite channels.
+                    </p>
+                </li>
+                <li>
+                    <img alt="" src="/yts/img/login/ytonzgo.png">
+                    <p class="title">
+                        Watch everywhere
+                    </p>
+                    <p>
+                        Take your picks with you wherever you go — watch on your smartphone, tablet, or smart TV.
+                    </p>
+                </li>
+                <li>
+                    <img alt="" src="/yts/img/login/ytwfrnz.png">
+                    <p class="title">
+                        Share with your friends
+                    </p>
+                    <p>
+                        See videos shared by your friends across all your social networks — all in one place.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

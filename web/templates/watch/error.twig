@@ -1,0 +1,75 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="content" class="">
+    <div id="watch-container">
+        <div id="watch-headline-container">
+            <div id="watch-headline" class="watch-headline">
+                <h1 id="watch-headline-title">
+                </h1>
+                <div id="watch-headline-user-info">
+                </div>
+            </div>
+        </div>
+        <div id="watch-video-container">
+            <div id="watch-video">
+                <div id="watch-player" class="unavailable-player">
+                    <div id="watch-player-unavailable">
+                        <div id="watch-player-unavailable-message">
+                            <div id="watch-player-unavailable-icon-container">
+                                <img src="/yts/img/meh-vflQF1ybI.png" />
+                            </div>
+                            <div id="watch-player-unavailable-message-container">
+                                <div id="unavailable-message" class=""> {{ msg }}.</div>
+                                <div id="unavailable-submessage" class="watch-unavailable-submessage">Sorry about that.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="watch-main-container">
+            <div id="watch-main">
+                <div id="watch-panel">
+                    <div id="watch-actions">
+                        <div id="watch-actions-right">
+                            <button disabled="True" onclick=";return false;" type="button" id="watch-insight-button"
+                                class="yt-uix-tooltip yt-uix-tooltip-reverse master-sprite yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                role="button"><img class="yt-uix-button-icon yt-uix-button-icon-watch-insight"
+                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>
+                        </div>
+
+                        <span class="yt-uix-button-group"><button disabled="True" onclick=";return false;" type="button"
+                                class="master-sprite start yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default" id="watch-like"
+                                role="button"><img class="yt-uix-button-icon yt-uix-button-icon-watch-like"
+                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                    class="yt-uix-button-content">Like </span></button><button disabled="True"
+                                onclick=";return false;" type="button"
+                                class="master-sprite end yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                id="watch-unlike" role="button"><img
+                                    class="yt-uix-button-icon yt-uix-button-icon-watch-unlike"
+                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button></span>
+                        <button disabled="True" type="button" class="addto-button watch show-label yt-uix-button yt-uix-button-default"
+                            onclick=";return false;" role="button"><img
+                                class="yt-uix-button-icon yt-uix-button-icon-addto"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                class="yt-uix-button-content"><span class="addto-label">Add to</span> </span></button>
+
+                        <button disabled="True" onclick=";return false;" type="button"
+                            class="yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default" id="watch-share" role="button"><span
+                                class="yt-uix-button-content">Share </span></button>
+                        <button disabled="True" onclick=";return false;" type="button"
+                            class="master-sprite yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                            id="watch-flag" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-watch-flag"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

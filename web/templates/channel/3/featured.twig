@@ -1,0 +1,1141 @@
+{% extends 'channel/3/base.twig' %}
+
+{% block ch_content %}
+<div id="branded-page-body">
+    <div class="channel-tab-content channel-layout-two-column selected   blogger-template ">
+        <div class="tab-content-body">
+            <div class="featured-top-pane">
+
+            </div>
+            <div class="primary-pane">
+                {% if featured_video != null %}
+                <div
+                    class="channels-featured-video channel-module yt-uix-c3-module-container has-visible-edge">
+                    <div class="module-view featured-video-view-module">
+                        <div class="channels-video-player "
+                            data-swf-config='{
+                                "assets": {
+                                    "css_actions": "\/yts\/cssbin\/www-player-actions-vflJeCcsD.css",
+                                    "html": "\/html5_player_template",
+                                    "css": "\/yts\/cssbin\/www-player-vfltPqzFT.css",
+                                    "js": "\/yts\/jsbin\/html5player-vflkDTt-q.js"
+                                }, 
+                                "url": "https:\/\/s.ytimg.com\/yts\/swfbin\/watch_as3_hh-vfld0L3rI.swf", 
+                                "min_version": "8.0.0", 
+                                "args": {
+                                    "el": "profilepage", 
+                                    "fexp": "909521,909703,916411,909918,907219,922401,920704,912806,927201,922403,925003,913546,913556,916805,920201,901451", 
+                                    "url_encoded_fmt_stream_map": "", 
+                                    "vid": "{{ featured_video.vid }}", 
+                                    "ps": "default", 
+                                    "sourceid": "y", 
+                                    "allow_embed": 1, 
+                                    "rmktEnabled": "1", 
+                                    "allow_ratings": 1, 
+                                    "hl": "", 
+                                    "title": "{{ featured_video.title }}",  
+                                    "keywords": "", 
+                                    "cr": "", 
+                                    "rmktPingThreshold": 0, 
+                                    "eurl": "", 
+                                    "uid": "{{ featured_video.author }}", 
+                                    "iurl": "\/ytd\/thumbs\/{{ featured_video.thumb }}", 
+                                    "view_count": 1506025, 
+                                    "fmt_list": "",
+                                    "sdetail": "f:g-logo-xit,p:\/", 
+                                    "referrer": "", 
+                                    "avg_rating": 4.94644636048, 
+                                    "video_id": "{{ featured_video.vid }}", 
+                                    "length_seconds": {{ featured_video.duration }}, 
+                                    {#"baseUrl": "http:\/\/googleads.g.doubleclick.net\/pagead\/viewthroughconversion\/962985656\/", #}
+                                    "enablejsapi": 1, 
+                                    "sk": "Nk6sYwfsPCKbqXfzZjRBPIP_55CdPZ3SC", 
+                                    "rel": 0, 
+                                    "autoplay": "0", 
+                                    "focEnabled": "1", 
+                                    "iurlsd": "\/ytd\/thumbs\/{{ featured_video.thumb }}"
+                                }, 
+                                "url_v9as2": "https:\/\/s.ytimg.com\/yts\/swfbin\/cps-vflasigQC.swf", 
+                                "params": {
+                                    "allowscriptaccess": "always", 
+                                    "allowfullscreen": "true", 
+                                    "bgcolor": "#000000"
+                                }, 
+                                "attrs": {
+                                    "id": "movie_player"
+                                }, 
+                                "url_v8": "https:\/\/s.ytimg.com\/yts\/swfbin\/cps-vflasigQC.swf", 
+                                "html5": false
+                            }'
+                            data-video-id="{{ featured_video.vid }}"
+                            style="color: #fff;">
+                        </div>
+                        <div class="channels-featured-video-details yt-tile-visible clearfix">
+                            <h3 class="title">
+                                <a href="/watch?v={{ featured_video.vid }}" class="yt-uix-sessionlink">
+                                    {{ featured_video.title }}
+                                </a>
+                                <div class="view-count-and-actions">
+                                    <div class="view-count">
+                                        <span class="count">
+                                            1,506,025
+                                        </span>
+                                        views
+                                    </div>
+                                </div>
+                            </h3>
+                            <p class="channels-featured-video-metadata">
+                                <span>by {{ GetUsername(featured_video.author) }}</span>
+                                <span class="created-date">{{ time_elapsed_string(featured_video.published) }}</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="single-playlist channel-module yt-uix-c3-module-container">
+                    <div class="module-view single-playlist-view-module">
+                        <div class="blogger-playall">
+                            <a class="yt-playall-link yt-playall-link-default yt-uix-sessionlink "
+                                href="/watch?v=4e_kz79tjb8&amp;list=UU6nSFpj9HTCZ5t-N3Rm3-HA&amp;feature=plcp"
+                                data-sessionlink="ei=CIydloiAz7MCFRIUIQodfWSNUA%3D%3D&amp;feature=plcp">
+                                <img class="small-arrow" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                Play all
+                            </a>
+
+                        </div>
+
+                        <div class="playlist-info">
+                            <h2>Uploaded videos</h2>
+                            {% if uploaded_videos_count != 0 %}<span class="blogger-video-count">1-{{ uploaded_videos.rowCount() }} of {{ uploaded_videos_count }}</span>{% endif %}
+                            <div class="yt-horizontal-rule "><span class="first"></span><span
+                                    class="second"></span><span class="third"></span></div>
+
+                        </div>
+                        <ul class="gh-single-playlist">
+                            {% for video in uploaded_videos %}
+                            <li class="blogger-video">
+                                <div class="video yt-tile-visible">
+                                    <a href="/watch?v={{ video.vid }}"
+                                        class="yt-uix-sessionlink">
+                                        <span class="ux-thumb-wrap contains-addto "><span
+                                                class="video-thumb ux-thumb yt-thumb-default-288 "><span
+                                                    class="yt-thumb-clip"><span
+                                                        class="yt-thumb-clip-inner"><img
+                                                            src="/ytd/thumbs/{{ video.thumb }}"
+                                                            alt="Thumbnail" width="288"><span
+                                                            class="vertical-align"></span></span></span></span><span
+                                                class="video-time">{{ video.duration|date("i:s") }}</span>
+
+
+                                            <button onclick=";return false;" title="Watch Later"
+                                                type="button"
+                                                class="addto-button video-actions addto-watch-later-button-sign-in yt-uix-button yt-uix-button-default yt-uix-button-short yt-uix-tooltip"
+                                                data-button-menu-id="shared-addto-watch-later-login"
+                                                data-video-ids="4e_kz79tjb8" role="button"><span
+                                                    class="yt-uix-button-content"> <img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Watch Later">
+                                                </span><img class="yt-uix-button-arrow"
+                                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>
+                                        </span>
+                                        <span class="video-item-content">
+                                            <span class="video-overview">
+                                                <span class="title video-title" title="{{ video.title }}">{{
+                                                    video.title }}</span>
+                                            </span>
+                                            <span class="video-details">
+                                                <span class="yt-user-name video-owner" dir="ltr">{{
+                                                    GetUsername(video.author) }}</span>
+                                                <span class="video-view-count">
+                                                    1,506,025 views
+                                                </span>
+                                                <span class="video-time-published">{{
+                                                    time_elapsed_string(video.published) }}</span>
+                                                <span class="video-item-description">LINKS:
+
+                                                    http://www.twitter.com/tweetsauce
+                                                    http://facebook.com/VsauceGaming
+
+                                                    music by http://www.youtube.com/user/jakechudnow
+
+                                                    Wisdom of the Crowds BBC VIDEO: http://bit.ly/...</span>
+                                            </span>
+
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </li>
+                            {% else %}
+                            <li><p class="channel-page-no-videos-message">This channel has no videos.</p></li>
+                            {% endfor %}
+                            {% if uploaded_videos_count > 10 %}
+                            <li class="video">
+                                <button name="page" onclick=";return false;" type="button"
+                                    class="more-videos yt-uix-button yt-uix-button-default" value="2"
+                                    data-list_id="UU6nSFpj9HTCZ5t-N3Rm3-HA" role="button"><span
+                                        class="yt-uix-button-content"> <span class="load-more-text">
+                                            Load 10 more videos
+                                        </span>
+                                        <span class="loading-indicator">
+                                            <img src="//s.ytimg.com/yts/img/loader-vflff1Mjj.gif"
+                                                alt="Loading">
+                                        </span>
+                                    </span></button>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="secondary-pane">
+                <div id="watch-longform-ad" style="display:none;">
+                    <div id="watch-longform-text">
+                        Advertisement
+                    </div>
+                    <div id="watch-longform-ad-placeholder"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                            height="60" width="300"></div>
+                    <div id="instream_google_companion_ad_div"></div>
+                </div>
+                <div id="watch-channel-brand-div"
+                    class="companion-ads has-visible-edge channel-module yt-uix-c3-module-container hid">
+                    <div id="ad300x250"></div>
+                    <div id="google_companion_ad_div"></div>
+                    <div class="ad-label-text">
+                        Advertisement
+                    </div>
+                </div>
+
+
+
+                <div class="user-profile channel-module yt-uix-c3-module-container ">
+                    <div class="module-view profile-view-module"
+                        data-owner-external-id=6nSFpj9HTCZ5t-N3Rm3-HA>
+                        <h2>
+                            About Vsauce
+                        </h2>
+                        <div class="section first">
+                            <div class="user-profile-item profile-description">
+                                <p>Amazing Facts &amp; The Best of the Internet</p>
+                                <p></p>
+                                <p>BUSINESS EMAIL: Michael@Vsauce.com</p>
+
+
+                            </div>
+                            <div class="user-profile-item">
+                                <div class="yt-c3-profile-custom-url field-container ">
+                                    <a href="http://www.facebook.com/VsauceGaming" rel="me nofollow"
+                                        target="_blank" title="Vsauce Facebook"
+                                        class="yt-uix-redirect-link">
+                                        <img src="//s2.googleusercontent.com/s2/favicons?domain=www.facebook.com&amp;feature=youtube_channel"
+                                            class="favicon" alt="">
+                                        <span class="link-text">
+                                            Vsauce Facebook
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="yt-c3-profile-custom-url field-container ">
+                                    <a href="http://www.twitter.com/tweetsauce" rel="me nofollow"
+                                        target="_blank" title="Vsauce Twitter" class="yt-uix-redirect-link">
+                                        <img src="//s2.googleusercontent.com/s2/favicons?domain=www.twitter.com&amp;feature=youtube_channel"
+                                            class="favicon" alt="">
+                                        <span class="link-text">
+                                            Vsauce Twitter
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="yt-c3-profile-custom-url field-container ">
+                                    <a href="http://www.districtlines.com/Vsauce" rel="me nofollow"
+                                        target="_blank" title="Vsauce T-Shirts"
+                                        class="yt-uix-redirect-link">
+                                        <img src="//s2.googleusercontent.com/s2/favicons?domain=www.districtlines.com&amp;feature=youtube_channel"
+                                            class="favicon" alt="">
+                                        <span class="link-text">
+                                            Vsauce T-Shirts
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="yt-c3-profile-custom-url field-container ">
+                                    <a href="http://www.youtube.com/Vsauce2" rel="me nofollow"
+                                        target="_blank" title="Vsauce2" class="yt-uix-redirect-link">
+                                        <img src="//s2.googleusercontent.com/s2/favicons?domain=www.youtube.com&amp;feature=youtube_channel"
+                                            class="favicon" alt="">
+                                        <span class="link-text">
+                                            Vsauce2
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="yt-c3-profile-custom-url field-container ">
+                                    <a href="http://www.youtube.com/Vsauce3" rel="me nofollow"
+                                        target="_blank" title="Vsauce3" class="yt-uix-redirect-link">
+                                        <img src="//s2.googleusercontent.com/s2/favicons?domain=www.youtube.com&amp;feature=youtube_channel"
+                                            class="favicon" alt="">
+                                        <span class="link-text">
+                                            Vsauce3
+                                        </span>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                            <hr class="yt-horizontal-rule ">
+
+                        </div>
+                        <div class="section created-by-section">
+                            <div class="user-profile-item">
+                                by <span class="yt-user-name " dir="ltr">Vsauce</span>
+                            </div>
+                            <ul>
+                                <li class="user-profile-item ">
+                                    <span class="item-name">Latest Activity</span>
+                                    <span class="value">Nov 12, 2012</span>
+                                </li>
+
+
+                                <li class="user-profile-item ">
+                                    <span class="item-name">Date Joined</span>
+                                    <span class="value">Jul 30, 2007</span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <ul class="section">
+
+
+                            <li class="user-profile-item ">
+                                <span class="item-name">Country</span>
+                                <span class="value">United States</span>
+                            </li>
+
+                        </ul>
+                        <hr class="yt-horizontal-rule ">
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="playlists-narrow channel-module yt-uix-c3-module-container">
+                    <div class="module-view gh-featured">
+                        <h2>Featured Playlists</h2>
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=sAGEOKAG0zw&amp;list=SP8B1DDE384770FD97&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C4e76c5bFDvjVQa1PpcFPlWb9RIKoLHm5pHfbiIeB3fg6VcmRMfHE%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/sAGEOKAG0zw/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/jGIbUK4nw00/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/ddV6jyDeCKA/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/I9LbG3Y0_9M/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            43 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PL8B1DDE384770FD97&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    DOT.
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=HFW70hUGRsk&amp;list=SP5BB30729E2910578&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C4b29210FDvjVQa1PpcFPlWb9RIKoLHqeJZ7nqikhU95IVm2GYmq4%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/HFW70hUGRsk/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/ySjk2_4kDQE/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/UNmaARtB4Ws/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/_UTZDR1Go24/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            52 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PL5BB30729E2910578&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    IMG!
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=EqWaWyvuClc&amp;list=PLDB2EF5413568CBAA&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C4353d3cFDvjVQa1PpcFPlWb9RIKoLHpxl3WdD8PudNzyBkA2sgjs%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/AxKE6P0LYC8/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/EqWaWyvuClc/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/cOi2nyiWFmY/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/L4-F_UakaA8/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            27 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PLDB2EF5413568CBAA&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    LUT
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=aNgE_hf41NY&amp;list=SPEC0A5E71DE1EDFCE&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C477e84fFDvjVQa1PpcFPlWb9RIKoLHjfjSW-rtwegMrsxRcmDEUc%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/aNgE_hf41NY/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/2eUDExCeayw/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/kXLr_bIlz4A/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/_tTwjDRa110/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            25 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PLEC0A5E71DE1EDFCE&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    DONG
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=RQlrSvnG3dg&amp;list=PL57A31A57F0DBD2B2&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C41eb0b3FDvjVQa1PpcFPlWb9RIKoLHv2J2tmoqZTCYcq8jPevq_E%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/C7VxAOHeF4o/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/RQlrSvnG3dg/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/Gp_pB9UCnIQ/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/4Gs2ZIwkXSQ/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            10 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PL57A31A57F0DBD2B2&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    VSauce Leanback
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=nid0tHZxBA0&amp;list=SPC43FCAFC96B4B68E&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C47ecda5FDvjVQa1PpcFPlWb9RIKoLHldTff8webWU0Ged__fDoLs%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/nid0tHZxBA0/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/VuFSLaQapbU/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/O-621MyYKKo/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/DS7Si3EJ9gE/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            7 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PLC43FCAFC96B4B68E&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    VSAUCE WTF
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=hglseVMaoq4&amp;list=SP3851FCE621847764&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C4f7124fFDvjVQa1PpcFPlWb9RIKoLHklPA_8dAtAyNTNuCUkee2s%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/XjLF4-XUH_A/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/dacojrlGM7Q/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/hglseVMaoq4/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/Bgc2-3ozo00/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            6 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=PL3851FCE621847764&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    UP ALL KNIGHT
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <div class="playlist yt-tile-visible yt-uix-tile">
+                            <a href="/watch?v=4e_kz79tjb8&amp;list=UU6nSFpj9HTCZ5t-N3Rm3-HA&amp;feature=plcp"
+                                class="play-all yt-uix-sessionlink yt-uix-contextlink"
+                                data-sessionlink="context=C4baace7FDvjVQa1PpcFPlWb9RIKoLHpvZ3w5S-ArlxyWcvIuCs8k%3D">
+                                <span class="playlist-thumb-strip playlist-thumb-strip-252"><span
+                                        class="videos videos-4 horizontal-cutoff"><span class="clip"><span
+                                                class="centering-offset"><span class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i1.ytimg.com/vi/4e_kz79tjb8/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i2.ytimg.com/vi/eiAx2kqmUpQ/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i4.ytimg.com/vi/3teflb1QNN4/default.jpg"
+                                                        alt="" class="thumb"></span></span></span><span
+                                            class="clip"><span class="centering-offset"><span
+                                                    class="centering"><span
+                                                        class="ie7-vertical-align-hack">&nbsp;</span><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        data-thumb="//i3.ytimg.com/vi/Z0zConOPZ8Y/default.jpg"
+                                                        alt=""
+                                                        class="thumb"></span></span></span></span><span
+                                        class="resting-overlay"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="play-button" alt="Play all"> <span
+                                            class="video-count-box">
+                                            245 videos
+                                        </span>
+                                    </span><span class="hover-overlay"><span
+                                            class="play-all-container"><strong><img
+                                                    src="//s.ytimg.com/yts/img/ui/playlist_thumb_strip/mini-play-all-vflZu1SBs.png"
+                                                    alt="">Play all</strong></span></span></span>
+                            </a>
+                            <h3>
+                                <a href="/playlist?list=UU6nSFpj9HTCZ5t-N3Rm3-HA&amp;feature=plcp"
+                                    title="See all videos in playlist." class="yt-uix-tile-link">
+                                    Uploaded videos
+                                </a>
+                            </h3>
+                            <span class="playlist-author-attribution">
+                                by Vsauce
+                            </span>
+                        </div>
+
+                        <a class="view-all-link" href="/user/Vsauce/videos?view=1">
+                            view all
+                            <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div
+                    class="channel-module other-channels yt-uix-c3-module-container other-channels-compact">
+                    <div class="module-view other-channels-view">
+                        <h2>Other AWESOME Channels</h2>
+                        <ul class="channel-summary-list ">
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i2.ytimg.com/i/qmugCqELzhIMNYnsjScXXw/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/Vsauce2" dir="ltr" class="yt-uix-tile-link">
+                                                    Vsauce2
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>685,035</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i4.ytimg.com/i/wmFOfFuvRPI112vR5DNnrA/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/Vsauce3" dir="ltr" class="yt-uix-tile-link">
+                                                    Vsauce3
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>224,631</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i4.ytimg.com/i/oxcjq-8xIDTYp3uz647V5A/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/numberphile" dir="ltr"
+                                                    class="yt-uix-tile-link">
+                                                    Numberphile
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>199,225</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i3.ytimg.com/i/6107grRI4m0o2-emgoDnAA/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/SmarterEveryDay" dir="ltr"
+                                                    class="yt-uix-tile-link">
+                                                    Smarter Every Day
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>312,510</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i2.ytimg.com/i/UHW94eEFW7hkUMVaZz4eDg/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/minutephysics" dir="ltr"
+                                                    class="yt-uix-tile-link">
+                                                    MinutePhysics
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>652,264</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i3.ytimg.com/i/2C_jShtL725hvbm1arSV9w/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/greymatter" dir="ltr" class="yt-uix-tile-link">
+                                                    C.G.P. Grey&#39;s channel
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>338,777</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i3.ytimg.com/i/vBqzzvUBLCs8Y7Axb-jZew/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/sixtysymbols" dir="ltr"
+                                                    class="yt-uix-tile-link">
+                                                    Sixty Symbols
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>133,217</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i3.ytimg.com/i/ZYTClx2T1of7BRZ86-8fow/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/scishow" dir="ltr" class="yt-uix-tile-link">
+                                                    SciShow
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>330,552</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i1.ytimg.com/i/X6b17PVsYBQ0ip5gyeme-Q/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/user/crashcourse" dir="ltr"
+                                                    class="yt-uix-tile-link">
+                                                    Crash Course!
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>360,887</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="yt-tile-visible yt-uix-tile">
+                                <div class="channel-summary clearfix channel-summary-compact">
+                                    <div class="channel-summary-thumb">
+                                        <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="Thumbnail"
+                                                        data-thumb="//i1.ytimg.com/i/HnyfMqiRRG1u-2MsSQLbXA/1.jpg"
+                                                        width="46"><span
+                                                        class="vertical-align"></span></span></span></span>
+                                    </div>
+                                    <div class="channel-summary-info">
+                                        <h3 class="channel-summary-title">
+                                            <span class="qualified-channel-title">
+                                                <a href="/veritasium" dir="ltr" class="yt-uix-tile-link">
+                                                    Veritasium
+                                                </a>
+                                            </span>
+
+                                        </h3>
+                                        <span class="subscriber-count">
+                                            <strong>158,969</strong>
+                                            subscribers
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+
+
+                        <div class="yt-uix-expander yt-uix-expander-collapsed yt-c3-expander">
+                            <div class="yt-uix-expander-body">
+                                <ul class="channel-summary-list ">
+                                    <li class="yt-tile-visible yt-uix-tile">
+                                        <div class="channel-summary clearfix channel-summary-compact">
+                                            <div class="channel-summary-thumb">
+                                                <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                        class="yt-thumb-clip"><span
+                                                            class="yt-thumb-clip-inner"><img
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="Thumbnail"
+                                                                data-thumb="//i4.ytimg.com/i/OGeU-1Fig3rrDjhm9Zs_wg/1.jpg"
+                                                                width="46"><span
+                                                                class="vertical-align"></span></span></span></span>
+                                            </div>
+                                            <div class="channel-summary-info">
+                                                <h3 class="channel-summary-title">
+                                                    <span class="qualified-channel-title">
+                                                        <a href="/user/Vihart" dir="ltr"
+                                                            class="yt-uix-tile-link">
+                                                            Vi Hart
+                                                        </a>
+                                                    </span>
+
+                                                </h3>
+                                                <span class="subscriber-count">
+                                                    <strong>302,690</strong>
+                                                    subscribers
+                                                </span>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li class="yt-tile-visible yt-uix-tile">
+                                        <div class="channel-summary clearfix channel-summary-compact">
+                                            <div class="channel-summary-thumb">
+                                                <span class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                                        class="yt-thumb-clip"><span
+                                                            class="yt-thumb-clip-inner"><img
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                                alt="Thumbnail"
+                                                                data-thumb="//i2.ytimg.com/i/eQEKFH31vvD-InkTGSvCrA/1.jpg"
+                                                                width="46"><span
+                                                                class="vertical-align"></span></span></span></span>
+                                            </div>
+                                            <div class="channel-summary-info">
+                                                <h3 class="channel-summary-title">
+                                                    <span class="qualified-channel-title">
+                                                        <a href="/user/brusspup" dir="ltr"
+                                                            class="yt-uix-tile-link">
+                                                            brusspup
+                                                        </a>
+                                                    </span>
+
+                                                </h3>
+                                                <span class="subscriber-count">
+                                                    <strong>476,282</strong>
+                                                    subscribers
+                                                </span>
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <button type="button"
+                                    class="yt-uix-expander-head yt-uix-button yt-uix-button-link"
+                                    onclick=";return false;" role="button"><span
+                                        class="yt-uix-button-content"> less <img alt=""
+                                            src="/yts/img/pixel-vfl3z5WfW.gif">
+                                    </span></button>
+                            </div>
+                            <div class="yt-uix-expander-collapsed-body">
+                                <button type="button"
+                                    class="yt-uix-expander-head yt-uix-button yt-uix-button-link"
+                                    onclick=";return false;" role="button"><span
+                                        class="yt-uix-button-content"> more <img alt=""
+                                            src="/yts/img/pixel-vfl3z5WfW.gif">
+                                    </span></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

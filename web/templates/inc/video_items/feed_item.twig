@@ -1,0 +1,127 @@
+<div class="feed-item-container {% if count == 1 %} first {% endif %} {% if count == vcount %} last {% endif %} " data-channel-key="{{ video.author }}">
+
+
+    <div class="feed-author-bubble-container">
+        <a href="/channel/{{ video.author }}?feature=g-logo-xit" class="feed-author-bubble   "> <span
+                class="feed-item-author ">
+                <span class="video-thumb ux-thumb yt-thumb-square-28 "><span class="yt-thumb-clip"><span
+                            class="yt-thumb-clip-inner"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                alt="{{ video.username }}" data-thumb="/ytd/pfp/{{ video.pfp }}"
+                                width="28"><span class="vertical-align"></span></span></span></span>
+            </span>
+        </a>
+    </div>
+
+
+
+
+
+    <div class="feed-item-main">
+        <div class="feed-item-header">
+            <span class="feed-item-actions-line ">
+
+                <span class="feed-item-owner"><a href="/channel/{{ video.author }}?feature=g-logo-xit"
+                        class="yt-uix-sessionlink yt-user-name " data-sessionlink="feature=g-logo-xit" dir="ltr">{{ video.username }}</a></span> 
+                            uploaded a video
+
+
+
+                <span class="feed-item-time">
+                    {{ time_elapsed_string(video.published) }}
+                </span>
+
+
+            </span>
+        </div>
+
+        <div class="feed-item-content-wrapper clearfix context-data-item">
+            <div class="feed-item-thumb">
+                <a class="ux-thumb-wrap contains-addto  yt-uix-contextlink yt-uix-sessionlink"
+                    href="/watch?v={{ video.vid }}&amp;feature=g-logo-xit">
+                    <span class="video-thumb ux-thumb yt-thumb-default-185 "><span class="yt-thumb-clip"><span
+                                class="yt-thumb-clip-inner"><img src="/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                    data-thumb="/ytd/thumbs/{{ video.thumb }}" width="185"><span
+                                    class="vertical-align"></span></span></span></span>
+                    <span class="video-time">{{ video.duration|date('i:s') }}</span>
+
+
+
+                    {% include 'inc/video_items/watch_later_button.twig' with video %}
+
+                </a>
+
+            </div>
+            <div class="feed-item-content">
+
+                <h4>
+                    <a class="feed-video-title title yt-uix-contextlink  yt-uix-sessionlink  secondary"
+                        href="/watch?v={{ video.vid }}&amp;feature=g-logo-xit">
+                        {{ video.title }}
+                    </a>
+                </h4>
+                <div class="metadata">
+
+                    <a href="/channel/{{ video.author }}?feature=g-logo-xit" class="yt-user-photo "><span
+                            class="video-thumb ux-thumb yt-thumb-square-18 "><span class="yt-thumb-clip"><span
+                                    class="yt-thumb-clip-inner"><img src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vsauce"
+                                        data-thumb="/ytd/pfp/{{ video.pfp }}" width="18"><span
+                                        class="vertical-align"></span></span></span></span></a><a
+                        href="/channel/{{ video.author }}?feature=g-logo-xit" class="yt-uix-sessionlink yt-user-name "
+                        dir="ltr">{{ video.username }}</a>
+
+
+                    <span class="bull">&bull;</span>
+                    <span class="view-count">
+                        {{ video.views }} view{% if video.views != 1 %}s{% endif %}
+                    </span>
+
+
+
+                    <div class="description">
+                        <p>LINKS:</p>
+                        <p></p>
+                        <p><a href="http://www.twitter.com/tweetsauce" target="_blank"
+                                title="http://www.twitter.com/tweetsauce" rel="nofollow" dir="ltr"
+                                class="yt-uix-redirect-link">http://www.twitter.com/twee...</a>
+                        </p>
+                        <p><a href="http://facebook.com/VsauceGaming" target="_blank"
+                                title="http://facebook.com/VsauceGaming" rel="nofollow" dir="ltr"
+                                class="yt-uix-redirect-link">http://facebook.com/VsauceG...</a>
+                        </p>
+                        <p></p>
+                        <p>music by <a href="http://www.youtube.com/user/jakechudnow" target="_blank"
+                                title="http://www.youtube.com/user/jakechudnow" rel="nofollow" dir="ltr"
+                                class="yt-uix-redirect-link">http://www.youtube.com/user...</a>
+                        </p>
+                        <p></p>
+                        <p>Wisdom of the Crowds ...</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="feed-item-dismissal-notices">
+    <div class="feed-item-dismissal feed-item-dismissal-hide hid">This item has been
+        hidden</div>
+    <div class="feed-item-dismissal feed-item-dismissal-uploads hid">In the future you
+        will only see uploads from <span class="feed-item-owner"><a href="/user/Vsauce?feature=g-logo-xit"
+                class="yt-uix-sessionlink yt-user-name " data-sessionlink="feature=g-logo-xit"
+                dir="ltr">Vsauce</a></span>
+    </div>
+    <div class="feed-item-dismissal feed-item-dismissal-all-activity hid">In the future
+        you will see all activity from <span class="feed-item-owner"><a href="/user/Vsauce?feature=g-logo-xit"
+                class="yt-uix-sessionlink yt-user-name " data-sessionlink="feature=g-logo-xit"
+                dir="ltr">Vsauce</a></span>
+    </div>
+    <div class="feed-item-dismissal feed-item-dismissal-unsubscribe hid">You have been
+        unsubscribed from <span class="feed-item-owner"><a href="/user/Vsauce?feature=g-logo-xit"
+                class="yt-uix-sessionlink yt-user-name " data-sessionlink="feature=g-logo-xit"
+                dir="ltr">Vsauce</a></span>
+    </div>
+</div>

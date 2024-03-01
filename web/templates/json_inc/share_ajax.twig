@@ -1,0 +1,208 @@
+<div class="share-panel">
+    <div class="share-option-container ytg-box">
+        <div class="share-panel-url-container">
+            <span class=" yt-uix-form-input-container "><input class="yt-uix-form-input-text share-panel-url"
+                    name="share_url" value="{{ GetHostURL() }}/watch?v={{ vid }}" data-video-id="{{ vid }}"></span>
+            <div class="share-panel-url-options yt-uix-expander yt-uix-expander-collapsed">
+                <div class="yt-uix-expander-head">
+                    <a class="share-panel-show-url-options">
+                        <span class="collapsed-message">
+                            Options
+                            <img class="arrow" src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                        </span>
+                        <span class="expanded-message">
+                            Close
+                            <img class="arrow" src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                        </span>
+                    </a>
+                </div>
+                <ul class="yt-uix-expander-body share-options">
+                    <li>
+                        <label>
+                            <input class="share-panel-start-at" type="checkbox">
+                            Start at:
+                        </label>
+                        <input type="text" value="0:00" class="yt-uix-form-input-text share-panel-start-at-time">
+                    </li>
+                    <li>
+                        <label>
+                            <input class="share-panel-long-url" type="checkbox">
+                            Long link
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="share-panel-buttons yt-uix-expander yt-uix-expander-collapsed">
+            <span class="share-panel-main-buttons">
+                <button class="share-panel-embed yt-uix-button yt-uix-button-default" type="button"
+                    onclick=";return false;" role="button"><span class="yt-uix-button-content">Embed
+                    </span></button><button class="share-panel-email yt-uix-button yt-uix-button-default" type="button"
+                    onclick=";return false;" role="button"><span class="yt-uix-button-content">Email </span></button>
+            </span>
+        </div>
+
+
+        <div class="share-panel-services yt-uix-expander yt-uix-expander-collapsed clearfix">
+            <ul class="share-group ytg-box">
+                <li>
+                    <button
+                        onclick="yt.tracking.shareVideo('FACEBOOK', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.facebook.com/dialog/feed?app_id=87741124305\\u0026link=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026redirect_uri=https%3A%2F%2Fwww.youtube.com%2Ffacebook_redirect', {'height': 470,'width': 1010,'scrollbars': true});return false;"
+                        data-service-name="FACEBOOK" title="Share to Facebook"
+                        class="yt-uix-tooltip share-service-button">
+                        <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Facebook"
+                            class="share-service-icon share-service-icon-facebook">
+                        <span>Facebook</span>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        onclick="yt.tracking.shareVideo('TWITTER', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://twitter.com/share?url=http%3A%2F%2Fyoutu.be%2F{{ vid }}\\u0026text=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...%3A\\u0026via=youtube', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                        data-service-name="TWITTER" title="Share to Twitter"
+                        class="yt-uix-tooltip share-service-button">
+                        <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Twitter"
+                            class="share-service-icon share-service-icon-twitter">
+                        <span>Twitter</span>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        onclick="yt.tracking.shareVideo('GOOGLEPLUS', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('https://plus.google.com/share?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026source=yt', {'height': 620,'width': 620,'scrollbars': true});return false;"
+                        data-service-name="GOOGLEPLUS" title="Share to Yippie+"
+                        class="yt-uix-tooltip share-service-button">
+                        <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Yippie+"
+                            class="share-service-icon share-service-icon-googleplus">
+                        <span>Yippie+</span>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="yt-uix-expander-head">
+                <a class="share-panel-show-more">
+                    <span class="collapsed-message">
+                        More
+                        <img class="arrow" src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                    </span>
+                    <span class="expanded-message">
+                        Less
+                        <img class="arrow" src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                    </span>
+                </a>
+            </div>
+
+            <div class="yt-uix-expander-body share-options-secondary">
+                <div class="secondary">
+                    <div class="share-groups">
+                        <ul>
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('ORKUT', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.orkut.com/FavoriteVideos.aspx?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="ORKUT" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="orkut"
+                                        class="share-service-icon share-service-icon-orkut">
+                                    <span>orkut</span>
+                                </button>
+                                <span>orkut</span>
+                            </li>
+
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('TUMBLR', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.tumblr.com/share?v=3\\u0026u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="TUMBLR" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="tumblr."
+                                        class="share-service-icon share-service-icon-tumblr">
+                                    <span>tumblr.</span>
+                                </button>
+                                <span>tumblr.</span>
+                            </li>
+
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('BLOGGER', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.blogger.com/blog-this.g?n=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...\\u0026source=youtube\\u0026b=%3Ciframe+width%3D%22480%22+height%3D%22270%22+src%3D%22http%3A%2F%2Fwww.youtube.com%2Fembed%2F{{ vid }}%22+frameborder%3D%220%22+allowfullscreen%3E%3C%2Fiframe%3E\\u0026eurl=http%3A%2F%2Fi4.ytimg.com%2Fvi%2F{{ vid }}%2Fhqdefault.jpg', {'height': 468,'width': 768,'scrollbars': true});return false;"
+                                    data-service-name="BLOGGER" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Blogger"
+                                        class="share-service-icon share-service-icon-blogger">
+                                    <span>Blogger</span>
+                                </button>
+                                <span>Blogger</span>
+                            </li>
+
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('MYSPACE', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.myspace.com/Modules/PostTo/Pages/?t=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...\\u0026u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026l=1', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="MYSPACE" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="Myspace"
+                                        class="share-service-icon share-service-icon-myspace">
+                                    <span>Myspace</span>
+                                </button>
+                                <span>Myspace</span>
+                            </li>
+
+                        </ul>
+                        <ul>
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('REDDIT', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://reddit.com/submit?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026title=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="REDDIT" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="reddit"
+                                        class="share-service-icon share-service-icon-reddit">
+                                    <span>reddit</span>
+                                </button>
+                                <span>reddit</span>
+                            </li>
+
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('LINKEDIN', '{{ vid }}','en_US', 'sharepanel');yt.window.popup('http://www.linkedin.com/shareArticle?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026title=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...\\u0026summary=Music+video+of+the+number+1+hit+%22Never+Be+The+Same+Again%22+by+Melanie+C+and+Lisa+%27Left+Eye%27+Lopes.%0D%0A%0D%0AFor+more+Melanie+C+Music+go+to+http%3A%2F%2Fshop.melaniec.net%0D%0A%0D%0Awww.melaniec.net%0D%0Afacebook.com%2Fmelaniecmusic.page%0D%0Amyspace.com%2Fmelaniecmusic%0D%0Atwitter.com%2Fmelaniecmusic%0D%0Ayoutube.com%2Fmelaniecmusic\\u0026source=Youtube', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="LINKEDIN" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="LinkedIn"
+                                        class="share-service-icon share-service-icon-linkedin">
+                                    <span>LinkedIn</span>
+                                </button>
+                                <span>LinkedIn</span>
+                            </li>
+
+                            <li>
+                                <button
+                                    onclick="yt.tracking.shareVideo('PINTEREST', '{{ vid }}','en_US', 'sharepanel');yt.window.popup(' http://pinterest.com/pin/create/bookmarklet/?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D{{ vid }}%26feature%3Dshare\\u0026title=Melanie+C+-+Never+Be+The+Same+Again+%5Bfeaturing+Lisa+%27Left+Eye%27+Lopes%5D+%28M...\\u0026description=Music+video+of+the+number+1+hit+%22Never+Be+The+Same+Again%22+by+Melanie+C+and+Lisa+%27Left+Eye%27+Lopes.%0D%0A%0D%0AFor+more+Melanie+C+Music+go+to+http%3A%2F%2Fshop.melaniec.net%0D%0A%0D%0Awww.melaniec.net%0D%0Afacebook.com%2Fmelaniecmusic.page%0D%0Amyspace.com%2Fmelaniecmusic%0D%0Atwitter.com%2Fmelaniecmusic%0D%0Ayoutube.com%2Fmelaniecmusic\\u0026is_video=true\\u0026media=http%3A%2F%2Fi4.ytimg.com%2Fvi%2F{{ vid }}%2Fhqdefault.jpg', {'height': 650,'width': 1024,'scrollbars': true});return false;"
+                                    data-service-name="PINTEREST" class="share-service-button">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt="pinterest"
+                                        class="share-service-icon share-service-icon-pinterest">
+                                    <span>pinterest</span>
+                                </button>
+                                <span>pinterest</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="share-panel-embed-container hid">
+            <div>
+                Loading...
+            </div>
+        </div>
+
+
+        <div class="share-panel-email-container hid" data-disabled="true">
+            <strong><a
+                    href="https://accounts.google.com/ServiceLogin?uilel=3\u0026amp;passive=true\u0026amp;service=youtube\u0026amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26feature%3Demail%26hl%3Den_US%26next%3Dhttp%253A%252F%252Fyoutu.be%252F{{ vid }}%253Ffeature%253Dshare_email%26nomobiletemp%3D1\u0026amp;hl=en_US">Sign
+                    in</a> or <a href="/signup?next=http%3A%2F%2Fyoutu.be%2F{{ vid }}%3Ffeature%3Dshare_email">sign
+                    up</a> now!
+            </strong>
+
+        </div>
+
+    </div>
+
+    <span class="share-panel-hangout">
+        <img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-24x100-normal.png"
+            alt="Yippie Hangout" class="share-panel-hangout-button" title="Watch with your friends." />
+    </span>
+</div>

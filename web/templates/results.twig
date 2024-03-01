@@ -1,0 +1,708 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="content">
+
+
+    <noscript>
+        <div class="yt-alert yt-alert-default yt-alert-error  ">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"> <span class="yt-alert-vertical-trick"></span>
+                <div class="yt-alert-message">
+                    Hello, you seem to have JavaScript turned off. Please enable it to see search results properly.
+                </div>
+            </div>
+        </div>
+
+    </noscript>
+
+
+    <div id="search-header" class="yt-uix-expander yt-uix-expander-collapsed">
+        <div class="filter-top">
+            <button type="button" class="filter-button yt-uix-expander-head yt-uix-button yt-uix-button-default"
+                onclick=";return false;" data-button-toggle="true" data-button-menu-id="some-nonexistent-menu"
+                data-button-action="" role="button"><span class="yt-uix-button-content">Filters </span><img
+                    class="yt-uix-button-arrow" src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>
+
+            <ul class="filter-crumb-list"></ul>
+
+            <p class="num-results">
+                About <strong>168,000,000</strong> results
+            </p>
+
+
+            <br class="clear">
+        </div>
+
+        <div id="filter-dropdown" class="yt-uix-expander-body">
+            <div class="filter-col">
+                <h4 class="filter-col-title">Upload Date</h4>
+                <ul>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for today"
+                            href="/results?search_query=today&amp;lclk=today">Today</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for this week"
+                            href="/results?search_query=this+week&amp;lclk=this_week">This week</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for this month"
+                            href="/results?search_query=this+month&amp;lclk=this_month">This month</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for this year"
+                            href="/results?search_query=this+year&amp;lclk=this_year">This year</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-col">
+                <h4 class="filter-col-title">Result Type</h4>
+                <ul>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for video"
+                            href="/results?search_query=video&amp;lclk=video">Video</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for channel"
+                            href="/results?search_query=channel&amp;lclk=channel">Channel</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for playlist"
+                            href="/results?search_query=playlist&amp;lclk=playlist">Playlist</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for movie"
+                            href="/results?search_query=movie&amp;lclk=movie">Movie</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for show"
+                            href="/results?search_query=show&amp;lclk=show">Show</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-col">
+                <h4 class="filter-col-title">Duration</h4>
+                <ul>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for short"
+                            href="/results?search_query=short&amp;lclk=short">Short (~4 minutes)</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for long"
+                            href="/results?search_query=long&amp;lclk=long">Long (20~ minutes)</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-col">
+                <h4 class="filter-col-title">Features</h4>
+                <ul>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for hd"
+                            href="/results?search_query=hd&amp;lclk=hd">HD (high definition)</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for cc"
+                            href="/results?search_query=cc&amp;lclk=cc">CC (closed caption)</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for creativecommons"
+                            href="/results?search_query=creativecommons&amp;lclk=creativecommons">Creative commons</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for 3d"
+                            href="/results?search_query=3d&amp;lclk=3d">3D</a>
+                    </li>
+                    <li class="filter">
+
+                        <a class="filter-text filter-content" title="Search for live"
+                            href="/results?search_query=live&amp;lclk=live">Live now</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="filter-col">
+                <h4 class="filter-col-title">
+                    Sort by
+                </h4>
+                <ul>
+                    <li class="filter"> <span class="filter-content filter-selected">Relevance</span>
+                    </li>
+                    <li class="filter"> <a href="/results?search_type=videos&amp;search_sort=video_date_uploaded"
+                            class="filter-content">Upload date</a>
+                    </li>
+                    <li class="filter"> <a href="/results?search_type=videos&amp;search_sort=video_view_count"
+                            class="filter-content">View count</a>
+                    </li>
+                    <li class="filter"> <a href="/results?search_type=videos&amp;search_sort=video_avg_rating"
+                            class="filter-content">Rating</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+        <div class="yt-horizontal-rule "><span class="first"></span><span class="second"></span><span
+                class="third"></span></div>
+
+    </div>
+
+    <div id="search-base-div">
+        <div id="search-main" class="ytg-4col new-snippets">
+            <div id="results-main-content">
+
+                <ol id="search-results" class="context-data-container context-source-container" data-context-source="">
+                    {% for video in results %} 
+                        <li class="yt-grid-box result-item-video context-data-item"
+                            data-context-item-type="video" data-context-item-id="{{ video.vid }}">
+                            <div id="" class="yt-uix-tile yt-lockup-list yt-tile-default yt-grid-box ">
+                                <div class="yt-lockup-thumbnail"><a href="/watch?v={{ video.vid }}"
+                                        class="ux-thumb-wrap yt-uix-sessionlink yt-uix-contextlink contains-addto result-item-thumb"><span
+                                            class="video-thumb ux-thumb yt-thumb-default-185 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/ytd/thumbs/{{ video.thumb }}" alt="Thumbnail"
+                                                        width="185"><span
+                                                        class="vertical-align"></span></span></span></span><span
+                                            class="video-time">{{ video.duration|date('i:s') }}</span>
+
+
+                                        {% include 'inc/video_items/watch_later_button.twig' %}
+                                    </a></div>
+                                <div class="yt-lockup-content">
+                                    <h3><a class="yt-uix-contextlink yt-uix-sessionlink yt-uix-tile-link result-item-translation-title"
+                                            dir="ltr" title="{{ video.title }}"
+                                            href="/watch?v={{ video.vid }}">{{ video.title }}</a></h3>
+                                    <div class="yt-lockup-meta">
+                                        <p class="facets">
+                                            <span class="username-prepend">by <a href="/channel/{{ video.author }}"
+                                                    class="yt-uix-sessionlink yt-user-name "
+                                                    dir="ltr">{{ GetUsername(video.author) }}</a></span> <span class="metadata-separator">•</span>
+                                            <span class="date-added">{{ time_elapsed_string(video.published) }}</span>
+                                            <span class="metadata-separator">•</span>
+                                            <span class="viewcount">{{ GetVideoViews(video.vid) }} view{% if GetVideoViews(video.vid) != 1 %}s{% endif %}</span>
+
+                                        </p>
+                                    </div>
+                                    <p class="description " dir="ltr">
+                                        {{ video.description }}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+
+        <div id="search-pva-content">
+
+            <ul id="search-pva" class="ytg-2col-b ytg-last yt-vertical-rule new-snippets">
+                <li></li>
+
+
+
+
+                <p class="ads-promoted">
+                    <a href="//support.google.com/youtube/bin/answer.py?answer=143421&amp;hl=en-US" class="grayText">
+                        Featured Videos
+                    </a>
+                </p>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=yFoSQOaCHfc&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CF4QwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i2.ytimg.com/vi/yFoSQOaCHfc/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">1:29:14</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=yFoSQOaCHfc&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CF0Qvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">The Fallen
+                                Ones</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/Abehorror?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CF8QwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Abehorror</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">19,096 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Archaeologist Matt Fletcher uncovers a hidden tomb containing the
+                                mumm...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=WQw_cUtM2AE&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CGIQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i4.ytimg.com/vi/WQw_cUtM2AE/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">23:28</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=WQw_cUtM2AE&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CGEQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Ouran HSHC - 3
+                                - Beware the Physical Exam!</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/FUNimation?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CGMQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">FUNimation</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">568,305 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Tomorrows the physical exams and at Ouran Academy, the hormones are
+                                ra...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=3pzHqMuRFDY&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CGYQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i4.ytimg.com/vi/3pzHqMuRFDY/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">1:19:39</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=3pzHqMuRFDY&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CGUQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Shower of
+                                Blood</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/GravitasVOD?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CGcQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">GravitasVOD</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">197,928 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Five sexy college friends venture out on a road trip. A detour to
+                                Lisa...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=LIa7Xc5d55A&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CGoQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i1.ytimg.com/vi/LIa7Xc5d55A/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">21:42</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=LIa7Xc5d55A&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CGkQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Star Wars: The
+                                Old Republic - Sith Inquisitor Story Line (Spoilers): Chapter 3 Part 11</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/OMFGcata?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CGsQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">OMFGcata</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">76,076 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">After a long hiatus Varis returns to wreak havoc on the Empire and
+                                Rep...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=kLO8Nni13AQ&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CG4QwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i4.ytimg.com/vi/kLO8Nni13AQ/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">1:21:33</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=kLO8Nni13AQ&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CG0Qvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Neengalum
+                                Vellalam Oru Kodi 07/10/12</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/STARVIJAY?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CG8QwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">STARVIJAY</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">70,166 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Surya hosts the world's most celebrated game show. Actors Kushboo ...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=IWRsE5LPi_8&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CHIQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i2.ytimg.com/vi/IWRsE5LPi_8/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">43:13</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=IWRsE5LPi_8&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CHEQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Dota 2
+                                Gameplay - Purge Plays Invoker</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/DotaCinema?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CHMQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">DotaCinema</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">85,336 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Website: www.dotacinema.com stream www.own3d.tv T-shirts:
+                                dotacinema.s...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=ab7eKlW8UY8&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CHYQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i2.ytimg.com/vi/ab7eKlW8UY8/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">22:59</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=ab7eKlW8UY8&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CHUQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Gears of War 3
+                                Gameplay - Part 12 1080P Act II Campaign</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/RydarGames?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CHcQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">RydarGames</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">51,781 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Join me on Twitter twitter.com &amp; Join me on FaceBook
+                                www.facebook....</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-ads  featured yt-uix-tile yt-tile-default">
+                    <div class="thumb-container">
+                        <a href="/watch?v=ab55AzyPdbU&amp;feature=fvsr"
+                            class="ux-thumb-wrap result-item-thumb yt-uix-sessionlink"
+                            data-sessionlink="ved=CHoQwBs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">
+                            <span class="video-thumb ux-thumb yt-thumb-default-138 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img
+                                            src="http:/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                            data-thumb="http://i2.ytimg.com/vi/ab55AzyPdbU/default.jpg"
+                                            width="138"><span class="vertical-align"></span></span></span></span>
+                            <span class="video-time">24:55</span>
+                        </a>
+
+
+                    </div>
+                    <div class="result-item-main-content">
+                        <h3 dir="ltr">
+                            <a href="/watch?v=ab55AzyPdbU&amp;feature=fvsr" title=""
+                                class="yt-uix-sessionlink yt-uix-tile-link"
+                                data-sessionlink="ved=CHkQvxs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">Episode 19:
+                                Cinderella Four</a>
+                        </h3>
+
+
+
+
+
+                        <p class="facets">
+                            <span class="ads-by" dir="ltr">
+                                by <a href="/user/AnimeChannel?feature=chclk" class="yt-uix-sessionlink"
+                                    data-sessionlink="ved=CHsQwRs%3D&amp;ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D">AnimeChannel</a>
+                            </span>
+                            <span class="metadata-separator">•</span>
+                            <strong dir="ltr">45,076 views</strong>
+
+                        </p>
+
+                        <p class="search-ad-description">
+                            <span dir="ltr">Ordered to depart Hong Kong City, the Audhumla makes its preparations
+                                ...</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+                <div id="ad_creative_1" class="ad-div " style="z-index: 1">
+                    <iframe id="ad_creative_iframe_1" height="250" width="300" scrolling="no" frameborder="0"
+                        style="z-index: 1"
+                        src="http://ad-g.doubleclick.net/N4061/adi/com.ytsrc.enter/multimediacontent_videoclipsmoviedownloads;sz=300x250;tile=1;plat=pc;dc_dedup=1;kcr=us;kga=-1;kgg=-1;klg=en;kmyd=ad_creative_1;kr=F;kw=site:youtube.com;ord=6418696088620406?"></iframe>
+                    <div style="font-size: 10px; padding-top: 3px;" class="alignC grayText">
+                        <a href="/t/ads_preferences">
+                            Advertisement
+                        </a>
+                    </div>
+                    <script>
+                        (function () {
+                            var ord = Math.floor(Math.random() * 10000000000000000);
+                            var adIframe = document.getElementById("ad_creative_iframe_1");
+                            adIframe.src = "http://ad-g.doubleclick.net/N4061/adi/com.ytsrc.enter/multimediacontent_videoclipsmoviedownloads;sz=300x250;tile=1;plat=pc;dc_dedup=1;kcr=us;kga=-1;kgg=-1;klg=en;kmyd=ad_creative_1;kr=F;kw=site:youtube.com;ord=" + ord + "?";
+                        })();
+                    </script>
+
+                </div>
+
+
+
+                <span class="yt-vertical-rule-main"></span>
+                <span class="yt-vertical-rule-corner-top"></span>
+                <span class="yt-vertical-rule-corner-bottom"></span>
+
+            </ul>
+
+
+        </div>
+    </div>
+    <div id="search-footer-box" class="searchFooterBox">
+
+
+        <div class="yt-uix-pager" role="navigation">
+
+
+            <a href="/results?page=1"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-button-toggled yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="1" aria-label="Go to page 1"><span
+                    class="yt-uix-button-content">1</span></a>
+
+            <a href="/results?page=2"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="2" aria-label="Go to page 2"><span
+                    class="yt-uix-button-content">2</span></a>
+
+            <a href="/results?page=3"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="3" aria-label="Go to page 3"><span
+                    class="yt-uix-button-content">3</span></a>
+
+            <a href="/results?page=4"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="4" aria-label="Go to page 4"><span
+                    class="yt-uix-button-content">4</span></a>
+
+            <a href="/results?page=5"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="5" aria-label="Go to page 5"><span
+                    class="yt-uix-button-content">5</span></a>
+
+            <a href="/results?page=6"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="6" aria-label="Go to page 6"><span
+                    class="yt-uix-button-content">6</span></a>
+
+            <a href="/results?page=7"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="7" aria-label="Go to page 7"><span
+                    class="yt-uix-button-content">7</span></a>
+
+
+            <a href="/results?page=2"
+                class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                data-sessionlink="ei=CJuE3OGuybMCFebtRAodeVyNyA%3D%3D" data-page="2"><span
+                    class="yt-uix-button-content">Next »</span></a>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

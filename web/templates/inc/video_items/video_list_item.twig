@@ -1,0 +1,15 @@
+<li class="video-list-item">
+    <a href="/watch?v={{ video.vid }}" class="related-video yt-uix-contextlink  yt-uix-sessionlink"><span
+            class="ux-thumb-wrap contains-addto "><span class="video-thumb ux-thumb yt-thumb-default-120 "><span
+                    class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                            alt="{{ video.title }}" data-thumb="/ytd/thumbs/{{ video.thumb }}" width="120"><span
+                            class="vertical-align"></span></span></span></span><span class="video-time">{{
+                video.duration|date('i:s') }}</span>
+
+
+                {% include 'inc/video_items/watch_later_button.twig' with video %}
+        </span><span dir="ltr" class="title" title="{{ video.title }}">{{ video.title }}</span><span
+            class="stat attribution">by <span class="yt-user-name " dir="ltr">{{ video.username 
+                }}</span></span><span class="stat view-count">{{ video.views }}
+            view{% if video.views != 1 %}s{% endif %}</span></a>
+</li>

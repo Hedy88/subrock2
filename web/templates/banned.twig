@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://botoxparty.github.io/XP.css/XP.css">
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: black;
+                font-size: 13px;
+                margin: 0;
+                overflow: hidden;
+            }
+            main, html, body {
+                width: 100%;
+                height: 100%;
+            }
+            main {
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+            #gangster {
+                background-image: url(/yts/img/gangster/side.png);
+                background-repeat: no-repeat;
+                background-position: right;
+                background-size: contain;
+                min-width: 696px;
+                display: none;
+                transition: opacity, 1s;
+            }
+            #ip {
+                position: fixed;
+                color: white;
+                font-size: 9em;
+                text-shadow: 0px 0px 4px black;
+                transition: opacity, 0.5s;
+                opacity: 0;        
+                z-index: 1;
+            }
+            #fade_white {
+                position: fixed;
+                background-color: white;
+                z-index: 10;
+                transition: opacity, 1s;
+                opacity: 0;
+            }
+            @keyframes bgscroll {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: -483px -362px;
+                }
+            }   
+            #banned {
+                background-image: url(/yts/img/gangster/banned.png);
+                image-rendering: pixelated;
+                background-size: 480px auto;
+                animation: bgscroll 10s linear infinite;
+            }
+            #loader button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 40%;
+                max-width: 750px;
+                height: fit-content;
+            }
+            #loader button,#loader button:hover {
+                border: 0;
+                border-radius: 0;
+                background: transparent;
+                box-shadow: none;
+            }
+            object {
+                width: 100%;
+            }
+            #corner {
+                visibility: visible;
+                position: fixed;
+                z-index: 11;
+            }
+            #corner_image {
+                opacity: 0.60;
+                z-index: 2;
+            }
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(3px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(3px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(1px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }
+            .shake {
+                animation: shake .3s linear infinite;
+            }
+            #internalservererror {
+                background-color: white;
+                font-size: initial;
+                font-family: auto;
+                color: black;
+                padding: 8px;
+            }
+            #internalservererror h1 {
+                font-size: 2em;
+                margin-top: 0;
+            }
+            .title-bar {
+                background: linear-gradient(180deg,#ff9709,#ee5300 8%,#ee5000 40%,#f60 88%,#f60 93%,#ff5b00 95%,#d73d00 96%,#d73d00);
+                text-shadow: 1px 1px #89100f;
+                border-top: 1px solid #d93108;
+                border-left: 1px solid #d93108;
+                border-right: 1px solid #a01e00;
+            }
+            .title-bar-controls {
+                filter: hue-rotate(136deg);
+            }
+            .window {
+                width: 516px;
+                box-shadow: inset -1px -1px #8c1300, inset 1px 1px #d93108, inset -2px -2px #a01e00, inset 2px 2px #ee6a16, inset -3px -3px #da3b00, inset 3px 3px #dd5508;
+            }
+            #free {
+                z-index: 10;
+                position: fixed;
+                transition: left .3s, top .3s;
+            }
+            .title-bar-text {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
+        <title> YTMND - You're the man now dog!</title>
+        <link rel="shortcut icon" href="/yts/img/ytmnd/icon.ico">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <script>
+            async function gangsterload() {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('corner').style.display = 'none';
+                document.getElementById('internalservererror').style.display = 'block';
+                document.getElementById('free').style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+                document.getElementById('free').style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                document.getElementById('internalservererror').innerHTML = 'nah I\'m just fucking with you';
+                document.querySelector('title').innerText = 'SIKE BITCH';
+                await new Promise(resolve => setTimeout(resolve, 500));
+                document.getElementById('internalservererror').style.display = 'none';
+                document.getElementById('gangsteraudio').play();
+                document.getElementById('toshiba').style.display = 'flex';
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                document.getElementById('toshiba').style.display = 'none';
+                document.getElementById('gangster').style.display = 'flex';
+                await new Promise(resolve => setTimeout(resolve, 500));
+                document.getElementById('gangster').style.opacity = '1';
+                document.getElementById('fade_white').style.display = 'block';
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                document.getElementById("gangster").classList.add('shake');
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                document.querySelector('title').innerText += ', You';
+                await new Promise(resolve => setTimeout(resolve, 500));
+                document.querySelector('title').innerText += ' are';
+                await new Promise(resolve => setTimeout(resolve, 500));
+                document.getElementById('ip').style.display = 'flex';
+                await new Promise(resolve => setTimeout(resolve, 100));
+                document.getElementById('ip').style.opacity = '1';
+                document.querySelector('title').innerText = 'SIKE BITCH, You are BANNED';
+                await new Promise(resolve => setTimeout(resolve, 700));
+                document.getElementById('fade_white').style.opacity = '1';
+                await new Promise(resolve => setTimeout(resolve, 515));
+                document.getElementById('fade_white').style.opacity = '0';
+                document.getElementById('ip').style.display = 'none';
+                document.getElementById('gangster').style.display = 'none';
+                document.getElementById('banned').style.display = 'flex';
+                await new Promise(resolve => setTimeout(resolve, 716));
+                document.getElementById('fade_white').style.display = 'none';
+            } 
+
+            async function ytmnd() {
+                await new Promise(resolve => setTimeout(resolve, 500));
+                this.svg = document.getElementById('logo_svg').contentDocument;
+                await new Promise(resolve => setTimeout(resolve, 600));
+                var stars = this.svg.getElementsByClassName('logo_stars');
+                for (var i = 0; i < stars.length; i++) {
+                    stars.item(i).style.animationPlayState = 'running';
+                }
+                this.svg.getElementById('flare').style.display = 'block';
+                await new Promise(resolve => setTimeout(resolve, 650));
+                this.svg.getElementById('full_logo').classList.add('activated');
+                this.svg.getElementById('play_button').classList.add('activated');
+                document.querySelector('object').style.pointerEvents = "none";
+            }
+
+            ytmnd();
+
+            async function unban() {
+                var scream = new Audio('/yts/img/gangster/scream.mp3');
+                document.getElementById('screamer').requestFullscreen();
+                document.getElementById('gangsteraudio').pause();
+                document.getElementById('banned').style.display = 'none';
+                document.getElementById('free').style.display = 'none';
+                scream.play();
+                document.getElementById('screamer').style.display = 'block';
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                document.exitFullscreen();
+                scream.pause();
+                document.getElementById('gangsteraudio').play();
+                document.getElementById('screamer').style.display = 'none';
+                document.getElementById('banned').style.display = 'flex';
+            }
+
+            function freemove() {
+                document.getElementById('free').style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+                document.getElementById('free').style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+            }
+            window.addEventListener('resize', () => {
+                freemove();
+            });
+            window.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('[role="tab"]');
+            const tabList = document.querySelector('[role="tablist"]');
+
+            // Add a click event handler to each tab
+            tabs.forEach(tab => {
+                tab.addEventListener('click', changeTabs);
+            });
+
+            // Enable arrow navigation between tabs in the tab list
+            let tabFocus = 0;
+
+            tabList.addEventListener('keydown', e => {
+                // Move right
+                if (e.keyCode === 39 || e.keyCode === 37) {
+                tabs[tabFocus].setAttribute('tabindex', -1);
+                if (e.keyCode === 39) {
+                    tabFocus++;
+                    // If we're at the end, go to the start
+                    if (tabFocus >= tabs.length) {
+                    tabFocus = 0;
+                    }
+                    // Move left
+                } else if (e.keyCode === 37) {
+                    tabFocus--;
+                    // If we're at the start, move to the end
+                    if (tabFocus < 0) {
+                    tabFocus = tabs.length - 1;
+                    }
+                }
+
+                tabs[tabFocus].setAttribute('tabindex', 0);
+                tabs[tabFocus].focus();
+                }
+            });
+            });
+
+            function changeTabs(e) {
+            const target = e.target;
+            const parent = target.parentNode;
+            const grandparent = parent.parentNode;
+
+            // Remove all current selected tabs
+            parent
+                .querySelectorAll('[aria-selected="true"]')
+                .forEach(t => t.setAttribute('aria-selected', false));
+
+            // Set this tab as selected
+            target.setAttribute('aria-selected', true);
+
+            // Hide all tab panels
+            grandparent
+                .querySelectorAll('[role="tabpanel"]')
+                .forEach(p => p.setAttribute('hidden', true));
+
+            // Show the selected panel
+            grandparent.parentNode
+                .querySelector(`#${target.getAttribute('aria-controls')}`)
+                .removeAttribute('hidden');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="corner">
+            <img src="/yts/img/ytmnd/corner_test.gif" usemap="#lc" alt="click for site info" id="corner_image">
+            <map name="lc" id="lc">
+                <area shape="poly" coords="0,0,100,0,0,100" href="#" id="corner_map_area" alt="click for site info">
+            </map>
+        </div>
+        <img id="screamer" src="/yts/img/gangster/scare.png" style="width: 100%; height: 100%;display: none;">
+        <main id="fade_white" style="display: none;"></main>
+        <main id="ip" style="display: none;">{{ ip }}</main>
+        <main id="internalservererror" style="display: none;">
+            <h1>Internal Server Error</h1><b>Screenshot and report this screen to the admins</b><hr>
+            PDOException: SQLSTATE[00000]: Syntax error or access violation: 0 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM ...' at line 0 in /var/www/html/index.php:0 Stack trace: #0 /var/www/html/index.php(0): PDO->prepare('SELECT * FROM ...') #1 {main}
+        </main>
+        <main id="toshiba" style="display: none;">
+            <img width="30%" src="/yts/img/gangster/toshiba.png">
+        </main>
+        <main id="gangster" style="opacity: 0;">
+            <img width="20%" src="/yts/img/gangster/boot.gif">
+        </main>
+        <main id="loader"><button onclick="gangsterload()"><object id="logo_svg" type="image/svg+xml" data="/yts/img/ytmnd/ytmnd_loader_logo.svg"></object></button></main>
+        <main id="banned" style="display: none;">
+            <button onclick="unban();" onmouseover="freemove();" id="free">FREE UNBAN</button>
+            <div class="window">
+                <div class="title-bar">
+                    <div class="title-bar-text">{{ ip }}</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body" style="width: 500px;">
+                    <section class="tabs" style="max-width: 500px">
+                        <menu role="tablist" aria-label="Tabs">
+                            <button role="tab" aria-selected="true" aria-controls="info">Ban Info</button>
+                            <button role="tab" aria-controls="appeal">Appeal</button>
+                        </menu>
+                        <!-- the tab content -->
+                        <article role="tabpanel" id="info">
+                            <img width="100%" src="/yts/img/gangster/ghetto.jpg">
+                            <p>You were banned by <b>{{ mod }}</b> for <b>{{ reason }}</b></p>
+                            <p>Things you can try:</p>
+                            <ul>
+                                <li>Throw a hissy fit</li>
+                                <li>Go through the five stages of grief</li>
+                                <li>Leave</li>
+                                <li>Go outside</li>
+                            </ul>
+                        </article>
+                        <article role="tabpanel" hidden id="appeal">
+                            <div class="field-row-stacked" >
+                                <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/0Mhj5LyWC30" title="blyat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <label for="text24">Why you should be unbanned</label>
+                                <textarea style="width: 100%; resize: none;" id="text24" rows="8"></textarea>
+                            </div>
+                            <section class="field-row" style="justify-content: flex-end">
+                                <button>OK</button>
+                            </section>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <audio id="gangsteraudio" loop src="/yts/img/gangster/big_shot.mp3"></audio>
+    </body>
+</html> 

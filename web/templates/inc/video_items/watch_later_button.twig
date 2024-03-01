@@ -1,0 +1,5 @@
+<button onclick=";return false;" title="Watch Later" type="button"
+    class="addto-button video-actions addto-watch-later-button{% if not _LoggedIn %}-sign-in{% endif %} yt-uix-button yt-uix-button-default yt-uix-button-short yt-uix-tooltip"
+    {% if not _LoggedIn %} data-button-menu-id="shared-addto-watch-later-login" {% endif %} data-video-ids="{{ video.vid }}"
+    role="button"><span class="yt-uix-button-content"> <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="Watch Later">
+    </span><img class="yt-uix-button-arrow" src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>

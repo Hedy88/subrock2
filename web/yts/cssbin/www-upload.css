@@ -1,0 +1,130 @@
+.upload-div-top {
+    background-image: linear-gradient(to bottom,#888 0,#252525 100%);
+    color: white;
+    padding: 15px;
+    box-shadow: inset 0 1px 0 rgba(256,256,256,.1);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    border-color: #151515 #151515 #000;
+    font-weight: bold;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.upload-div-base {
+    background: white;
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    height: 316px;
+    border-top: 0px;
+    color: #5c5c5c;
+}
+
+.upload-div-base b {
+    color: #2d2d2d;
+}
+
+#upload {
+    padding: 19px;
+}
+
+#upload #file-dragdrop-area {
+    padding: 30px;
+    background-image: linear-gradient(to bottom,#f0f0f0 0,#e6e6e6 100%);
+    height: 215px;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#upload #upload-icon {
+    background-image: url(/yts/img/large-upload-resting-icon-vflM6eC13.png);
+    width: 118px;
+    height: 80px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#file-dragdrop-area h1 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#upload-step-1:hover #upload-icon {
+    background-image: url(/yts/img/large-upload-hover-icon-vflcwlQhZ.png);
+}
+
+input[type="file"] {
+    position: absolute;
+    width: 478px;
+    height: 277px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#left {
+    float: left;
+    width: 55%; 
+}
+
+#right {
+    float: right;
+}
+
+#upload-step-1 #right {
+    width: 37%;
+}
+
+#upload-step-2 #right {
+    width: 32%;
+}
+
+.progress {
+    display: flex;
+    height: 25px;
+    overflow: hidden;
+    font-size: 15px;
+    background-image: linear-gradient(to bottom, #262626 0, #383838 100%);
+    border-radius: 0.25rem;
+}
+.progress .bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #1e18cc;;
+    transition: width .6s ease;
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+    align-items: flex-end;
+    animation: progress-bar-stripes 1s linear infinite;
+    box-shadow: inset 0px -5px 9px #00000087;
+}
+
+.progress .bar .percent {
+    margin-right: 7px;
+    text-shadow: 0px 1px 0px black;
+}
+
+@keyframes progress-bar-stripes {
+    from {
+      background-position: 1rem 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+}
+
+#upload noscript {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #84848459;
+    width: 823px;
+    height: 100%;
+}

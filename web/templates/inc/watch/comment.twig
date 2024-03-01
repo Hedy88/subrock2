@@ -1,0 +1,79 @@
+<li class="comment yt-tile-default" data-author-id="{{ comment.author }}" data-id="{{ comment.cid }}">
+
+    <div class="comment-body">
+
+
+        <div class="content-container">
+            <div class="content">
+
+                <div class="comment-text" dir="ltr">
+                    <p>{{ comment.comment}}</p>
+                </div>
+
+                <p class="metadata">
+                    <span class="author ">
+                        <a href="/channel/{{ comment.author }}" class="yt-uix-sessionlink yt-user-name " dir="ltr">{{
+                            GetUsername(comment.author) }}</a>
+                    </span>
+                    <span class="time" dir="ltr">
+                        {% if comment.reply_to is not empty %}
+                            in reply to
+                            <a href="/channel/{{ comment.author }}" class="yt-uix-sessionlink yt-user-name " dir="ltr">{{ GetUsername(comment.author) }}</a>
+                            <a href="#" class="comment-action comment-action-showparent" onclick="return false;" data-action="show-parent">(Show the comment)</a>
+                        {% endif %}
+                        <a dir="ltr" href="/comment?lc={{ comment.cid }}">
+                            {{ time_elapsed_string(comment.posted) }}
+                        </a>
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <div class="comment-actions">
+                <span class="yt-uix-button-group"><span><button type="button"
+                            class="start comment-action-vote-up comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                            onclick=";return false;" title="Vote Up" data-action="vote-up" data-tooltip-show-delay="300"
+                            role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                    class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-up"
+                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Up"><span
+                                    class="yt-uix-button-valign"></span></span></button>
+                    </span><span><button type="button"
+                            class="start comment-action-vote-down comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                            onclick=";return false;" title="Vote Down" data-action="vote-down"
+                            data-tooltip-show-delay="300" role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                    class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-down"
+                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Down"><span
+                                    class="yt-uix-button-valign"></span></span></button>
+                    </span></span><span class="yt-uix-button-group"><button type="button"
+                        class="start comment-action yt-uix-button yt-uix-button-default" onclick=";return false;"
+                        data-action="reply" role="button"><span class="yt-uix-button-content">Reply
+                        </span></button><button type="button"
+                        class="flip end yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                        onclick=";return false;" data-button-has-sibling-menu="true" role="button" aria-pressed="false"
+                        aria-expanded="false" aria-haspopup="true" aria-activedescendant=""><img
+                            class="yt-uix-button-arrow" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                        <div class=" yt-uix-button-menu yt-uix-button-menu-default" style="display: none;">
+                            <ul>
+                                <li class="comment-action-remove comment-action" data-action="remove"><span
+                                        class="yt-uix-button-menu-item">Remove</span>
+                                </li>
+                                <li class="comment-action" data-action="flag"><span class="yt-uix-button-menu-item">Flag
+                                        for
+                                        spam</span></li>
+                                <li class="comment-action-block comment-action" data-action="block"><span
+                                        class="yt-uix-button-menu-item">Block
+                                        User</span></li>
+                                <li class="comment-action-unblock comment-action" data-action="unblock"><span
+                                        class="yt-uix-button-menu-item">Unblock
+                                        User</span></li>
+                            </ul>
+                        </div>
+                    </button></span>
+            </div>
+
+        </div>
+
+    </div>
+</li>

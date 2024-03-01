@@ -1,0 +1,388 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="content">
+    <div id="masthead_child_div"></div>
+
+
+
+
+
+
+
+    <div id="ad_creative_1" class="ad-div mastad" style="z-index: 1;">
+
+        <script>(function () { var loaded = function () { return yt && yt.www && yt.www.home && yt.www.home.ads; }; window.masthead_ad_creative_iframe_1_workaround = function () { if (loaded()) { yt.www.home.ads.workaroundIE(this); } }; window.masthead_ad_creative_iframe_1_onload = function () { if (!loaded()) { setTimeout(masthead_ad_creative_iframe_1_onload, 50); return; } yt.www.home.ads.workaroundLoad(); }; })();</script>
+
+        <iframe id="ad_creative_iframe_1"
+            src="https://ad-g.doubleclick.net/N4061/adi/com.ythome/_default;sz=970x250;tile=1;ssl=1;plat=pc;dc_dedup=1;kbsg=HPUS121114;kcr=us;kga=-1;kgg=-1;klg=en;kmyd=ad_creative_1;"
+            height="250" width="970" scrolling="no" frameborder="0" style="z-index: 1"
+            onload="masthead_ad_creative_iframe_1_onload();"
+            onmouseover="masthead_ad_creative_iframe_1_workaround(this)"
+            onfocus="masthead_ad_creative_iframe_1_workaround(this)"></iframe>
+        <script>
+            (function () {
+                var ord = Math.floor(Math.random() * 10000000000000000);
+                var adIframe = document.getElementById("ad_creative_iframe_1");
+                adIframe.src = "https://ad-g.doubleclick.net/N4061/adi/com.ythome/_default;sz=970x250;tile=1;ssl=1;plat=pc;dc_dedup=1;kbsg=HPUS121114;kcr=us;kga=-1;kgg=-1;klg=en;kmyd=ad_creative_1;ord=" + ord + "?";
+            })();
+        </script>
+
+    </div>
+
+
+
+    <div class="guide-layout-container enable-fancy-subscribe-button">
+        <div class="guide-container">
+            <div id="guide-builder-promo">
+                {% if not _LoggedIn %}
+                <h2>
+                    Sign in to add channels to your homepage
+                </h2>
+                <div id="guide-builder-promo-buttons" class="signed-out">
+                    <button href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}" type="button"
+                        class=" yt-uix-button yt-uix-button-dark"
+                        onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"
+                        role="button"><span class="yt-uix-button-content">Sign In </span></button>
+                </div>
+                {% else %}
+                <div id="guide-builder-promo-buttons">
+                    <button href="/channels?feature=promo" type="button" class=" yt-uix-button yt-uix-button-primary"
+                        onclick=";window.location.href=this.getAttribute('href');return false;" role="button"><span
+                            class="yt-uix-button-icon-wrapper"><img class="yt-uix-button-icon yt-uix-button-icon-add"
+                                src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                class="yt-valign-trick"></span></span><span class="yt-uix-button-content">Browse
+                            channels </span></button>
+                </div>
+                {% endif %}
+            </div>
+            <div class="guide">
+                {% if _LoggedIn %}
+                <div id="channel">
+                    <span id="channel-thumb">
+                        <a href="/channel/{{ __session_user.uuid }}" class="yt-user-photo ">
+                            <span class="video-thumb ux-thumb yt-thumb-square-77 "><span class="yt-thumb-clip"><span
+                                        class="yt-thumb-clip-inner"><img src="/ytd/pfp/{{ __session_user.pfp }}"
+                                            alt="{{ __session_user.username }}" width="77"><span
+                                            class="vertical-align"></span></span></span></span>
+
+                        </a>
+
+
+                    </span>
+                    <div id="personal-feeds">
+                        <ul>
+                            <li class="guide-item-container"><a class="guide-item guide-item-action"
+                                    href="/channel/{{ __session_user.uuid }}?feature=guide">My channel<img
+                                        src="/yts/img/pixel-vfl3z5WfW.gif" class="see-more-arrow" alt=""></a></li>
+                            <li class="guide-item-container"><a class="guide-item" data-feed-name="uploads"
+                                    data-feed-type="personal" title="Videos you have uploaded">Videos</a></li>
+                            <li class="guide-item-container"><a class="guide-item" data-feed-name="likes"
+                                    data-feed-type="personal" title="Videos you have liked">Likes</a></li>
+                            <li class="guide-item-container"><a class="guide-item" data-feed-name="history"
+                                    data-feed-type="personal" title="Videos you have watched">History</a></li>
+                            <li class="guide-item-container"><a class="guide-item" data-feed-name="watch_later"
+                                    data-feed-type="personal"
+                                    title="Videos you have added to your Watch Later list">Watch Later</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="guide-section yt-uix-expander  first">
+                    <h3 class="guide-item-container">
+                        <a class="guide-item selected" id="all-subscriptions" data-feed-name="all"
+                            data-feed-type="main">
+                            <span class="thumb">
+                                <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" alt=""
+                                    class="system-icon category">
+                            </span>
+                            <span class="display-name">
+                                Subscriptions
+                            </span>
+                        </a>
+                    </h3>
+                    <ul>
+                        <li class="guide-item-container hideable">
+                            <a id="social-guide-item" class="guide-item" data-feed-name="social_all"
+                                data-feed-type="social">
+                                <span class="thumb">
+                                    <img src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" class="system-icon social">
+                                </span>
+                                <span class="display-name">
+                                    Social
+                                </span>
+                            </a>
+                        </li>
+                        {% for channel in channels %}
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-external-id="{{ channel.uuid }}"
+                                data-feed-name="{{ channel.uuid }}" data-feed-type="user">
+                                <span class="thumb"><span class="video-thumb ux-thumb yt-thumb-square-28 "><span
+                                            class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                                    data-thumb="/ytd/pfp/{{ channel.pfp }}"
+                                                    width="28"><span
+                                                    class="vertical-align"></span></span></span></span></span>
+                                <span class="display-name">
+                                    {{ channel.username }}
+                                </span>
+                            </a>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                    <div class="guide-item-container">
+                        <span class="guide-item guide-item-fake guide-item-action">
+                            <a href="/subscription_manager?feature=foot">see all<img
+                                    src="//s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif" class="see-more-arrow" alt=""></a>
+                        </span>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="guide-section yt-uix-expander {% if not _LoggedIn %} first {% endif %}">
+                    <h3 class="guide-item-container selected-child">
+                        <a class="guide-item {% if not _LoggedIn %} selected {% endif %}" data-feed-name="chentube" data-feed-type="system">
+                            <span class="thumb">
+                                <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="" class="system-icon category">
+                            </span>
+                            <span class="display-name">
+                                From ChenTube
+                            </span>
+                        </a>
+                    </h3>
+                    <ul>
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="trending" data-feed-type="system">
+                                <span class="thumb">
+                                    <img class="system-icon system trending" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Trending
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="music" data-feed-type="system">
+                                <span class="thumb">
+                                    <img class="system-icon system music" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Music
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="entertainment" data-feed-type="chart">
+                                <span class="thumb">
+                                    <img class="system-icon chart entertainment" src="/yts/img/pixel-vfl3z5WfW.gif"
+                                        alt="">
+                                </span>
+                                <span class="display-name">
+                                    Entertainment
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="sports" data-feed-type="chart">
+                                <span class="thumb">
+                                    <img class="system-icon chart sports" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Sports
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="comedy" data-feed-type="chart">
+                                <span class="thumb">
+                                    <img class="system-icon chart comedy" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Comedy
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="film" data-feed-type="chart">
+                                <span class="thumb">
+                                    <img class="system-icon chart film" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Film &amp; Animation
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="guide-item-container ">
+                            <a class="guide-item" data-feed-name="gadgets" data-feed-type="chart">
+                                <span class="thumb">
+                                    <img class="system-icon chart gadgets" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                                </span>
+                                <span class="display-name">
+                                    Gaming
+                                </span>
+                            </a>
+                        </li>
+                        {% if not _LoggedIn %}
+                            {% for channel in channels %}
+                            <li class="guide-item-container ">
+                                <a class="guide-item" data-external-id="{{ channel.uuid }}"
+                                    data-feed-name="{{ channel.uuid }}" data-feed-type="user">
+                                    <span class="thumb"><span class="video-thumb ux-thumb yt-thumb-square-28 "><span
+                                                class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif" alt="Thumbnail"
+                                                        data-thumb="/ytd/pfp/{{ channel.pfp }}"
+                                                        width="28"><span
+                                                        class="vertical-align"></span></span></span></span></span>
+                                    <span class="display-name">
+                                        {{ channel.username }}
+                                    </span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                    <div class="guide-item-container">
+                        <span class="guide-item guide-item-action guide-item-fake">
+                            <a href="/videos?feature=hp">see all<img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                    class="see-more-arrow" alt=""></a> </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="guide-background"></div>
+
+
+        <div id="video-sidebar">
+
+            <div id="ad_creative_expand_btn_1" class="masthead-ad-control open hid">
+                <a onclick="masthead.expand_ad(); return false;">
+                    <span>Show ad</span>
+                    <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                </a>
+            </div>
+
+            {% if _LoggedIn %}
+                <h3>
+                    Recommended
+                </h3>
+                <ul>
+                    {% for video in videoslist.recommended %}
+                        {% include 'inc/video_items/video_list_item.twig' with video %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h3 class="sidebar-module-header">
+                Spotlight
+            </h3>
+            <h2>Music Tuesday: Going Solo</h2>
+            <p class="sidebar-module-description">
+                My Morning Jacket&#39;s front man has announced he&#39;s working on a solo album. It got us thinking
+                back: what were the first solo music videos from artists who started in major groups?
+            </p>
+            <p class="sidebar-module-description">
+                Presented by: <a href="/music">music</a>
+            </p>
+            <br>
+
+            <h3>
+                Featured
+            </h3>
+            <ul>
+                {% for video in videoslist.featured %}
+                {% include 'inc/video_items/video_list_item.twig' with video %}
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div id="feed">
+            <div id="feed-system-youtube" class="individual-feed" data-loaded="true" data-feed-name="youtube"
+                data-feed-type="system">
+                <div class="feed-header no-metadata">
+                    <div class="feed-header-thumb">
+                        <img class="feed-header-icon youtube" src="/yts/img/pixel-vfl3z5WfW.gif" alt="">
+                    </div>
+                    <div class="feed-header-details context-source-container" data-context-source="From ChenTube">
+                        <h2> From ChenTube
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="feed-container" data-filter-type="" data-view-type="">
+
+                    <div class="feed-page">
+                        <ul class="context-data-container">
+                            {% set count = 1 %}
+                            {% for video in videoslist.latest %}
+                            <li>
+                                {% include 'inc/video_items/feed_item.twig' with {video, vcount, count} %}
+                            </li>
+                            {% set count = count + 1 %}
+                            {% else %}
+                            <p class="feed-message">
+                                No videos found.
+                            </p>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="feed-error" class="individual-feed hid">
+                <p class="feed-message">
+                    We were unable to complete the request, please try again later.
+                </p>
+            </div>
+
+            <div id="feed-loading-template" class="hid">
+                <div class="feed-message">
+                    <p class="yt-spinner">
+                        <img src="/yts/img/pixel-vfl3z5WfW.gif" class="yt-spinner-img" alt="Loading icon">
+
+                        Loading...
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="feed-background"></div>
+
+        <div id="footer-ads">
+
+
+
+
+
+
+            <div id="ad_creative_3" class="ad-div " style="z-index: 1">
+                <iframe id="ad_creative_iframe_3" height="1" width="1" scrolling="no" frameborder="0"
+                    style="z-index: 1"></iframe>
+                <script>
+                    (function () {
+                        var ord = Math.floor(Math.random() * 10000000000000000);
+                        var adIframe = document.getElementById("ad_creative_iframe_3");
+                        adIframe.src = "https://ad-g.doubleclick.net/N6762/adi/mkt.ythome_1x1/;sz=1x1;tile=3;ssl=1;plat=pc;dc_dedup=1;kcr=us;kga=-1;kgg=-1;klg=en;kmyd=ad_creative_3;!c=ssl;ord=" + ord + "?";
+                    })();
+                </script>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

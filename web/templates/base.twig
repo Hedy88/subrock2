@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <script>
+        var yt = yt || {}; yt.timing = yt.timing || {}; yt.timing.tick = function (label, opt_time) { var timer = yt.timing['timer'] || {}; if (opt_time) { timer[label] = opt_time; } else { timer[label] = new Date().getTime(); } yt.timing['timer'] = timer; }; yt.timing.info = function (label, value) { var info_args = yt.timing['info_args'] || {}; info_args[label] = value; yt.timing['info_args'] = info_args; }; yt.timing.info('e', "926401,916411,924104,929203,901457,922401,920704,912806,927201,922403,925003,913546,913556,916805,920201,901451"); if (document.webkitVisibilityState == 'prerender') { document.addEventListener('webkitvisibilitychange', function () { yt.timing.tick('start'); }, false); } yt.timing.tick('start'); yt.timing.info('li', '0'); try { yt.timing['srt'] = window.gtbExternal && window.gtbExternal.pageT() || window.external && window.external.pageT; } catch (e) { } if (window.chrome && window.chrome.csi) { yt.timing['srt'] = Math.floor(window.chrome.csi().pageT); } if (window.msPerformance && window.msPerformance.timing) { yt.timing['srt'] = window.msPerformance.timing.responseStart - window.msPerformance.timing.navigationStart; }    
+        </script>
+
+    <title>ChenTube</title>
+    <link rel="search" type="application/opensearchdescription+xml"
+        href="http://www.youtube.com/opensearch?locale=en_US" title="ChenTube Video Search">
+    <link rel="icon" href="/yts/img/favicon-vfldLzJxy.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/yts/img/favicon-vfldLzJxy.ico" type="image/x-icon">
+    <link rel="icon" href="/yts/img/favicon_32-vflWoMFGx.png" sizes="32x32">
+    <link rel="canonical" href="{{ GetHostURL() }}">
+    {% block meta %}
+        <meta name="description" content="Share your videos with friends, family, and the world">
+        <meta name="keywords" content="video, sharing, camera phone, video phone, free, upload">
+        <meta property="og:image" content="/yts/img/chentube_logo_stacked-vfl225ZTx.png">
+    {% endblock %}
+    {# <link rel="alternate" media="handheld" href="http://m.youtube.com/index?&amp;desktop_uri=%2F">
+    <link rel="alternate" media="only screen and (max-width: 640px)"
+        href="http://m.youtube.com/index?&amp;desktop_uri=%2F"> #}
+    <link id="css-3834298799" rel="stylesheet" href="/yts/cssbin/www-core-vflcAYGVJ.css">
+    <link id="css-2781079399" rel="stylesheet" href="/yts/cssbin/www-guide-vflC6OhPw.css">
+
+    <!-- jquery? more like... jQUIRKY HAHAHAHAHAHAAHAHAH *fucking dies* -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://malsup.github.io/jquery.form.js"></script> 
+
+    {% block head %}
+    {% endblock %}
+
+
+
+    <script>
+        if (window.yt.timing) { yt.timing.tick("ct"); }    
+    </script>
+
+</head>
+<!-- machid: sNW5tN3Z2SWdXaDZ1cllBYmZaU21rQ0h4OUk1OVdrQUx1RW9PaFVNbHBOd19NTzBtVW11azl3 -->
+
+
+
+<body id="" class="date-20121113 en_US ltr   ytg-old-clearfix guide-feed-v2 " dir="ltr">
+
+    <div id="body-container">
+        <form name="logoutForm" method="POST" action="/logout">
+            <input type="hidden" name="action_logout" value="1">
+        </form>
+
+
+
+
+
+        <!-- begin page -->
+        <div id="page" class="{{ page.classes }}">
+
+            {{ include('inc/header.twig') }}
+            
+            <div id="content-container">
+                <!-- begin content -->
+                {% block content %}
+                {% endblock %}
+                <!-- end content -->
+            </div>
+
+            {{ include('inc/footer.twig') }}
+
+
+
+
+            <div id="playlist-bar" class="hid passive editable"
+                data-video-url="/watch?v=&amp;feature=BFql&amp;playnext=1&amp;list=QL" data-list-id=""
+                data-list-type="QL">
+                <div id="playlist-bar-bar-container">
+                    <div id="playlist-bar-bar">
+                        <div class="yt-alert yt-alert-naked yt-alert-success hid " id="playlist-bar-notifications">
+                            <div class="yt-alert-icon">
+                                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite"
+                                    alt="Alert icon">
+                            </div>
+                            <div class="yt-alert-content" role="alert"></div>
+                        </div>
+                        <span id="playlist-bar-info"><span class="playlist-bar-active playlist-bar-group"><button
+                                    onclick=";return false;" title="Previous video" type="button"
+                                    id="playlist-bar-prev-button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                    role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-prev"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt="Previous video"><span
+                                            class="yt-uix-button-valign"></span></span></button><span
+                                    class="playlist-bar-count"><span class="playing-index">0</span> / <span
+                                        class="item-count">0</span></span><button type="button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                    onclick=";return false;" id="playlist-bar-next-button" role="button"><span
+                                        class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-next"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                            class="yt-uix-button-valign"></span></span></button></span><span
+                                class="playlist-bar-active playlist-bar-group"><button type="button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                    onclick=";return false;" id="playlist-bar-autoplay-button" data-button-toggle="true"
+                                    role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-autoplay"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                            class="yt-uix-button-valign"></span></span></button><button type="button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                    onclick=";return false;" id="playlist-bar-shuffle-button" data-button-toggle="true"
+                                    role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-shuffle"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                            class="yt-uix-button-valign"></span></span></button></span><span
+                                class="playlist-bar-passive playlist-bar-group"><button onclick=";return false;"
+                                    title="Play videos" type="button" id="playlist-bar-play-button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                    role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-play"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt="Play videos"><span
+                                            class="yt-uix-button-valign"></span></span></button><span
+                                    class="playlist-bar-count"><span class="item-count">0</span></span></span><span
+                                id="playlist-bar-title" class="yt-uix-button-group"><span class="playlist-title">Unsaved
+                                    Playlist</span></span></span>
+                        <a id="playlist-bar-lists-back" href="#">
+                            Return to active list
+                        </a>
+
+                        <span id="playlist-bar-controls"><span class="playlist-bar-group"><button type="button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked  yt-uix-button yt-uix-button-text yt-uix-button-empty"
+                                    onclick=";return false;" id="playlist-bar-toggle-button" role="button"><span
+                                        class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-playlist-bar-toggle"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                            class="yt-uix-button-valign"></span></span></button></span><span
+                                class="playlist-bar-group"><button type="button"
+                                    class="yt-uix-tooltip yt-uix-tooltip-masked yt-uix-button-reverse flip yt-uix-button yt-uix-button-text"
+                                    onclick=";return false;" data-button-menu-id="playlist-bar-options-menu"
+                                    data-button-has-sibling-menu="true" role="button"><span
+                                        class="yt-uix-button-content">Options </span><img class="yt-uix-button-arrow"
+                                        src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button></span></span>
+                    </div>
+                </div>
+
+                <div id="playlist-bar-tray-container">
+                    <div id="playlist-bar-tray" class="yt-uix-slider yt-uix-slider-fluid"><button
+                            class="yt-uix-button playlist-bar-tray-button yt-uix-button-default yt-uix-slider-prev"
+                            onclick="return false;"><img class="yt-uix-slider-prev-arrow"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Previous video"></button><button
+                            class="yt-uix-button playlist-bar-tray-button yt-uix-button-default yt-uix-slider-next"
+                            onclick="return false;"><img class="yt-uix-slider-next-arrow"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Next video"></button>
+                        <div class="yt-uix-slider-body">
+                            <div id="playlist-bar-tray-content" class="yt-uix-slider-slide">
+                                <ol class="video-list"></ol>
+                                <ol id="playlist-bar-help">
+                                    <li class="empty playlist-bar-help-message">Your queue is empty. Add videos to your
+                                        queue using this button: <img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="addto-button-help"><br> or <a
+                                            href="/ServiceLogin?continue=/">sign
+                                            in</a> to load a different list.</li>
+                                </ol>
+                            </div>
+                            <div class="yt-uix-slider-shade-left"></div>
+                            <div class="yt-uix-slider-shade-right"></div>
+                        </div>
+                    </div>
+                    <div id="playlist-bar-save"></div>
+                    <div id="playlist-bar-lists" class="dark-lolz"></div>
+                    <div id="playlist-bar-loading"><img src="/yts/img/pixel-vfl3z5WfW.gif"
+                            alt="Loading..."><span id="playlist-bar-loading-message">Loading...</span><span
+                            id="playlist-bar-saving-message" class="hid">Saving...</span></div>
+                    <div id="playlist-bar-template" style="display: none;"
+                        data-video-thumb-url="//i4.ytimg.com/vi/__video_encrypted_id__/default.jpg">
+                        <!--<li class="playlist-bar-item yt-uix-slider-slide-unit __classes__" data-video-id="__video_encrypted_id__"><a href="__video_url__" title="__video_title__" class="yt-uix-sessionlink" data-sessionlink="ei=CPiLrcjdzbMCFQgTIQod8CWOBQ%3D%3D&amp;feature=BFa"><span class="video-thumb ux-thumb yt-thumb-default-106 "><span class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img src="/yts/img/pixel-vfl3z5WfW.gif" alt="__video_title__" data-thumb-manual="true" data-thumb="__video_thumb_url__" width="106" ><span class="vertical-align"></span></span></span></span><span class="screen"></span><span class="count"><strong>__list_position__</strong></span><span class="play"><img src="/yts/img/pixel-vfl3z5WfW.gif"></span><span class="yt-uix-button yt-uix-button-default delete"><img class="yt-uix-button-icon-playlist-bar-delete" src="/yts/img/pixel-vfl3z5WfW.gif" alt="Delete"></span><span class="now-playing">Now playing</span><span dir="ltr" class="title"><span>__video_title__  <span class="uploader">by __video_display_name__</span>
+</span></span><span class="dragger"></span></a></li>-->
+                    </div>
+                    <div id="playlist-bar-next-up-template" style="display: none;">
+                        <!--<div class="playlist-bar-next-thumb"><span class="video-thumb ux-thumb yt-thumb-default-74 "><span class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img src="//i4.ytimg.com/vi/__video_encrypted_id__/default.jpg" alt="Thumbnail" width="74" ><span class="vertical-align"></span></span></span></span></div>-->
+                    </div>
+                </div>
+                <div id="playlist-bar-options-menu" class="hid">
+
+                    <div id="playlist-bar-extras-menu">
+                        <ul>
+                            <li><span class="yt-uix-button-menu-item" data-action="clear">
+                                    Clear all videos from this list
+                                </span></li>
+                        </ul>
+
+                    </div>
+
+                    <ul>
+                        <li><span class="yt-uix-button-menu-item"
+                                onclick="window.location.href='//support.google.com/youtube/bin/answer.py?answer=146749&amp;hl=en-US'">Learn
+                                more</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div id="shared-addto-watch-later-login" class="hid">
+                <a href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                    class="sign-in-link">Sign in</a> to add this to a playlist
+
+            </div>
+
+            <div id="shared-addto-menu" style="display: none;" class="hid sign-in">
+                <div class="addto-menu">
+                    <div id="addto-list-panel" class="menu-panel active-panel">
+                        <span class="yt-uix-button-menu-item yt-uix-tooltip sign-in" data-possible-tooltip=""
+                            data-tooltip-show-delay="750"><a
+                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                class="sign-in-link">Sign in</a> to add this to a playlist
+                        </span>
+
+                    </div>
+                    <div id="addto-list-saved-panel" class="menu-panel">
+                        <div class="panel-content">
+                            <div class="yt-alert yt-alert-naked yt-alert-success  ">
+                                <div class="yt-alert-icon">
+                                    <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite"
+                                        alt="Alert icon">
+                                </div>
+                                <div class="yt-alert-content" role="alert"> <span
+                                        class="yt-alert-vertical-trick"></span>
+                                    <div class="yt-alert-message">
+
+                                        <span class="message">Added to <span
+                                                class="addto-title yt-uix-tooltip yt-uix-tooltip-reverse"
+                                                title="More information about this playlist"
+                                                data-tooltip-show-delay="750"></span></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="addto-list-error-panel" class="menu-panel">
+                        <div class="panel-content">
+                            <img src="/yts/img/pixel-vfl3z5WfW.gif">
+                            <span class="error-details"></span>
+                            <a class="show-menu-link">Back to list</a>
+                        </div>
+                    </div>
+
+                    <div id="addto-note-input-panel" class="menu-panel">
+                        <div class="panel-content">
+                            <div class="yt-alert yt-alert-naked yt-alert-success  ">
+                                <div class="yt-alert-icon">
+                                    <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite"
+                                        alt="Alert icon">
+                                </div>
+                                <div class="yt-alert-content" role="alert"> <span
+                                        class="yt-alert-vertical-trick"></span>
+                                    <div class="yt-alert-message">
+                                        <span class="message">Added to playlist:</span>
+                                        <span class="addto-title yt-uix-tooltip"
+                                            title="More information about this playlist"
+                                            data-tooltip-show-delay="750"></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yt-uix-char-counter" data-char-limit="150">
+                            <div class="addto-note-box addto-text-box"><textarea id="addto-note"
+                                    class="addto-note yt-uix-char-counter-input" maxlength="150"></textarea><label
+                                    for="addto-note" class="addto-note-label">Add an optional note</label></div><span
+                                class="yt-uix-char-counter-remaining">150</span>
+                        </div> <button disabled="disabled" type="button"
+                            class="playlist-save-note yt-uix-button yt-uix-button-default" onclick=";return false;"
+                            role="button"><span class="yt-uix-button-content">Add note </span></button>
+                    </div>
+                    <div id="addto-note-saving-panel" class="menu-panel">
+                        <div class="panel-content loading-content">
+                            <img src="/yts/img/pixel-vfl3z5WfW.gif">
+                            <span>Saving note...</span>
+                        </div>
+                    </div>
+                    <div id="addto-note-saved-panel" class="menu-panel">
+                        <div class="panel-content">
+                            <img src="/yts/img/pixel-vfl3z5WfW.gif">
+                            <span class="message">Note added to:</span>
+                        </div>
+                    </div>
+                    <div id="addto-note-error-panel" class="menu-panel">
+                        <div class="panel-content">
+                            <img src="/yts/img/pixel-vfl3z5WfW.gif">
+                            <span class="message">Error adding note:</span>
+                            <ul class="error-details"></ul>
+                            <a class="add-note-link">Click to add a new note</a>
+                        </div>
+                    </div>
+                    <div class="close-note hid">
+                        <img src="/yts/img/pixel-vfl3z5WfW.gif" class="close-button">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <!-- end page -->
+    </div>
+
+
+
+
+    <script id="js-3423493459" src="/yts/jsbin/www-core-vfl7pIgfx.js" data-loaded="true"></script>
+
+
+    <script>
+        yt.setConfig({
+            'XSRF_TOKEN': '4InIHUKWkR1fBc1XddRzkuChkAd8MTM1Mjk1NzQ5NEAxMzUyODcxMDk0',
+            'XSRF_FIELD_NAME': 'session_token'
+        });
+
+        yt.setConfig('XSRF_REDIRECT_TOKEN', 'ySlHBZ8KltKPnep0T1R9YlGLOMJ8MTM1Mjk1NzQ5NUAxMzUyODcxMDk1');
+
+        yt.setConfig({
+            'EVENT_ID': "CPiLrcjdzbMCFQgTIQod8CWOBQ==",
+            'CURRENT_URL': "http:\/\/www.youtube.com\/",
+            'LOGGED_IN': {{ _LoggedIn }},
+            'SESSION_INDEX': null,
+
+            'WATCH_CONTEXT_CLIENTSIDE': false,
+
+            'FEEDBACK_LOCALE_LANGUAGE': "en",
+            'FEEDBACK_LOCALE_EXTRAS': { "logged_in": false, "experiments": "926401,916411,924104,929203,901457,922401,920704,912806,927201,922403,925003,913546,913556,916805,920201,901451", "guide_subs": "NA", "accept_language": null }
+        });
+    </script>
+
+
+    <script>
+        if (window.yt.timing) { yt.timing.tick("js_head"); }    </script>
+
+    <script>
+        _gel('masthead-search-term').focus();
+        yt.setConfig('FEED_DEBUG', true);
+        yt.setConfig('GUIDE_VERSION', 1);
+    </script>
+
+    {% block extra %}
+    {% endblock %}
+
+    <script id="js-3726832686" src="/yts/jsbin/www-guide-vflUQ343a.js" data-loaded="true"></script>
+
+
+
+    <script>
+        window.masthead = new yt.www.ads.MastheadAd(
+            "lyPeMDFwcWY",
+            true);
+
+        yt.www.guide.init();
+
+
+    </script>
+
+    <script>
+        if (window.yt.timing) { yt.timing.tick("js_page"); }    </script>
+
+    <script>
+        yt.setConfig('TIMING_ACTION', "glo");    </script>
+
+
+
+
+
+    <script>yt.setConfig('THUMB_DELAY_LOAD_BUFFER', 300);</script>
+
+    <script>
+
+
+
+        yt.setMsg({
+            'LIST_CLEARED': "List cleared",
+            'PLAYLIST_VIDEO_DELETED': "Video deleted.",
+            'ERROR_OCCURRED': "Sorry, an error occurred.",
+            'NEXT_VIDEO_TOOLTIP': "Next video:\u003cbr\u003e \u0026#8220;${next_video_title}\u0026#8221;",
+            'NEXT_VIDEO_NOTHUMB_TOOLTIP': "Next video",
+            'SHOW_PLAYLIST_TOOLTIP': "Show playlist",
+            'HIDE_PLAYLIST_TOOLTIP': "Hide playlist",
+            'AUTOPLAY_ON_TOOLTIP': "Turn autoplay off",
+            'AUTOPLAY_OFF_TOOLTIP': "Turn autoplay on",
+            'SHUFFLE_ON_TOOLTIP': "Turn shuffle off",
+            'SHUFFLE_OFF_TOOLTIP': "Turn shuffle on",
+            'PLAYLIST_BAR_PLAYLIST_SAVED': "Playlist saved!",
+            'PLAYLIST_BAR_ADDED_TO_FAVORITES': "Added to favorites",
+            'PLAYLIST_BAR_ADDED_TO_PLAYLIST': "Added to playlist",
+            'PLAYLIST_BAR_ADDED_TO_QUEUE': "Added to queue",
+            'AUTOPLAY_WARNING1': "Next video starts in 1 second...",
+            'AUTOPLAY_WARNING2': "Next video starts in 2 seconds...",
+            'AUTOPLAY_WARNING3': "Next video starts in 3 seconds...",
+            'AUTOPLAY_WARNING4': "Next video starts in 4 seconds...",
+            'AUTOPLAY_WARNING5': "Next video starts in 5 seconds...",
+            'UNDO_LINK': "Undo"
+        });
+
+
+        yt.setConfig({
+            'DRAGDROP_BINARY_URL': "\/yts\/jsbin\/www-dragdrop-vflVtCQG3.js",
+            'PLAYLIST_BAR_PLAYING_INDEX': -1
+        });
+
+        yt.setAjaxToken('addto_ajax_logged_out', "zGvEfCB9Dbo-apHTNLE37t0k_Kt8MTM1Mjk1NzQ5NUAxMzUyODcxMDk1");
+
+        yt.pubsub.subscribe('init', yt.www.lists.init);
+
+
+
+
+
+
+        yt.events.listen(_gel('masthead-search-term'), 'focus', yt.www.home.ads.workaroundReset);
+
+
+
+        yt.setConfig({ 'SBOX_JS_URL': "\/yts\/jsbin\/www-searchbox-vflWtMugU.js", 'SBOX_SETTINGS': { "CLOSE_ICON_URL": "\/yts\/img\/icons\/close-vflrEJzIW.png", "SHOW_CHIP": false, "PSUGGEST_TOKEN": null, "REQUEST_DOMAIN": "us", "EXPERIMENT_ID": 7, "SESSION_INDEX": null, "HAS_ON_SCREEN_KEYBOARD": false, "CHIP_PARAMETERS": {}, "REQUEST_LANGUAGE": "en" }, 'SBOX_LABELS': { "SUGGESTION_DISMISS_LABEL": "Dismiss", "SUGGESTION_DISMISSED_LABEL": "Suggestion dismissed" } });
+
+
+
+
+
+    </script>
+
+    <script>
+        yt.setMsg({
+            'ADDTO_WATCH_LATER_ADDED': "Added",
+            'ADDTO_WATCH_LATER_ERROR': "Error"
+        });
+    </script>
+
+
+
+    <script>
+        if (window.yt.timing) { yt.timing.tick("js_foot"); }    
+    </script>
+
+    <div id="debug">
+
+    </div>
+
+</body>
+
+</html>

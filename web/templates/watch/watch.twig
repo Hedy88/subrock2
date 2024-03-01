@@ -1,0 +1,1393 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+<script>var yt = yt || {}; yt.preload = {}; yt.preload.counter_ = 0; yt.preload.start = function (src) { var img = new Image(); var counter = ++yt.preload.counter_; yt.preload[counter] = img; img.onload = img.onerror = function () { delete yt.preload[counter]; }; img.src = src; img = null; }; yt.preload.start("\/crossdomain.xml"); yt.preload.start("http://clients1.google.com\/generate_204");</script>
+<link rel="canonical" href="/watch?v={{ video.vid }}">
+<link rel="alternate" media="handheld" href="http://m.youtube.com/watch?v={{ video.vid }}">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.youtube.com/watch?v={{ video.vid }}">
+<link rel="shortlink" href="http://youtu.be/{{ video.vid }}">
+<script>
+    var gYouTubePlayerReady = false;
+    if (!window['onYouTubePlayerReady']) {
+        window['onYouTubePlayerReady'] = function () {
+            gYouTubePlayerReady = true;
+        };
+    }
+</script>
+<script>
+    if (window.yt.timing) { yt.timing.tick("ct"); }    
+</script>
+
+{% endblock %}
+
+{% block meta %}
+<meta name="title" content="{{ video.title }}">
+
+<meta name="description"
+    content="LINKS: http://www.twitter.com/tweetsauce http://facebook.com/VsauceGaming music by http://www.youtube.com/user/jakechudnow Wisdom of the Crowds BBC VIDEO: ht...">
+
+<meta name="keywords" content="">
+
+<meta property="og:url" content="{{ GetHostURL() }}/watch?v={{ video.vid }}">
+<meta property="og:title" content="{{ video.title }}">
+<meta property="og:description"
+    content="LINKS: http://www.twitter.com/tweetsauce http://facebook.com/VsauceGaming music by http://www.youtube.com/user/jakechudnow Wisdom of the Crowds BBC VIDEO: ht...">
+<meta property="og:type" content="video">
+<meta property="og:image" content="{{ GetHostURL() }}/ytd/thumbs/{{ video.thumb }}">
+<meta property="og:video" content="{{ GetHostURL() }}/ytd/videos_360/{{ video.file }}">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="og:video:type" content="video/webm" />
+<meta name="twitter:card" value="player">
+<meta name="twitter:player" value="/ytd/videos_360/{{ video.file }}">
+<meta property="twitter:player:width" content="1280">
+<meta property="twitter:player:height" content="720">
+<meta name="title" content="{{ video.title }}">
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+    <div id="watch-container" itemscope itemtype="http://schema.org/VideoObject">
+        <!-- begin watch-headline-container -->
+        <div id="watch-headline-container">
+            <div id="watch-headline" class="watch-headline">
+
+
+
+
+                <h1 id="watch-headline-title">
+
+
+                    <span id="eow-title" class=" " dir="ltr" title="{{ video.title }}">
+                        {{ video.title }}
+                    </span>
+
+                </h1>
+
+
+                <div id="watch-headline-user-info">
+                    <span class="yt-uix-button-group"><button href="/channel/{{ video.author }}?feature=watch"
+                            type="button" class="start yt-uix-button yt-uix-button-default"
+                            onclick=";window.location.href=this.getAttribute('href');return false;" role="button"><span
+                                class="yt-uix-button-content">{{ GetUsername(video.author) }} </span></button>
+                        <div class="yt-subscription-button-hovercard yt-uix-hovercard"
+                            data-card-class="watch-subscription-card"><span
+                                class="yt-uix-button-context-light yt-uix-button-subscription-container">
+                                {% if __SESSION.uuid != video.author %}
+                                <button href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                    onclick=";window.location.href=this.getAttribute('href');return false;"
+                                    type="button"
+                                    class="yt-subscription-button yt-subscription-button-js-default end  yt-uix-button yt-uix-button-subscription"
+                                    data-enable-hovercard="true" data-subscription-value="UC6nSFpj9HTCZ5t-N3Rm3-HA"
+                                    data-force-position="true" data-position="topright"
+                                    data-subscription-feature="watch" data-subscription-type=""
+                                    role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                            class="yt-uix-button-icon yt-uix-button-icon-subscribe"
+                                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                            class="yt-uix-button-valign"></span></span><span
+                                        class="yt-uix-button-content"> <span class="subscribe-label">Subscribe</span>
+                                        <span class="subscribed-label">Subscribed</span>
+                                        <span class="unsubscribe-label">Unsubscribe</span>
+                                    </span></button>
+                                {% else %}
+                                <button disabled="True" onclick=";return false;"
+                                    title="No need to subscribe to yourself!" type="button"
+                                    class="yt-subscription-button end yt-uix-button yt-uix-button-default yt-uix-tooltip"
+                                    role="button" data-tooltip-text="No need to subscribe to yourself!"><span
+                                        class="yt-uix-button-content">Subscribe </span></button>
+                                {% endif %}
+                                <span class="yt-subscription-button-disabled-mask"></span></span>
+                            <div class="yt-uix-hovercard-content hid">
+                                <p class="yt-spinner">
+                                    <img src="/yts/img/pixel-vfl3z5WfW.gif" class="yt-spinner-img" alt="Loading icon">
+
+                                    Loading...
+                                </p>
+                            </div>
+                        </div>
+                    </span>
+
+                    <button onclick="_toggleclass(this,'yt-uix-expander-collapsed');return false;" type="button"
+                        id="watch-mfu-button" class="yt-uix-expander-collapsed yt-uix-button yt-uix-button-default"
+                        data-button-toggle="true" data-video-user-id="6nSFpj9HTCZ5t-N3Rm3-HA"
+                        data-button-menu-id="some-nonexistent-menu" data-video-id="4e_kz79tjb8"
+                        data-button-action="yt.www.watch.watch5.handleToggleMoreFromUser" role="button"><span
+                            class="yt-uix-button-content">245 videos </span><img class="yt-uix-button-arrow"
+                            src="/yts/img/pixel-vfl3z5WfW.gif" alt=""></button>
+                </div>
+
+                <div id="watch-more-from-user" class="collapsed">
+                    <div id="watch-channel-discoverbox" class="yt-rounded">
+                        <span id="watch-channel-loading">Loading...</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end watch-headline-container -->
+        <div id="watch-video-container">
+            <div id="watch-video">
+                <script>
+                    if (window.yt.timing) { yt.timing.tick("bf"); }    
+                </script>
+
+                <div id="watch-player" class="flash-player"></div>
+                <script>
+                    (function () {
+                        var swf = "      \u003cembed type=\"application\/x-shockwave-flash\"     s\u0072c=\"\"  flashvars=\"video_id={{ video.vid }}\"   id=\"movie_player\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\"\u003e\n";
+                        document.getElementById('watch-player').innerHTML = swf;
+                    })()
+                </script>
+
+                <!-- begin watch-video-extra -->
+                <div id="watch-video-extra">
+
+
+                </div>
+                <!-- end watch-video-extra -->
+            </div>
+        </div>
+
+
+        <!-- begin watch-video-extra -->
+        <div id="watch-video-extra">
+
+
+        </div>
+        <!-- end watch-video-extra -->
+    </div>
+</div>
+<!-- begin watch-main-container -->
+<div id="watch-main-container">
+    <div id="watch-main">
+        <div id="watch-panel">
+            <div class="yt-alert yt-alert-default yt-alert-warn hid " id="flash10-promo-div">
+                <div class="yt-alert-icon">
+                    <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+                </div>
+                <div class="yt-alert-buttons"><button type="button"
+                        class="close yt-uix-close yt-uix-button yt-uix-button-close"
+                        onclick="yt.flash.dismissFlashUpgradePromo();return false;" data-close-parent-class="yt-alert"
+                        role="button"><span class="yt-uix-button-content">Close </span></button></div>
+                <div class="yt-alert-content" role="alert"> <span class="yt-alert-vertical-trick"></span>
+                    <div class="yt-alert-message">
+                        Upgrade to the latest Flash Player for improved playback performance. <a
+                            href="http://www.adobe.com/go/getflashplayer/"
+                            onmousedown="urchinTracker('/Events/VideoWatch/GetFlashUpgrade');">Upgrade
+                            now</a> or <a href="//support.google.com/youtube/bin/answer.py?answer=95402">more
+                            info</a>.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="watch-actions">
+                <div id="watch-actions-right">
+                    <span class="watch-view-count">
+                        <strong>{{ GetVideoViews(video.vid) }}</strong>
+                    </span>
+                    <button onclick=";return false;" title="Show video statistics" type="button"
+                        id="watch-insight-button"
+                        class="yt-uix-tooltip yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                        data-button-action="yt.www.watch.actions.stats" role="button"><span
+                            class="yt-uix-button-icon-wrapper"><img
+                                class="yt-uix-button-icon yt-uix-button-icon-watch-insight"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Show video statistics"><span
+                                class="yt-uix-button-valign"></span></span></button>
+                </div>
+
+                <span id="watch-like-unlike" class="yt-uix-button-group " data-button-toggle-group="optional"><button
+                        onclick=";return false;" title="I like this" type="button"
+                        class="start yt-uix-tooltip-reverse  yt-uix-button yt-uix-button-default yt-uix-tooltip"
+                        id="watch-like" data-button-toggle="true" data-button-action="yt.www.watch.actions.like"
+                        role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                class="yt-uix-button-icon yt-uix-button-icon-watch-like"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="I like this"><span
+                                class="yt-uix-button-valign"></span></span><span class="yt-uix-button-content">Like
+                        </span></button><button onclick=";return false;" title="I dislike this" type="button"
+                        class="end yt-uix-tooltip-reverse  yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                        id="watch-unlike" data-button-toggle="true" data-button-action="yt.www.watch.actions.unlike"
+                        role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                class="yt-uix-button-icon yt-uix-button-icon-watch-unlike"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="I dislike this"><span
+                                class="yt-uix-button-valign"></span></span></button></span>
+
+
+                <button type="button" class="yt-uix-tooltip-reverse  yt-uix-button yt-uix-button-default yt-uix-tooltip"
+                    onclick=";return false;" title="Add to favorites or playlist" data-upsell="playlist"
+                    data-button-action="yt.www.watch.actions.addto" role="button"><span
+                        class="yt-uix-button-content"><span class="addto-label">Add to</span> </span></button>
+
+
+                <button onclick=";return false;" title="Share or embed this video" type="button"
+                    class="yt-uix-tooltip-reverse yt-uix-button yt-uix-button-default yt-uix-tooltip" id="watch-share"
+                    data-button-action="yt.www.watch.actions.share" role="button"><span
+                        class="yt-uix-button-content">Share </span></button>
+
+                <button onclick=";return false;" title="Flag as inappropriate" type="button"
+                    class="yt-uix-tooltip-reverse  yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                    id="watch-flag" data-button-action="yt.www.watch.actions.flag" role="button"><span
+                        class="yt-uix-button-icon-wrapper"><img class="yt-uix-button-icon yt-uix-button-icon-watch-flag"
+                            src="/yts/img/pixel-vfl3z5WfW.gif" alt="Flag as inappropriate"><span
+                            class="yt-uix-button-valign"></span></span></button>
+
+
+
+
+            </div>
+
+            <div id="watch-actions-area-container" class="hid">
+                <div id="watch-actions-area" class="yt-rounded">
+                    <div id="watch-actions-loading" class="watch-actions-panel hid">
+                        Loading...
+                    </div>
+                    <div id="watch-actions-logged-out" class="watch-actions-panel hid">
+                        <div class="yt-alert yt-alert-naked yt-alert-warn  ">
+                            <div class="yt-alert-icon">
+                                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+                            </div>
+                            <div class="yt-alert-content" role="alert"> <span class="yt-alert-vertical-trick"></span>
+                                <div class="yt-alert-message">
+                                    <strong><a href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}">Sign
+                                            in</a> or <a
+                                            href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit">sign
+                                            up</a> now!
+                                    </strong>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="watch-actions-error" class="watch-actions-panel hid">
+                        <div class="yt-alert yt-alert-naked yt-alert-error  ">
+                            <div class="yt-alert-icon">
+                                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+                            </div>
+                            <div class="yt-alert-content" role="alert" id="watch-error-string"></div>
+                        </div>
+                    </div>
+
+
+                    <div id="watch-actions-addto" class="watch-actions-panel hid"></div>
+
+                    <div id="watch-actions-share" class="watch-actions-panel hid">
+                        <div id="watch-actions-share-loading">
+                            Loading...
+                        </div>
+                        <div id="watch-actions-share-panel" class="hid"></div>
+                    </div>
+
+
+
+
+
+                    <div id="watch-actions-ajax" class="watch-actions-panel hid"></div>
+
+                    <div class="close">
+                        <img src="/yts/img/pixel-vfl3z5WfW.gif" class="close-button"
+                            onclick="yt.www.watch.actions.hide();">
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="watch-info">
+                <div id="watch-description" class="yt-uix-expander  yt-uix-expander-collapsed"
+                    data-expander-action="yt.www.watch.watch5.handleToggleDescription">
+                    <div id="watch-description-clip">
+                        <p id="watch-uploader-info">
+
+                            Published on <span id="eow-date" class="watch-video-date">{{ video.published|date("M d, Y")
+                                }}</span> by <a href="/channel/{{ video.author }}"
+                                class="yt-uix-sessionlink yt-user-name author" rel="author" dir="ltr">{{
+                                GetUsername(video.author) }}</a>
+
+                        </p>
+                        <div id="watch-description-text">
+                            <p id="eow-description">
+                                {{ FormatVideoDesc(video.description)|raw }}
+                            </p>
+                        </div>
+                        <div id="watch-description-extras">
+                            <h4>
+                                Category:
+                            </h4>
+                            <p id="eow-category"><a href="/videos/{{ video.category }}">{{ categories[video.category]
+                                    }}</a></p>
+
+
+
+                            <h4>License:</h4>
+                            <p id="eow-reuse">
+                                Standard ChenTube License
+                            </p>
+
+
+                        </div>
+
+                    </div>
+
+                    <ul id="watch-description-extra-info">
+                        <li>
+                            <div class="video-extras-sparkbars">
+                                <div class="video-extras-sparkbar-likes" style="width: 98.6603002302%"></div>
+                                <div class="video-extras-sparkbar-dislikes" style="width: 1.33969976985%"></div>
+                            </div>
+                            <span class="video-extras-likes-dislikes">
+                                <span class="likes">28,721</span> likes, <span class="dislikes">390</span>
+                                dislikes
+                            </span>
+
+
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+
+
+                    <div class="yt-horizontal-rule "><span class="first"></span><span class="second"></span><span
+                            class="third"></span></div>
+
+                    <div id="watch-description-toggle" class="yt-uix-expander-head">
+                        <div id="watch-description-expand" class="expand">
+                            <button type="button" class="metadata-inline yt-uix-button yt-uix-button-text"
+                                onclick=";return false;" role="button"><span class="yt-uix-button-content">Show
+                                    more <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="Show more">
+                                </span></button>
+                        </div>
+                        <div id="watch-description-collapse" class="collapse">
+                            <button type="button" class="metadata-inline yt-uix-button yt-uix-button-text"
+                                onclick=";return false;" role="button"><span class="yt-uix-button-content">Show
+                                    less <img src="/yts/img/pixel-vfl3z5WfW.gif" alt="Show less">
+                                </span></button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div id="watch-discussion">
+
+
+
+                <div id="comments-view" data-type="highlights" class="">
+
+                    {# <div class="comments-section">
+                        <h4>
+                            <strong>Top Comments</strong>
+
+                        </h4>
+
+                        <ul class="comment-list">
+
+
+
+                            <li class="comment yt-tile-default" data-tag="top" data-author-id="0N0nwglltqtG7CvF8ipY6Q"
+                                data-id="HqbfpuG2RWQol580OiGKhF5sdpKtrlzkEfbWmQCNLB4" data-score="20">
+
+                                <div class="comment-body">
+
+
+                                    <div class="content-container">
+                                        <div class="content">
+
+                                            <div class="comment-text" dir="ltr">
+                                                <p>When you feel emotionally invested in a song the brain
+                                                    releases the feel-good chemical Dopamine, which is
+                                                    responsible for the goose bumps.﻿</p>
+
+                                            </div>
+
+                                            <p class="metadata">
+                                                <span class="author ">
+                                                    <a href="/user/Saaduk92" class="yt-uix-sessionlink yt-user-name "
+                                                        data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D"
+                                                        dir="ltr">Saaduk92</a>
+                                                </span>
+                                                <span class="time" dir="ltr">
+                                                    in reply to <a href="/user/TopTheComment"
+                                                        class="yt-uix-sessionlink yt-user-name "
+                                                        data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D"
+                                                        dir="ltr">TopTheComment</a>
+                                                    <a href="#" class="comment-action comment-action-showparent"
+                                                        onclick="return false;" data-action="show-parent">(Show
+                                                        the comment)</a>
+                                                    <a dir="ltr"
+                                                        href="http://www.youtube.com/comment?lc=HqbfpuG2RWQol580OiGKhF5sdpKtrlzkEfbWmQCNLB4">
+                                                        4 hours ago
+                                                    </a>
+                                                </span>
+                                                <span dir="ltr" class="comments-rating-positive" title="21 up, 1 down">
+                                                    20
+                                                    <img class="comments-rating-thumbs-up"
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif">
+                                                </span>
+                                            </p>
+
+                                        </div>
+
+
+
+                                        <div class="comment-actions">
+                                            <span class="yt-uix-button-group"><span><button type="button"
+                                                        class="start comment-action-vote-up comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                                        onclick=";return false;" title="Vote Up" data-action="vote-up"
+                                                        data-tooltip-show-delay="300" role="button"><span
+                                                            class="yt-uix-button-icon-wrapper"><img
+                                                                class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-up"
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Up"><span
+                                                                class="yt-uix-button-valign"></span></span></button>
+                                                    <div class="watch7-hovercard yt-uix-clickcard-content">
+                                                        <h3 class="watch7-hovercard-header">Sign in to YouTube
+                                                        </h3>
+                                                        <div class="watch7-hovercard-message">
+                                                            Sign in with your YouTube Account (YouTube, Yippie+,
+                                                            Gmail, Orkut, Picasa, or Chrome) to rate <span
+                                                                class="yt-user-name " dir="ltr">Saaduk92</span>'s
+                                                            comment.
+
+                                                        </div>
+                                                        <ul class="watch7-hovercard-icon-strip clearfix">
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-youtube-icon">
+                                                                </div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gplus-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gmail-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-picasa-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-chrome-icon"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="watch7-hovercard-account-line">
+
+
+                                                            <button
+                                                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                                                type="button"
+                                                                class=" yt-uix-button yt-uix-button-primary"
+                                                                onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                role="button"><span class="yt-uix-button-content">Sign
+                                                                    in
+                                                                </span></button> <span
+                                                                class="watch7-hovercard-or-separator">or</span>
+                                                            <a href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit"
+                                                                class="watch7-hovercard-sign-in"=>Create an
+                                                                account</a>
+
+                                                        </div>
+                                                    </div>
+                                                </span><span><button type="button"
+                                                        class="start comment-action-vote-down comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                                        onclick=";return false;" title="Vote Down"
+                                                        data-action="vote-down" data-tooltip-show-delay="300"
+                                                        role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                                                class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-down"
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Down"><span
+                                                                class="yt-uix-button-valign"></span></span></button>
+                                                    <div class="watch7-hovercard yt-uix-clickcard-content">
+                                                        <h3 class="watch7-hovercard-header">Sign in to YouTube
+                                                        </h3>
+                                                        <div class="watch7-hovercard-message">
+                                                            Sign in with your YouTube Account (YouTube, Yippie+,
+                                                            Gmail, Orkut, Picasa, or Chrome) to rate <span
+                                                                class="yt-user-name " dir="ltr">Saaduk92</span>'s
+                                                            comment.
+
+                                                        </div>
+                                                        <ul class="watch7-hovercard-icon-strip clearfix">
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-youtube-icon">
+                                                                </div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gplus-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gmail-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-picasa-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-chrome-icon"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="watch7-hovercard-account-line">
+
+
+                                                            <button
+                                                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                                                type="button"
+                                                                class=" yt-uix-button yt-uix-button-primary"
+                                                                onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                role="button"><span class="yt-uix-button-content">Sign
+                                                                    in
+                                                                </span></button> <span
+                                                                class="watch7-hovercard-or-separator">or</span>
+                                                            <a href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit"
+                                                                class="watch7-hovercard-sign-in"=>Create an
+                                                                account</a>
+
+                                                        </div>
+                                                    </div>
+                                                </span></span><span class="yt-uix-button-group"><button type="button"
+                                                    class="start comment-action yt-uix-button yt-uix-button-default"
+                                                    onclick=";return false;" data-action="reply" role="button"><span
+                                                        class="yt-uix-button-content">Reply
+                                                    </span></button><button type="button"
+                                                    class="flip end yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                                    onclick=";return false;" data-button-has-sibling-menu="true"
+                                                    role="button" aria-pressed="false" aria-expanded="false"
+                                                    aria-haspopup="true" aria-activedescendant=""><img
+                                                        class="yt-uix-button-arrow" src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="">
+                                                    <div class=" yt-uix-button-menu yt-uix-button-menu-default"
+                                                        style="display: none;">
+                                                        <ul>
+                                                            <li class="comment-action-remove comment-action"
+                                                                data-action="remove"><span
+                                                                    class="yt-uix-button-menu-item">Remove</span>
+                                                            </li>
+                                                            <li class="comment-action" data-action="flag"><span
+                                                                    class="yt-uix-button-menu-item">Flag for
+                                                                    spam</span></li>
+                                                            <li class="comment-action-block comment-action"
+                                                                data-action="block"><span
+                                                                    class="yt-uix-button-menu-item">Block
+                                                                    User</span></li>
+                                                            <li class="comment-action-unblock comment-action"
+                                                                data-action="unblock"><span
+                                                                    class="yt-uix-button-menu-item">Unblock
+                                                                    User</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </button></span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+
+
+
+                            <li class="comment yt-tile-default" data-tag="top" data-author-id="i8x6W2I_p7khMaaW22RwTQ"
+                                data-id="HqbfpuG2RWRMlEklgw4DoXY2uJkghPpYSfimchwMdXs" data-score="18">
+
+                                <div class="comment-body">
+
+
+                                    <div class="content-container">
+                                        <div class="content">
+
+                                            <div class="comment-text" dir="ltr">
+                                                <p>WELL 1 FACEBOOK WHORE takes 30 pictures of themselves﻿ on
+                                                    their undies PER SECOND. </p>
+
+                                            </div>
+
+                                            <p class="metadata">
+                                                <span class="author ">
+                                                    <a href="/user/eurovisionairtv"
+                                                        class="yt-uix-sessionlink yt-user-name "
+                                                        data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D"
+                                                        dir="ltr">eurovisionairtv</a>
+                                                </span>
+                                                <span class="time" dir="ltr">
+                                                    <a dir="ltr"
+                                                        href="http://www.youtube.com/comment?lc=HqbfpuG2RWRMlEklgw4DoXY2uJkghPpYSfimchwMdXs">
+                                                        2 hours ago
+                                                    </a>
+                                                </span>
+                                                <span dir="ltr" class="comments-rating-positive" title="20 up, 2 down">
+                                                    18
+                                                    <img class="comments-rating-thumbs-up"
+                                                        src="/yts/img/pixel-vfl3z5WfW.gif">
+                                                </span>
+                                            </p>
+
+                                        </div>
+
+
+
+                                        <div class="comment-actions">
+                                            <span class="yt-uix-button-group"><span><button type="button"
+                                                        class="start comment-action-vote-up comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                                        onclick=";return false;" title="Vote Up" data-action="vote-up"
+                                                        data-tooltip-show-delay="300" role="button"><span
+                                                            class="yt-uix-button-icon-wrapper"><img
+                                                                class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-up"
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Up"><span
+                                                                class="yt-uix-button-valign"></span></span></button>
+                                                    <div class="watch7-hovercard yt-uix-clickcard-content">
+                                                        <h3 class="watch7-hovercard-header">Sign in to YouTube
+                                                        </h3>
+                                                        <div class="watch7-hovercard-message">
+                                                            Sign in with your YouTube Account (YouTube, Yippie+,
+                                                            Gmail, Orkut, Picasa, or Chrome) to rate <span
+                                                                class="yt-user-name " dir="ltr">eurovisionairtv</span>'s
+                                                            comment.
+
+                                                        </div>
+                                                        <ul class="watch7-hovercard-icon-strip clearfix">
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-youtube-icon">
+                                                                </div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gplus-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gmail-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-picasa-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-chrome-icon"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="watch7-hovercard-account-line">
+
+
+                                                            <button
+                                                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                                                type="button"
+                                                                class=" yt-uix-button yt-uix-button-primary"
+                                                                onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                role="button"><span class="yt-uix-button-content">Sign
+                                                                    in
+                                                                </span></button> <span
+                                                                class="watch7-hovercard-or-separator">or</span>
+                                                            <a href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit"
+                                                                class="watch7-hovercard-sign-in"=>Create an
+                                                                account</a>
+
+                                                        </div>
+                                                    </div>
+                                                </span><span><button type="button"
+                                                        class="start comment-action-vote-down comment-action yt-uix-button yt-uix-button-default yt-uix-tooltip yt-uix-button-empty"
+                                                        onclick=";return false;" title="Vote Down"
+                                                        data-action="vote-down" data-tooltip-show-delay="300"
+                                                        role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                                                class="yt-uix-button-icon yt-uix-button-icon-watch-comment-vote-down"
+                                                                src="/yts/img/pixel-vfl3z5WfW.gif" alt="Vote Down"><span
+                                                                class="yt-uix-button-valign"></span></span></button>
+                                                    <div class="watch7-hovercard yt-uix-clickcard-content">
+                                                        <h3 class="watch7-hovercard-header">Sign in to YouTube
+                                                        </h3>
+                                                        <div class="watch7-hovercard-message">
+                                                            Sign in with your YouTube Account (YouTube, Yippie+,
+                                                            Gmail, Orkut, Picasa, or Chrome) to rate <span
+                                                                class="yt-user-name " dir="ltr">eurovisionairtv</span>'s
+                                                            comment.
+
+                                                        </div>
+                                                        <ul class="watch7-hovercard-icon-strip clearfix">
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-youtube-icon">
+                                                                </div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gplus-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-gmail-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-picasa-icon"></div>
+                                                            </li>
+                                                            <li class="watch7-hovercard-icon">
+                                                                <div class="watch7-hovercard-chrome-icon"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="watch7-hovercard-account-line">
+
+
+                                                            <button
+                                                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}"
+                                                                type="button"
+                                                                class=" yt-uix-button yt-uix-button-primary"
+                                                                onclick=";window.location.href=this.getAttribute('href');return false;"
+                                                                role="button"><span class="yt-uix-button-content">Sign
+                                                                    in
+                                                                </span></button> <span
+                                                                class="watch7-hovercard-or-separator">or</span>
+                                                            <a href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit"
+                                                                class="watch7-hovercard-sign-in"=>Create an
+                                                                account</a>
+
+                                                        </div>
+                                                    </div>
+                                                </span></span><span class="yt-uix-button-group"><button type="button"
+                                                    class="start comment-action yt-uix-button yt-uix-button-default"
+                                                    onclick=";return false;" data-action="reply" role="button"><span
+                                                        class="yt-uix-button-content">Reply
+                                                    </span></button><button type="button"
+                                                    class="flip end yt-uix-button yt-uix-button-default yt-uix-button-empty"
+                                                    onclick=";return false;" data-button-has-sibling-menu="true"
+                                                    role="button" aria-pressed="false" aria-expanded="false"
+                                                    aria-haspopup="true" aria-activedescendant=""><img
+                                                        class="yt-uix-button-arrow" src="/yts/img/pixel-vfl3z5WfW.gif"
+                                                        alt="">
+                                                    <div class=" yt-uix-button-menu yt-uix-button-menu-default"
+                                                        style="display: none;">
+                                                        <ul>
+                                                            <li class="comment-action-remove comment-action"
+                                                                data-action="remove"><span
+                                                                    class="yt-uix-button-menu-item">Remove</span>
+                                                            </li>
+                                                            <li class="comment-action" data-action="flag"><span
+                                                                    class="yt-uix-button-menu-item">Flag for
+                                                                    spam</span></li>
+                                                            <li class="comment-action-block comment-action"
+                                                                data-action="block"><span
+                                                                    class="yt-uix-button-menu-item">Block
+                                                                    User</span></li>
+                                                            <li class="comment-action-unblock comment-action"
+                                                                data-action="unblock"><span
+                                                                    class="yt-uix-button-menu-item">Unblock
+                                                                    User</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </button></span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div> #}
+
+                    <div class="comments-section"
+                        onmouseover="if (yt.www && yt.www.watch && yt.www.watch.livecomments) yt.www.watch.livecomments.handleCommentMouseEvent(this, event);"
+                        onmouseout="if (yt.www && yt.www.watch && yt.www.watch.livecomments) yt.www.watch.livecomments.handleCommentMouseEvent(this, event);">
+                        <h4>
+                            <strong>All Comments</strong> ({{ commentscount }})
+
+                            <a class="comments-section-see-all" href="/all_comments?v=4e_kz79tjb8">
+                                see all
+                            </a>
+                        </h4>
+
+
+                        {% if not _LoggedIn %}
+                        <div class="comments-post-container clearfix">
+                            <div class="comments-post-alert">
+                                <a href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}">Sign
+                                    In</a> or <a
+                                    href="/signup?next=%2Fwatch%3Fv%3D4e_kz79tjb8%26feature%3Dg-logo-xit">Sign
+                                    Up</a><span class="comments-post-form-rollover-text"> now to post a
+                                    comment!</span>
+
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="comments-post-container clearfix">
+                            <form class="comments-post" method="post"
+                                action="/comment_servlet?add_comment=1">
+                                <div class="yt-alert yt-alert-default yt-alert-error hid comments-post-message">
+                                    <div class="yt-alert-icon">
+                                        <img src="/yts/img/pixel-vfl3z5WfW.gif"
+                                            class="icon master-sprite" alt="Alert icon">
+                                    </div>
+                                    <div class="yt-alert-buttons"></div>
+                                    <div class="yt-alert-content" role="alert"></div>
+                                </div>
+
+                                <input type="hidden" name="video_id" value="{{ video.vid }}">
+
+
+                                <input type="hidden" name="form_id" value="">
+                                <input type="hidden" name="source" value="w">
+                                <input type="hidden" value="" name="reply_parent_id">
+
+                                <a href="/channel/{{ __session_user.uuid }}"
+                                    class="yt-user-photo comments-post-profile"><span
+                                        class="video-thumb ux-thumb yt-thumb-square-46 "><span
+                                            class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                    src="/ytd/pfp/{{ __session_user.pfp }}"
+                                                    alt="{{ __session_user.username }}" width="46"><span
+                                                    class="vertical-align"></span></span></span></span></a>
+                                <div class="comments-textarea-container"
+                                    onclick="yt.www.comments.initForm(this, true, false);"><img
+                                        src="/yts/img/pixel-vfl3z5WfW.gif" alt=""
+                                        class="comments-textarea-tip"><label class="comments-textarea-label"
+                                        data-upsell="comment">Respond to this video...</label>
+                                    <div class="yt-uix-form-input-fluid yt-grid-fluid ">
+                                        <textarea id="" class="yt-uix-form-textarea comments-textarea"
+                                            onfocus="yt.www.comments.initForm(this, false, false);"
+                                            data-upsell="comment" name="comment"></textarea>
+
+                                    </div>
+                                </div>
+                                <p class="comments-remaining">
+                                    <span class="comments-remaining-count" data-max-count="500"></span> characters
+                                    remaining
+                                </p>
+                                <p class="comments-threshold-countdown hid">
+                                    <span class="comments-threshold-count"></span> seconds remaining before you can post
+                                </p>
+                                <p class="comments-post-buttons">
+                                    <span class="comments-post-video-response-link"><a
+                                            href="/video_response_upload?v={{ video.vid }}">Create a
+                                            video response</a>&nbsp;or&nbsp;</span><button type="submit"
+                                        class="comments-post yt-uix-button yt-uix-button-default"
+                                        onclick=";return true;" role="button"><span class="yt-uix-button-content">Post
+                                        </span></button>
+                                </p>
+                            </form>
+
+                        </div>
+                        {% endif %}
+
+
+                        <div id="live-comments-setting-scroll" class="live-comments-setting hid">
+                            <span id="live-comments-count"></span>
+                            <a onclick="yt.www.watch.livecomments.setScroll(true); return false;">Update
+                                automatically</a>
+                        </div>
+                        <div id="live-comments-setting-no-scroll" class="live-comments-setting hid">
+                            <a onclick="yt.www.watch.livecomments.setScroll(false); return false;">Disable
+                                automatic updates</a>
+                        </div>
+
+                        <ul class="comment-list" id="live_comments">
+                            {% for comment in comments %}
+                                {% include 'inc/watch/comment.twig' with {comment} %}
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+
+
+
+
+                    <div class="comments-section">
+                        <div class="comments-pagination" data-ajax-enabled="true">
+
+
+                            <div class="yt-uix-pager" role="navigation">
+
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=1"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-button-toggled yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="1"
+                                    aria-label="Go to page 1"><span class="yt-uix-button-content">1</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=2"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="2"
+                                    aria-label="Go to page 2"><span class="yt-uix-button-content">2</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=3"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="3"
+                                    aria-label="Go to page 3"><span class="yt-uix-button-content">3</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=4"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="4"
+                                    aria-label="Go to page 4"><span class="yt-uix-button-content">4</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=5"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="5"
+                                    aria-label="Go to page 5"><span class="yt-uix-button-content">5</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=6"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="6"
+                                    aria-label="Go to page 6"><span class="yt-uix-button-content">6</span></a>
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=7"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="7"
+                                    aria-label="Go to page 7"><span class="yt-uix-button-content">7</span></a>
+
+
+                                <a href="/all_comments?v=4e_kz79tjb8&page=2"
+                                    class="yt-uix-button  yt-uix-pager-button yt-uix-sessionlink yt-uix-button-default"
+                                    data-sessionlink="ei=CJbg3omAz7MCFaYORAodmjYQ1A%3D%3D" data-page="2"><span
+                                        class="yt-uix-button-content">Next »</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <ul>
+                        <li class="hid" id="parent-comment-loading"> Loading comment...</li>
+                    </ul>
+
+                    <div id="comments-loading" class="hid">Loading...</div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div id="watch-sidebar">
+
+
+            <div id="watch-channel-brand-div" style="display: none;" class="watch-sidebar-section">
+                <div id="ad300x250" class="alignR"></div>
+                <div id="google_companion_ad_div" class="alignR"></div>
+                <div style="padding-top: 3px; display:none;">
+                    Advertisement
+                </div>
+            </div>
+
+            <div class="watch-sidebar-section">
+                <ul id="watch-related" class="video-list watch-sidebar-body">
+                    {% for video in recommended_videos %}
+                    {% include 'inc/video_items/video_list_item.twig' with video %}
+                    {% endfor %}
+                </ul>
+                <ul id="watch-more-related" class="video-list hid">
+                    <li id="watch-more-related-loading">
+                        Loading more suggestions...
+                    </li>
+                </ul>
+                <div class="watch-sidebar-foot">
+                    <p class="content">
+                        <button type="button" id="watch-more-related-button" onclick=";return false;"
+                            class=" yt-uix-button yt-uix-button-default"
+                            data-button-action="yt.www.watch.watch5.handleLoadMoreRelated" role="button"><span
+                                class="yt-uix-button-content">Load more suggestions </span></button>
+                    </p>
+                </div>
+            </div>
+
+            <span class="yt-vertical-rule-main"></span>
+            <span class="yt-vertical-rule-corner-top"></span>
+            <span class="yt-vertical-rule-corner-bottom"></span>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div style="visibility: hidden; height: 0px; padding: 0px; overflow: hidden;">
+        <img src="//www.youtube-nocookie.com/gen_204?attributionpartner=NextNewNetworks" border="0" width="1"
+            height="1">
+
+    </div>
+
+</div>
+<!-- end watch-main-container -->
+</div>
+
+</div>
+{% endblock %}
+
+{% block extra %}
+<script>
+    yt.setConfig({
+        'CONVERSION_CONFIG_DICT': { "focEnabled": true, "vid": "{{ video.vid }}", "baseUrl": "http:\/\/googleads.g.doubleclick.net\/pagead\/viewthroughconversion\/962985656\/", "rmktEnabled": true, "rmktPingThreshold": 0, "uid": "6nSFpj9HTCZ5t-N3Rm3-HA" },
+        'VIDEO_ID': "{{ video.vid }}"
+    });
+    yt.setAjaxToken('watch_actions_ajax', "");
+
+    if (window['gYouTubePlayerReady']) {
+        yt.registerGlobal('gYouTubePlayerReady');
+    }
+</script>
+
+<script>
+    yt = yt || {};
+    yt.playerConfig = {
+        "assets": {
+            "css_actions": "\/yts\/cssbin\/www-player-actions-vflJeCcsD.css",
+            "html": "\/html5_player_template",
+            "css": "\/yts\/cssbin\/www-player-vfltPqzFT.css",
+            "js": "\/yts\/jsbin\/html5player-vflkDTt-q.js"
+        },
+        "url": "\/yts\/swfbin\/watch_as3-vfl1ubMZd.swf",
+        "min_version": "8.0.0",
+        "args": {
+            "is_html5_mobile_device": false,
+            "account_playback_token": "",
+            "ptk": "NextNewNetworks",
+            "focEnabled": "1",
+            "vid": "{{ video.vid }}",
+            "ad_device": 1,
+            "iv_close_button": 0,
+            "mpvid": "AATPPVZCAFHTFB_7",
+            "rmktEnabled": "1",
+            "autohide": "2",
+            "csi_page_type": "watch5ad",
+            "keywords": "how much water,could,how,much,water,put sun out,fusion,MinutePhysics,minute physics,minute,physics,gun,on,moon,bullet,speed,intergalactic,fast,what,if,what if,orbit",
+            "cr": "US",
+            "host_language": "en",
+            "uid": "6nSFpj9HTCZ5t-N3Rm3-HA",
+            "iv3_module": "http:\/\/s.ytimg.com\/yts\/swfbin\/iv3_module-vflyYvsLV.swf",
+            "ad_flags": 0,
+            "fmt_list": "45\/1280x720\/99\/0\/0,22\/1280x720\/9\/0\/115,44\/854x480\/99\/0\/0,35\/854x480\/9\/0\/115,43\/640x360\/99\/0\/0,34\/640x360\/9\/0\/115,18\/640x360\/9\/0\/115,5\/320x240\/7\/0\/0,36\/320x240\/99\/0\/0,17\/176x144\/99\/0\/0",
+            "title": "Guns in Space",
+            //"baseUrl": "http:\/\/googleads.g.doubleclick.net\/pagead\/viewthroughconversion\/962985656\/",
+            "loeid": "917000,919110,900304,907519,916613",
+            "invideo": true,
+            "afv_ad_tag": "http:\/\/googleads.g.doubleclick.net\/pagead\/ads?description_url=http%3A%2F%2Fwww.youtube.com%2Fvideo%2F{{ video.vid }}\u0026ht_id=462255\u0026video_cpm=6000000\u0026ad_type=skippablevideo\u0026loeid=917000%2C919110%2C900304%2C907519%2C916613\u0026ytdevice=1\u0026host=ca-host-pub-5126202577617241\u0026client=ca-pub-6219811747049371\u0026hl=en\u0026max_ad_duration=15000\u0026channel=afv_instream%2CVertical_3%2CVertical_174%2CVertical_435%2Cafv_instream_us%2Cafv_user_vsauce%2Cafv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA%2Cyt_mpvid_AATPPVZCAFHTFB_7%2Cyt_cid_337%2Cytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451%2Cytdevice_1%2Cytps_default%2Cytel_detailpage",
+            "tk": "_cU3HA7kEl-eiCjfbJOb2Sb-fMqad10V9lsIbhXVCejrSXqHjmNS6A==",
+            "sffb": true,
+            "pyv_in_related_cafe_experiment_id": 56702379,
+            //"ad_channel_code_instream": "afv_instream,Vertical_3,Vertical_174,Vertical_435,afv_instream_us,afv_user_vsauce,afv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA,yt_mpvid_AATPPVZCAFHTFB_7,yt_cid_337,ytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451,ytdevice_1,ytps_default,ytel_detailpage",
+            "sdetail": "f:relmfu,rv:DAcjV60RnRw",
+            "url_encoded_fmt_stream_map": "{{ url_encoded_fmt_stream_map }}",
+            "cafe_experiment_id": 56702377,
+            "sourceid": "yw",
+            "timestamp": 1353762254,
+            "storyboard_spec": "https:\/\/web.archive.org\/web\/20120902104319\/http:\/\/i4.ytimg.com\/sb\/SmnkYyHQqNs\/storyboard3_L$L\/$N.jpg|48#27#100#10#10#0#default#R_mD7kHhQkMHCwe6tzZJiUwS_Hs|80#45#71#10#10#2000#M$M#jh-_l8YcWzsSQy1jpIsZ0T_3skI|160#90#71#5#5#2000#M$M#aG58sIQLDO508fnxGrnzgU0mQV8|320#180#71#3#3#2000#M$M#w3O0GWC8eamO0si6qV_VDSUKoX0",
+            "iv_load_policy": 1,
+            "ad_host": "ca-host-pub-5126202577617241",
+            "adsense_video_doc_id": "yt_{{ video.vid }}",
+            //"ad_eurl": "http:\/\/www.youtube.com\/video\/{{ video.vid }}",
+            "showpopout": 1,
+            "mpu": true,
+            "hl": "en_US",
+            "iv_module": "http:\/\/s.ytimg.com\/yts\/swfbin\/iv_module-vflp12OMC.swf",
+            "iv_logging_level": 4,
+            "st_module": "http:\/\/s.ytimg.com\/yts\/swfbin\/st_module-vflEFUE3P.swf",
+            "no_get_video_log": "1",
+            "endscreen_module": "http:\/\/s.ytimg.com\/yts\/swfbin\/endscreen-vfl3QSo6a.swf",
+            "iv_read_url": "http:\/\/www.youtube.com\/annotations_iv\/read2?sparams=expire%2Cvideo_id\u0026expire=1353805800\u0026key=a1\u0026signature=A2277E3FB8821323B8C873E75FD2A88AC651B912.17978E60006A340B7FAA2E21F8C3608C69B46F70\u0026video_id={{ video.vid }}\u0026feat=CS",
+            "cid": 337,
+            "referrer": "http:\/\/www.youtube.com\/watch?v=DAcjV60RnRw\u0026feature=g-logo-xit",
+            "video_wall": 1,
+            "iv_queue_log_level": 0,
+            "afv_instream_max": 15000,
+            //"ad_logging_flag": 1,
+            "t": "vjVQa1PpcFNr2dylbJEwOtNqsKMW8KN3N4UsF55q220=",
+            //"afv_ad_tag_restricted_to_instream": "http:\/\/googleads.g.doubleclick.net\/pagead\/ads?description_url=http%3A%2F%2Fwww.youtube.com%2Fvideo%2F{{ video.vid }}\u0026ht_id=462255\u0026video_cpm=6000000\u0026ad_type=skippablevideo\u0026loeid=917000%2C919110%2C900304%2C907519%2C916613\u0026ytdevice=1\u0026host=ca-host-pub-5126202577617241\u0026client=ca-pub-6219811747049371\u0026hl=en\u0026max_ad_duration=15000\u0026channel=afv_instream%2CVertical_3%2CVertical_174%2CVertical_435%2Cafv_instream_us%2Cafv_user_vsauce%2Cafv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA%2Cyt_mpvid_AATPPVZCAFHTFB_7%2Cyt_cid_337%2Cytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451%2Cytdevice_1%2Cytps_default%2Cytel_detailpage", "fexp": "917000,919110,900304,907519,916613,922401,920704,912806,927201,925706,922403,913546,913556,916805,920201,901451",
+            "no_afv_instream": "1",
+            "shortform": true,
+            "dclk": true,
+            "inactive_skippable_threshold": 600000,
+            "allow_embed": 1,
+            //"ad_host_tier": "462255",
+            "rvs": "{{ endscreen }}",
+            "vq": "auto",
+            "yt_pt": "AD1B29mmqJNP1vkSLHy2wEMbdSdZA-jWV454ly4_FrPX2WI7n88_mDGfdEZ7BAogy1G4wTOXb9NzXFC8QPTwvzJZglTbBclOmmxDbw_RyNki1x9UrH_uVu-VFAs-KKyZktHrDdsvSOjaoW4tk2Ts",
+            "excluded_ads": "2=2_2_1,1_2_1",
+            "rmktPingThreshold": 0,
+            //"ad3_module": "http:\/\/s.ytimg.com\/yts\/swfbin\/ad3-vfl_NjMrd.swf",
+            "gut_tag": "\/4061\/ytpwatch\/main_337",
+            "ptchn": "Vsauce",
+            "length_seconds": 329,
+            "feature": "relmfu",
+            "enablejsapi": 1,
+            "plid": "AATPPVZBjq-uky_c",
+            "tmi": "1",
+            "afv": true,
+            //"ad_tag": "http:\/\/ad-g.doubleclick.net\/N4061\/pfadx\/com.ytpwatch.scitech\/main_337;sz=WIDTHxHEIGHT;kvid={{ video.vid }};kpu=Vsauce;kpid=337;u={{ video.vid }}|337;mpvid=AATPPVZCAFHTFB_7;plat=pc;kpeid=6nSFpj9HTCZ5t-N3Rm3-HA;afct=site_content;afv=1;dc_dedup=1;k5=3_174_435;kclt=1;kcr=us;kga=-1;kgg=-1;klg=en;kmsrd=1;ko=p;kr=F;kvz=203;shortform=1;tves=0;ytcat=28;ytdevice=1;ytexp=917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451;ytps=default;ytvt=w;!c=337;k2=3;k2=174;k2=435;kvlg=en;",
+            //"ad_video_pub_id": "ca-pub-6219811747049371",
+            //"ad_slots": "0",
+            "enablecsi": "1",
+            "watermark": ",http:\/\/s.ytimg.com\/yts\/img\/watermark\/youtube_watermark-vflHX6b6E.png,http:\/\/s.ytimg.com\/yts\/img\/watermark\/youtube_hd_watermark-vflAzLcD6.png",
+            "oid": "7qz1uhRHGI-YCs6OQoCiEw",
+            "afv_video_min_cpm": 6000000,
+            "abd": "1",
+            //"afv_inslate_ad_tag": "http:\/\/googleads.g.doubleclick.net\/pagead\/ads?description_url=http%3A%2F%2Fwww.youtube.com%2Fvideo%2F{{ video.vid }}\u0026ht_id=462255\u0026ad_type=userchoice\u0026loeid=917000%2C919110%2C900304%2C907519%2C916613\u0026ytdevice=1\u0026host=ca-host-pub-5126202577617241\u0026client=ca-pub-6219811747049371\u0026hl=en\u0026max_ad_duration=15000",
+            //"ad_channel_code_overlay": "invideo_overlay_480x70_cat28,afv_overlay,Vertical_3,Vertical_174,Vertical_435,afv_user_vsauce,afv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA,yt_mpvid_AATPPVZCAFHTFB_7,yt_cid_337,ytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451,ytdevice_1,ytps_default,ytel_detailpage",
+            "as_launched_in_country": "1",
+            "video_id": "{{ video.vid }}",
+            "sw": "0.1",
+            "sk": "nvV70EBSFQOnwbmYRKQY8Jf-dAQSMqV8C",
+            "pltype": "content",
+            "prefetch_ad_live_stream": true,
+            "iv_allow_external_links": "1",
+        },
+        "url_v9as2": "http:\/\/s.ytimg.com\/yts\/swfbin\/cps-vflBXPVjr.swf",
+        "params": {
+            "allowscriptaccess": "always",
+            "allowfullscreen": "true",
+            "bgcolor": "#000000"
+        },
+        "attrs": {
+            "id": "movie_player"
+        },
+        "url_v8": "http:\/\/s.ytimg.com\/yts\/swfbin\/cps-vflBXPVjr.swf",
+        "html5": false
+    };
+    yt.setConfig({
+        'EMBED_HTML_TEMPLATE': "\u003ciframe width=\"__width__\" height=\"__height__\" src=\"__url__\" frameborder=\"0\" allowfullscreen\u003e\u003c\/iframe\u003e",
+        'EMBED_HTML_URL': "http:\/\/www.youtube.com\/embed\/__videoid__"
+    });
+    yt.setMsg('FLASH_UPGRADE', "\u003cdiv class=\"yt-alert yt-alert-default yt-alert-error  yt-alert-player\"\u003e  \u003cdiv class=\"yt-alert-icon\"\u003e\n    \u003cimg s\u0072c=\"\/\/s.ytimg.com\/yts\/img\/pixel-vfl3z5WfW.gif\" class=\"icon master-sprite\" alt=\"Alert icon\"\u003e\n  \u003c\/div\u003e\n\u003cdiv class=\"yt-alert-buttons\"\u003e\u003c\/div\u003e\u003cdiv class=\"yt-alert-content\" role=\"alert\"\u003e    \u003cspan class=\"yt-alert-vertical-trick\"\u003e\u003c\/span\u003e\n    \u003cdiv class=\"yt-alert-message\"\u003e\n            You need to upgrade your Adobe Flash Player to watch this video. \u003cbr\u003e \u003ca href=\"http:\/\/get.adobe.com\/flashplayer\/\"\u003eDownload it from Adobe.\u003c\/a\u003e\n    \u003c\/div\u003e\n\u003c\/div\u003e\u003c\/div\u003e");
+    yt.setMsg('PLAYER_FALLBACK', "\u003cdiv class=\"yt-alert yt-alert-default yt-alert-error  yt-alert-player\"\u003e  \u003cdiv class=\"yt-alert-icon\"\u003e\n    \u003cimg s\u0072c=\"\/\/s.ytimg.com\/yts\/img\/pixel-vfl3z5WfW.gif\" class=\"icon master-sprite\" alt=\"Alert icon\"\u003e\n  \u003c\/div\u003e\n\u003cdiv class=\"yt-alert-buttons\"\u003e\u003c\/div\u003e\u003cdiv class=\"yt-alert-content\" role=\"alert\"\u003e    \u003cspan class=\"yt-alert-vertical-trick\"\u003e\u003c\/span\u003e\n    \u003cdiv class=\"yt-alert-message\"\u003e\n            The Adobe Flash Player or an HTML5 supported browser is required for video playback. \u003cbr\u003e \u003ca href=\"http:\/\/get.adobe.com\/flashplayer\/\"\u003eGet the latest Flash Player\u003c\/a\u003e \u003cbr\u003e \u003ca href=\"\/html5\"\u003eLearn more about upgrading to an HTML5 browser\u003c\/a\u003e\n    \u003c\/div\u003e\n\u003c\/div\u003e\u003c\/div\u003e");
+    yt.setMsg('QUICKTIME_FALLBACK', "\u003cdiv class=\"yt-alert yt-alert-default yt-alert-error  yt-alert-player\"\u003e  \u003cdiv class=\"yt-alert-icon\"\u003e\n    \u003cimg s\u0072c=\"\/\/s.ytimg.com\/yts\/img\/pixel-vfl3z5WfW.gif\" class=\"icon master-sprite\" alt=\"Alert icon\"\u003e\n  \u003c\/div\u003e\n\u003cdiv class=\"yt-alert-buttons\"\u003e\u003c\/div\u003e\u003cdiv class=\"yt-alert-content\" role=\"alert\"\u003e    \u003cspan class=\"yt-alert-vertical-trick\"\u003e\u003c\/span\u003e\n    \u003cdiv class=\"yt-alert-message\"\u003e\n            The Adobe Flash Player or QuickTime is required for video playback. \u003cbr\u003e \u003ca href=\"http:\/\/get.adobe.com\/flashplayer\/\"\u003eGet the latest Flash Player\u003c\/a\u003e \u003cbr\u003e \u003ca href=\"http:\/\/www.apple.com\/quicktime\/download\/\"\u003eGet the latest version of QuickTime\u003c\/a\u003e\n    \u003c\/div\u003e\n\u003c\/div\u003e\u003c\/div\u003e");
+
+
+    (function () {
+        var forceUpdate = yt.www.watch.player.updateConfig(yt.playerConfig);
+        var youTubePlayer = yt.player.update('watch-player', yt.playerConfig,
+            forceUpdate, gYouTubePlayerReady);
+        yt.setConfig({ 'PLAYER_REFERENCE': youTubePlayer });
+    })();
+</script>
+
+<script>
+    yt.setConfig({
+        'SUBSCRIBE_AXC': "",
+
+        'IS_OWNER_VIEWING': null,
+        'IS_WIDESCREEN': true,
+        'PREFER_LOW_QUALITY': false,
+        'WIDE_PLAYER_STYLES': ["watch-wide-mode"],
+        'ALLOW_EMBED': true,
+        'ALLOW_RATINGS': true,
+
+        'LIST_AUTO_PLAY_ON': false,
+        'LIST_AUTO_PLAY_VALUE': 1,
+        'SHUFFLE_VALUE': 0,
+        'SHUFFLE_ENABLED': false,
+        'YPC_CAN_RATE_VIDEO': true,
+        'YPC_SHOW_VPPA_CONFIRM_RATING': false,
+
+
+
+
+
+
+
+        'PLAYBACK_ID': "AATPPVZBjq-uky_c",
+        'PLAY_ALL_MAX': 480
+    });
+
+    yt.setMsg({
+        'LOADING': "Loading...",
+        'WATCH_ERROR_MESSAGE': "This feature is not available right now. Please try again later."
+    });
+
+
+
+    yt.setMsg({
+        'UNBLOCK_USER': "Are you sure you want to unblock this user?",
+        'BLOCK_USER': "Are you sure you want to block this user?"
+    });
+    yt.setConfig('BLOCK_USER_AJAX_XSRF', '');
+
+
+
+    yt.setConfig({
+        {% if not _LoggedIn %} 'COMMENTS_SIGNIN_URL': "\/ServiceLogin", {% endif %}
+        'COMMENTS_THRESHHOLD': -5,
+        'COMMENTS_PAGE_SIZE': 10,
+        'COMMENTS_COUNT': 11135,
+        'COMMENTS_YPC_CAN_POST_OR_REACT_TO_COMMENT': true,
+        'COMMENT_SOURCE': "w",
+        'COMMENT_OPEN_REPLY_BOX': false
+    });
+
+    yt.setAjaxToken('link_ajax', "");
+    yt.setAjaxToken('comment_servlet', "");
+    yt.setAjaxToken('comment_voting', "");
+
+    yt.setMsg({
+        'COMMENT_OK': "OK",
+        'COMMENT_BLOCKED': "You have been blocked by the owner of this video.",
+        'COMMENT_CAPTCHAFAIL': "The response to the letters on the image was not correct, please try again.",
+        'COMMENT_PENDING': "Comment Pending Approval!",
+        'COMMENT_ERROR_EMAIL': "Error, account unverified (see email)",
+        'COMMENT_ERROR': "Error, try again",
+        'COMMENT_OWNER_LINKING': "Comments can't contain links, please put the link in your video description and refer to it in the comment."
+    });
+
+    yt.pubsub.subscribe('init', yt.www.comments.init);
+
+
+
+
+    yt.setConfig('ENABLE_AUTO_LARGE', true);
+    yt.www.watch.watch5.updatePlayerSize();
+    yt.pubsub.subscribe('init', function () {
+        yt.events.listen(window, 'resize',
+            yt.www.watch.watch5.handleResize);
+    });
+
+    yt.pubsub.subscribe('init', yt.www.watch.activity.init);
+    yt.pubsub.subscribe('init', yt.www.watch.player.init);
+    yt.pubsub.subscribe('init', yt.www.watch.actions.init);
+    yt.pubsub.subscribe('init', yt.www.watch.shortcuts.init);
+
+
+    yt.pubsub.subscribe('init', function () {
+        var description = _gel('watch-description');
+        if (!_hasclass(description, 'yt-uix-expander-collapsed')) {
+            yt.www.watch.watch5.handleToggleDescription(description);
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+{#
+
+<script>
+    yt.setConfig('PYV_REQUEST', true);
+    yt.setConfig('PYV_AFS', false);
+</script>
+<script>
+    yt.www.ads.pyv.loadPyvIframe("\n  \u003cscript\u003e\n    var google_max_num_ads = '1';\n    var google_ad_output = 'js';\n    var google_ad_type = 'text';\n    var google_only_pyv_ads = true;\n    var google_video_doc_id = \"yt_{{ video.vid }}\";\n      var google_ad_request_done = parent.yt.www.ads.pyv.pyvWatchAfcWithPpvCallback;\n    var google_ad_client = 'ca-pub-6219811747049371';\n    var google_ad_block = '3';\n      var google_ad_host = \"ca-host-pub-5126202577617241\";\n      var google_ad_host_tier_id = \"462255\";\n      var google_page_url = \"http:\\\/\\\/www.youtube.com\\\/video\\\/{{ video.vid }}\";\n      var google_ad_channel = \"PyvWatchInRelated+PyvYTWatch+PyvWatchNoAdX+pw+non_lpw+afv_user_vsauce+afv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA+yt_mpvid_AATPPVZCAFHTFB_7+yt_cid_337+ytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451+ytdevice_1\";\n      var google_language = \"en\";\n      var google_eids = ['56702379'];\n      var google_yt_pt = \"AD1B29mmqJNP1vkSLHy2wEMbdSdZA-jWV454ly4_FrPX2WI7n88_mDGfdEZ7BAogy1G4wTOXb9NzXFC8QPTwvzJZglTbBclOmmxDbw_RyNki1x9UrH_uVu-VFAs-KKyZktHrDdsvSOjaoW4tk2Ts\";\n  \u003c\/script\u003e\n\n  \u003cscript s\u0072c=\"\/\/pagead2.googlesyndication.com\/pagead\/show_ads.js\"\u003e\u003c\/script\u003e\n");
+</script>
+
+<script>
+    window['google_language'] = "en";
+
+
+    window['google_ad_type'] = 'image';
+    window['google_ad_width'] = '300';
+    window['google_ad_block'] = '2';
+    window['google_ad_client'] = "ca-pub-6219811747049371";
+    window['google_ad_host'] = "ca-host-pub-5126202577617241";
+    window['google_ad_host_tier_id'] = "462255";
+    window['google_ad_channel'] = "1961111246+0618682152+0854550288+afv_user_vsauce+afv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA+yt_mpvid_AATPPVZCAFHTFB_7+yt_cid_337+ytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451+ytdevice_1+Vertical_3+Vertical_174+Vertical_435+ytps_default+ytel_detailpage";
+    window['google_video_doc_id'] = "yt_{{ video.vid }}";
+    window['google_color_border'] = 'FFFFFF';
+    window['google_color_bg'] = 'FFFFFF';
+    window['google_color_link'] = '0033CC';
+    window['google_color_text'] = '444444';
+    window['google_color_url'] = '0033CC';
+    window['google_language'] = "en";
+    window['google_alternate_ad_url'] = "http:\/\/www.youtube.com\/ad_frame?id=watch-channel-brand-div";
+    window['google_yt_pt'] = "AD1B29mmqJNP1vkSLHy2wEMbdSdZA-jWV454ly4_FrPX2WI7n88_mDGfdEZ7BAogy1G4wTOXb9NzXFC8QPTwvzJZglTbBclOmmxDbw_RyNki1x9UrH_uVu-VFAs-KKyZktHrDdsvSOjaoW4tk2Ts";
+    window['google_eids'] = ['56702378'];
+    window['google_page_url'] = "http:\/\/www.youtube.com\/video\/{{ video.vid }}";
+</script>
+
+<script>
+    yt.pubsub.subscribe('init', function () {
+        var scriptEl = document.createElement('script');
+        scriptEl.src = "\/\/pagead2.googlesyndication.com\/pagead\/show_companion_ad.js";
+        var headEl = document.getElementsByTagName('head')[0];
+        headEl.appendChild(scriptEl);
+    });
+</script>
+
+<script>
+    function afcAdCall() {
+        var channels = "1961111246+0618682152+0854550288+afv_user_vsauce+afv_user_id_6nSFpj9HTCZ5t-N3Rm3-HA+yt_mpvid_AATPPVZCAFHTFB_7+yt_cid_337+ytexp_917000.919110.900304.907519.916613.922401.920704.912806.927201.925706.922403.913546.913556.916805.920201.901451+ytdevice_1+Vertical_3+Vertical_174+Vertical_435+ytps_default+ytel_detailpage";
+        channels = channels.replace('0854550288', '0854550287');
+        channels = channels.replace('afv_brand_mpu', '0854550287');
+        channels = channels + '+afc_on_page';
+        window['google_ad_format'] = '300x250_as';
+        window['google_ad_height'] = '250';
+        window['google_page_url'] = "http:\/\/www.youtube.com\/video\/{{ video.vid }}";
+        window['google_yt_pt'] = "AD1B29mmqJNP1vkSLHy2wEMbdSdZA-jWV454ly4_FrPX2WI7n88_mDGfdEZ7BAogy1G4wTOXb9NzXFC8QPTwvzJZglTbBclOmmxDbw_RyNki1x9UrH_uVu-VFAs-KKyZktHrDdsvSOjaoW4tk2Ts";
+
+
+        var afcOptions = {
+            'ad_type': 'image',
+            'format': '300x250_as',
+            'ad_block': '2',
+            'ad_client': "ca-pub-6219811747049371",
+            'ad_host': "ca-host-pub-5126202577617241",
+            'ad_host_tier_id': "462255",
+            'ad_channel': channels,
+            'video_doc_id': "yt_{{ video.vid }}",
+            'color_border': 'FFFFFF',
+            'color_bg': 'FFFFFF',
+            'color_link': '0033CC',
+            'color_text': '444444',
+            'color_url': '0033CC',
+            'language': "en",
+            'alternate_ad_url': "http:\/\/www.youtube.com\/ad_frame?id=watch-channel-brand-div"
+        };
+        var afcCallback = function () {
+            if (window.google && google.ads && google.ads.Ad) {
+                yt.www.watch.ads.handleShowAfvCompanionAdDiv(false);
+                var ad = new google.ads.Ad("ca-pub-6219811747049371", 'google_companion_ad_div', afcOptions);
+            } else {
+                yt.setTimeout(afcCallback, 200);
+            }
+        };
+        afcCallback();
+    }
+</script>
+
+<script>
+    yt.pubsub.subscribe('init', function () {
+        var scriptEl = document.createElement('script');
+        scriptEl.src = "\/\/www.google.com\/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22ads%22%2C%22version%22%3A%221%22%2C%22callback%22%3A%22(function()%7B%7D)%22%2C%22packages%22%3A%5B%22content%22%5D%7D%5D%7D";
+        var headEl = document.getElementsByTagName('head')[0];
+        headEl.appendChild(scriptEl);
+    });
+</script>
+
+
+<script src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    yt.www.watch.ads.createGutSlot("\/4061\/ytpwatch\/main_337");
+</script>
+
+
+
+#}
+
+
+
+<script>
+    if (window.yt.timing) { yt.timing.tick("js_page"); }    </script>
+
+<script>
+    yt.setConfig('TIMING_ACTION', "watch5ad");    </script>
+
+
+
+
+
+<script>yt.setConfig('THUMB_DELAY_LOAD_BUFFER', 0);</script>
+
+{% endblock %}

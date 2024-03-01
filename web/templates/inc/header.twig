@@ -1,0 +1,178 @@
+<div id="masthead-container">
+    <!-- begin masthead -->
+    <div id="masthead" class="" dir="ltr">
+        <a id="logo-container" href="/" title="ChenTube home">
+            <img id="logo" src="/yts/img/pixel-vfl3z5WfW.gif" alt="ChenTube home">
+        </a>
+
+
+        <div id="masthead-user-bar-container">
+            <div id="masthead-user-bar">
+                {% if not _LoggedIn %}
+                <div id="masthead-user">
+                    <div id="masthead-user-display"><span id="masthead-user-wrapper"><button
+                                href="/ServiceLogin?continue={{ __SERVER.REQUEST_URI }}" type="button"
+                                id="masthead-user-button"
+                                onclick=";window.location.href=this.getAttribute('href');return false;"
+                                class=" yt-uix-button yt-uix-button-text" role="button"><span
+                                    class="yt-uix-button-content"> <span id="masthead-user-image">
+                                        <span class="clip">
+                                            <span class="clip-center">
+                                                <img src="/ytd/pfp/no_videos.png" alt="">
+                                                <span class="vertical-center"></span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="masthead-user-username">Sign In</span>
+                                </span></button></span></div>
+                </div>
+                {% else %}
+                <div id="masthead-user">
+                    <span id="masthead-gaia-user-expander" class="masthead-user-menu-expander masthead-expander"
+                        onclick="yt.www.masthead.toggleExpandedMasthead()"><span id="masthead-gaia-user-wrapper"
+                            class="yt-rounded" tabindex="0">{{ __session_user.username }}</span></span>
+                    <button type="button" class="sb-button sb-notif-off yt-uix-button" onclick=";return false;"
+                        id="sb-button-notify" role="button"><span class="yt-uix-button-content">0 </span></button>
+                    <button type="button" class="sb-button yt-uix-button" onclick=";return false;" id="sb-button-share"
+                        role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                class="yt-uix-button-icon yt-uix-button-icon-share-plus"
+                                src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                class="yt-valign-trick"></span></span><span class="yt-uix-button-content">
+                        </span></button>
+
+                    <span id="masthead-gaia-photo-expander" class="masthead-user-menu-expander masthead-expander"
+                        onclick="yt.www.masthead.toggleExpandedMasthead()"><span id="masthead-gaia-photo-wrapper"
+                            class="yt-rounded"><span id="masthead-gaia-user-image"><span class="clip"><span
+                                        class="clip-center"><img src="/ytd/pfp/{{ __session_user.pfp }}" alt=""><span
+                                            class="vertical-center"></span></span></span></span><span
+                                class="masthead-expander-arrow"></span></span></span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div id="masthead-search-bar-container">
+            <div id="masthead-search-bar">
+                <div id="masthead-nav"><a href="/videos?feature=mh">Browse</a><span
+                        class="masthead-link-separator">|</span><a id="masthead-upload-link" class=""
+                        data-upsell="upload" href="/my_videos_upload">Upload</a>
+                </div>
+
+
+                <form id="masthead-search" class="search-form consolidated-form" action="/results"
+                    onsubmit="if (_gel('masthead-search-term').value == '') return false;">
+                    <button class="search-btn-compontent search-button yt-uix-button yt-uix-button-default"
+                        onclick="if (_gel('masthead-search-term').value == '') return false; _gel('masthead-search').submit(); return false;;return true;"
+                        type="submit" id="search-btn" dir="ltr" tabindex="2" role="button"><span
+                            class="yt-uix-button-content">Search </span></button>
+                    <div id="masthead-search-terms" class="masthead-search-terms-border" dir="ltr">
+                        <label><input id="masthead-search-term" autocomplete="off" class="search-term"
+                                name="search_query" value="{{ search_query }}" type="text" tabindex="1"
+                                onkeyup="goog.i18n.bidi.setDirAttribute(event,this)" title="Search"></label>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    {% if _LoggedIn %}
+    <div id="masthead-expanded" class="hid">
+        <div id="masthead-expanded-container" class="with-sandbar">
+            <div id="masthead-expanded-menus-container">
+                <span id="masthead-expanded-menu-shade"></span>
+                <div id="masthead-expanded-google-menu">
+                    <span class="masthead-expanded-menu-header">
+                        Yippie account
+                    </span>
+                    <div id="masthead-expanded-menu-google-container">
+                        <img id="masthead-expanded-menu-gaia-photo" alt="" data-src="/ytd/pfp/{{ __session_user.pfp }}">
+                        <div id="masthead-expanded-menu-account-info">
+                            <p>{{ __session_user.username }}</p>
+                            <p id="masthead-expanded-menu-email">{{ __session_user.email }}</p>
+                        </div>
+                        <div id="masthead-expanded-menu-google-column1">
+                            <ul>
+                                <li class="masthead-expanded-menu-item"><a
+                                        href="https://profiles.google.com?authuser=0">Profile</a></li>
+                                <li class="masthead-expanded-menu-item"><a
+                                        href="https://plus.google.com/u/0/stream">Yippie+</a></li>
+                                <li class="masthead-expanded-menu-item"><a
+                                        href="https://plus.google.com/u/0/settings/privacy">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div id="masthead-expanded-menu-google-column2">
+                            <ul>
+                                <li class="masthead-expanded-menu-item">
+                                    <a href="https://plus.google.com/u/0/settings">
+                                        Settings
+                                    </a>
+                                </li>
+                                <li class="masthead-expanded-menu-item">
+                                    <a class="end" href="#" onclick="document.logoutForm.submit(); return false;">
+                                        Sign out
+                                    </a>
+                                </li>
+                                <li class="masthead-expanded-menu-item">
+                                    <a href="#" onclick="yt.www.masthead.accountswitch.toggle(); return false;">
+                                        Switch account
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="masthead-expanded-menu">
+                    <span class="masthead-expanded-menu-header">
+                        ChenTube
+                    </span>
+                    <ul id="masthead-expanded-menu-list">
+                        <li class="masthead-expanded-menu-item">
+                            <a href="/channel/{{ __session_user.uuid }}?feature=mhee">
+                                My channel
+                            </a>
+                        </li>
+                        <li class="masthead-expanded-menu-item">
+                            <a href="/my_videos?feature=mhee">
+                                Video Manager
+                            </a>
+                        </li>
+                        <li class="masthead-expanded-menu-item">
+                            <a href="/my_subscriptions?feature=mhee">Subscriptions</a>
+                        </li>
+                        <li class="masthead-expanded-menu-item">
+                            <a href="/account?feature=mhee">
+                                ChenTube settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div id="masthead-expanded-sandbar">
+                <div id="masthead-expanded-lists-container">
+                    <div id="masthead-expanded-loading-message">Loading...</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div id="alerts">{% if __error is defined %}
+        <div class="yt-alert yt-alert-default yt-alert-error">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif"
+                    class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"></div>
+            <div class="yt-alert-content" role="alert"> <span class="yt-alert-vertical-trick"></span>
+                <div class="yt-alert-message">
+                    {{ __error }}
+                </div>
+            </div>
+        </div>
+        {% endif %}</div>
+
+    <!-- end masthead -->
+</div>

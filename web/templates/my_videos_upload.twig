@@ -1,0 +1,165 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+<link rel="stylesheet" href="/yts/cssbin/www-upload.css">
+{% endblock %}
+
+{% block content %}
+{# <div id="content">
+    <div class="main content clearfix">
+        <form method="POST" enctype="multipart/form-data" id="uploadform" action="/upload_post">
+            <div id="upload">
+                <div id="upload-step-1">
+                    <input type="file" id="video_file" name="video_file" accept="video/*">
+                    <div id="file-dragdrop-area">
+                        <div id="upload-icon"></div>
+                        <h1>Drag and drop a file to upload</h1>
+                    </div>
+                </div>
+                <div id="upload-step-2" style="display: none;">
+                    <div id="left">
+                        <b>Title</b> <br><input id="video-title" class="yt-uix-form-input-text"
+                            style="width: 550px;margin-top: 3px;" type="text" name="title"><br><br>
+                        <b>Description</b> <br>
+                        <textarea name="description" class="yt-uix-form-input-text"
+                            style="width: 550px;margin-top: 3px;"></textarea><br><br>
+                        <b>Tags</b> <br><input placeholder="Seperate with commas" class="yt-uix-form-input-text"
+                            style="width: 550px;margin-top: 3px;" type="text" name="tags"><br><br>
+
+                        <button type="submit" class="yt-uix-button yt-uix-button-default">Upload Video</button>
+                    </div>
+                    <div id="right">
+                        <b>Category</b> <br>
+                        <select class="yt-uix-button yt-uix-button-default" name="category">
+                            {% for value, category in categories %}
+                            <option value="{{ value }}">{{ category }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div id="upload-progress" style="display: none;">
+                    <div class="progress">
+                        <div class="bar">
+                            <div class="percent">0%</div>
+                        </div>
+                    </div>
+
+                    <div id="status"></div>
+                </div>
+                <noscript></noscript>
+            </div>
+        </form>
+    </div>
+</div> #}
+
+<div id="content">
+
+    <div class="upload-div-top">
+        Upload video file
+    </div>
+    <div class="upload-div-base">
+        <div id="upload-progress" style="display: none;">
+            <div class="progress">
+                <div class="bar">
+                    <div class="percent">0%</div>
+                </div>
+            </div>
+
+            <div id="status"></div>
+        </div>
+        <div class="www-upload-left">
+            <form method="POST" enctype="multipart/form-data" id="uploadform" action="/my_videos_upload_post">
+                <div id="upload">
+                    <div id="upload-step-1">
+                        <div id="left">
+                            <noscript></noscript>
+                            <input type="file" id="video_file" name="video_file" accept="video/*">
+                            <div id="file-dragdrop-area">
+                                <div id="upload-icon"></div>
+                                <h1>Drag and drop a file to upload</h1>
+                            </div>
+                        </div>
+                        <div id="right">
+                            <h1>More ways to upload and create</h1><br>
+                            <img src="/yts/img/upload_multiple.png" style="vertical-align: top;">
+                            <span style="display: inline-block;">
+                                <h4>Uploading high quality videos</h4>
+                                <span class="small-text">
+                                    Upload videos up to 720p at 30 FPS.
+                                </span>
+                            </span><br><br>
+                        </div>
+                    </div>
+                    <div id="upload-step-2" style="display: none;">
+                        <div id="left">
+                            <b>Title</b> <br><input id="video-title" class="yt-uix-form-input-text"
+                                style="width: 550px;margin-top: 3px;" type="text" name="title"><br><br>
+                            <b>Description</b> <br>
+                            <textarea name="description" class="yt-uix-form-input-text"
+                                style="width: 550px;margin-top: 3px;"></textarea><br><br>
+                            <b>Tags</b> <br><input placeholder="Seperate with commas" class="yt-uix-form-input-text"
+                                style="width: 550px;margin-top: 3px;" type="text" name="tags"><br><br>
+
+                            <button type="submit" class="yt-uix-button yt-uix-button-default">Upload Video</button>
+                        </div>
+                        <div id="right">
+                            <b>Category</b> <br>
+                            <select class="yt-uix-button yt-uix-button-default" name="category">
+                                {% for value, category in categories %}
+                                <option value="{{ value }}">{{ category }}</option>
+                                {% endfor %}
+                            </select><br><br>
+                        </div>
+                    </div>
+                    <div id="upload-progress" style="display: none;">
+                        <div class="progress">
+                            <div class="bar">
+                                <div class="percent">0%</div>
+                            </div>
+                        </div>
+
+                        <div id="status"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra %}
+<script>
+    document.getElementById('video_file').onchange = () => {
+        document.getElementById('upload-step-1').style.display = 'none';
+        document.getElementById('upload-step-2').style.display = 'block';
+        document.getElementById('video-title').value = video_file.value.replace(/^.*[\\\/]/, '');
+    }
+</script>
+<script>
+    $(function () {
+
+        var bar = $('.bar');
+        var percent = $('.percent');
+        var status = $('#status');
+
+        $('#uploadform').ajaxForm({
+            beforeSend: function () {
+                status.empty();
+                var percentVal = '0%';
+                document.getElementById('upload-step-2').style.display = 'none';
+                document.getElementById('upload-progress').style.display = 'block';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            uploadProgress: function (event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            complete: function (xhr) {
+                status.html(xhr.responseText)
+            }
+        });
+    }); 
+</script>
+{% endblock %}

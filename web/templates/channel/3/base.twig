@@ -1,0 +1,246 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+<link id="css-3031658408" rel="stylesheet" href="/yts/cssbin/www-the-rest-vflzYVqky.css">
+<link id="css-1479876921" rel="stylesheet" href="/yts/cssbin/www-channels3-vflWDARTt.css">
+<style>
+    #branded-page-body-container {
+        background-color: #CCCCCC;
+        *background-image: url();
+        *background-repeat: no-repeat;
+        *background-position: left top;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+    <div class="subscription-menu-expandable subscription-menu-expandable-channels3 yt-rounded ytg-wide hid">
+        <div class="content" id="recommended-channels-list"></div>
+        <button class="close" type="button">close</button>
+    </div>
+
+    <div class="hid">
+        <div class="yt-alert yt-alert-default yt-alert-success  " id="success-template">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"></div>
+        </div>
+        <div class="yt-alert yt-alert-default yt-alert-error  " id="error-template">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"></div>
+        </div>
+        <div class="yt-alert yt-alert-default yt-alert-warn  " id="warn-template">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"></div>
+        </div>
+        <div class="yt-alert yt-alert-default yt-alert-info  " id="info-template">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"></div>
+        </div>
+        <div class="yt-alert yt-alert-default yt-alert-status  " id="status-template">
+            <div class="yt-alert-icon">
+                <img src="/yts/img/pixel-vfl3z5WfW.gif" class="icon master-sprite" alt="Alert icon">
+            </div>
+            <div class="yt-alert-buttons"><button type="button"
+                    class="close yt-uix-close yt-uix-button yt-uix-button-close" onclick=";return false;"
+                    data-close-parent-class="yt-alert" role="button"><span class="yt-uix-button-content">Close
+                    </span></button></div>
+            <div class="yt-alert-content" role="alert"></div>
+        </div>
+    </div>
+
+    <div class="hid">
+        <div id="message-container-template" class="message-container"></div>
+    </div>
+
+
+
+    <img class="hid"
+        src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?data=path%3Dfeatured%3Btype%3Dcview%3Butuid%3D6nSFpj9HTCZ5t-N3Rm3-HA&amp;label=default"
+        border="0" width="1" height="1">
+
+    <div id="branded-page-default-bg" class="ytg-base">
+        <div id="branded-page-body-container" class="ytg-base clearfix enable-fancy-subscribe-button">
+            {# <map name='branded_page_banner_image_map'><area shape='rect' coords='186,0,258,52'
+                    href='/redirect?q=http%3A%2F%2Fwww.facebook.com%2FVsauceGaming&amp;event=imagemapurl&amp;usg=wPfu6TFaI1a6K6r6s3doHeXvNCE=' /><area
+                    shape='rect' coords='258,0,331,52'
+                    href='/redirect?q=http%3A%2F%2Fwww.twitter.com%2Ftweetsauce&amp;event=imagemapurl&amp;usg=O0mN3dGfsxVEFLnrCl_g6_ltVCQ=' /><area
+                    shape='rect' coords='499,60,600,115'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL8B1DDE384770FD97&amp;event=imagemapurl&amp;usg=O1_xWVY8mzj_d3Z6Ch68j0B2QyE=' /><area
+                    shape='rect' coords='619,67,710,119'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL5BB30729E2910578&amp;event=imagemapurl&amp;usg=Pr8GvyRw_OQy5wzkm0sjns_MsMs=' /><area
+                    shape='rect' coords='400,110,510,152'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPLDB2EF5413568CBAA&amp;event=imagemapurl&amp;usg=mVxhy7Tg5V_cHvN9EgOBQU3jjIU=' /><area
+                    shape='rect' coords='536,117,627,154'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPLEC0A5E71DE1EDFCE&amp;event=imagemapurl&amp;usg=6cqxGQatwhNCIA7qEvHdfeGA9w0=' /><area
+                    shape='rect' coords='676,125,794,152'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL57A31A57F0DBD2B2&amp;event=imagemapurl&amp;usg=FS1N9pLFHjHUBgK9YHlpiSt7B6s=' /><area
+                    shape='rect' coords='850,0,920,53'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2FVsauce2&amp;event=imagemapurl&amp;usg=NKlpszmcKY8ix6PMLbAGJy8HtMU=' /><area
+                    shape='rect' coords='910,60,970,114'
+                    href='/redirect?q=http%3A%2F%2Fwww.youtube.com%2FVsauce3&amp;event=imagemapurl&amp;usg=RZvysSCimExoT6v2qBUCpGcH9eI=' /></map>
+            <img usemap="#branded_page_banner_image_map" height="150" class="ytg-wide branded-banner-image"
+                src="/yts/img/pixel-vfl3z5WfW.gif"> #}
+
+
+            <div id="branded-page-header-container" class="ytg-wide banner-displayed-mode">
+                <div id="branded-page-header" class="ytg-wide">
+                    <div id="channel-header-main">
+                        <div class="upper-section clearfix">
+                            <a href="/channel/{{ user.uuid }}">
+                                <span class="channel-thumb">
+                                    <span class="video-thumb ux-thumb yt-thumb-square-60 "><span
+                                            class="yt-thumb-clip"><span class="yt-thumb-clip-inner"><img
+                                                    src="/ytd/pfp/{{ user.pfp }}"
+                                                    alt="{{ user.username }}" width="60"><span
+                                                    class="vertical-align"></span></span></span></span>
+                                </span>
+                            </a>
+                            <div class="upper-left-section ">
+
+                                <h1 class="context-source-container"
+                                    data-context-image="/ytd/pfp/{{ user.pfp }}">
+                                    <span class="qualified-channel-title">
+                                        {{ user.username }}
+                                    </span>
+
+
+                                </h1>
+
+                            </div>
+
+                            <div class="upper-left-section">
+                                <div class="yt-subscription-button-hovercard yt-uix-hovercard"><span
+                                        class="yt-uix-button-context-light yt-uix-button-subscription-container"><button
+                                            href="https://accounts.google.com/ServiceLogin?passive=true&amp;continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26feature%3Dsubscribe%26nomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fuser%252FVsauce%253Ffeature%253Dg-logo-xit%2526continue_action%253Dop9ZjnuXttZUislEl29Vy3TtO8BKZPSiAHI3CS00WfYKaaivqYtSe8YtKg5npkbtzMuYwLiFuxb1UShZOMDbmcajWUzSSin_rDcjAEvYh4M=&amp;uilel=3&amp;hl=en_US&amp;service=youtube"
+                                            onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"
+                                            type="button"
+                                            class="yt-subscription-button subscription-button-with-recommended-channels   yt-uix-button yt-uix-button-subscription"
+                                            data-enable-hovercard="true"
+                                            data-subscription-value="UC6nSFpj9HTCZ5t-N3Rm3-HA" data-force-position=""
+                                            data-position="" data-subscription-feature="channels3"
+                                            data-subscription-type=""
+                                            data-sessionlink="ei=CIydloiAz7MCFRIUIQodfWSNUA%3D%3D&amp;feature=channels3"
+                                            role="button"><span class="yt-uix-button-icon-wrapper"><img
+                                                    class="yt-uix-button-icon yt-uix-button-icon-subscribe"
+                                                    src="/yts/img/pixel-vfl3z5WfW.gif" alt=""><span
+                                                    class="yt-uix-button-valign"></span></span><span
+                                                class="yt-uix-button-content"> <span
+                                                    class="subscribe-label">Subscribe</span>
+                                                <span class="subscribed-label">Subscribed</span>
+                                                <span class="unsubscribe-label">Unsubscribe</span>
+                                            </span></button><span
+                                            class="yt-subscription-button-disabled-mask"></span></span>
+                                    <div class="yt-uix-hovercard-content hid">
+                                        <p class="yt-spinner">
+                                            <img src="/yts/img/pixel-vfl3z5WfW.gif" class="yt-spinner-img"
+                                                alt="Loading icon">
+
+                                            Loading...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="upper-right-section">
+                                <div class="header-stats">
+
+
+                                    <div class="stat-entry">
+                                        <span class="stat-value">1,409,363</span>
+                                        <span class="stat-name">subscribers</span>
+
+                                    </div>
+
+
+
+                                    <div class="stat-entry">
+                                        <span class="stat-value">218,218,459</span>
+                                        <span class="stat-name">video views</span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="valign-shim"></span>
+                            </div>
+                        </div>
+                        <div class="channel-horizontal-menu clearfix">
+                            <ul role="tablist">
+                                <li role="presentation" class="selected">
+                                    <a href="/user/Vsauce/featured" class="gh-tab-100" role="tab" aria-selected="true">
+                                        Featured
+
+                                    </a>
+                                </li>
+
+                                <li role="presentation">
+                                    <a href="/user/Vsauce/videos?view=0" class="gh-tab-101" role="tab"
+                                        aria-selected="false">
+                                        Browse videos
+
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% block ch_content %}
+            
+            {% endblock %}
+
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block extra %}
+<script id="js-3572960334" src="//s.ytimg.com/yts/jsbin/www-channels3-vflGPcE_X.js" data-loaded="true"></script>
+
+    <script>
+      yt.pubsub.subscribe('init', function() {
+        yt.setAjaxToken('watch_actions_ajax', "");
+      });
+      yt.setMsg({
+          'CHANNELS3_FEATURED_PLAYER_GENERIC_ERROR': "This feature is not available right now. Please try again later."
+      })
+        yt.pubsub.subscribe('init', function () {
+          yt.www.livestreaming.ConcurrentViewers(30000)
+        });
+    </script>
+
+    <script>
+    yt.pubsub.subscribe('init', yt.www.channels.c3.channel.initBloggerLayout);
+  </script>
+{% endblock %}
